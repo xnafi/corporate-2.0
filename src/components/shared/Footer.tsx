@@ -44,13 +44,13 @@ const Footer = () => {
           {/* Newsletter */}
           <div>
             <h3 className="font-semibold mb-4">Newsletter</h3>
-            <div className="flex">
+            <div className="relative w-full">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full p-2 border rounded-l-md text-sm outline-none"
+                className="w-full p-3 pr-20 text-sm border border-gray-300 rounded-md outline-none"
               />
-              <button className="bg-orange-500 text-white px-4 py-2 rounded-r-md text-sm hover:bg-orange-600">
+              <button className="absolute top-1/2 right-1 transform -translate-y-1/2 bg-orange-500 text-white px-4 py-2 rounded-md text-sm hover:bg-orange-600">
                 TRY NOW
               </button>
             </div>
@@ -66,18 +66,14 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4 my-4 md:my-0">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border text-orange-500 hover:bg-orange-500 hover:text-white cursor-pointer">
-              <FaFacebookF />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border text-black hover:bg-black hover:text-white cursor-pointer">
-              <FaLinkedinIn />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border text-black hover:bg-black hover:text-white cursor-pointer">
-              <FaTwitter />
-            </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border text-black hover:bg-black hover:text-white cursor-pointer">
-              <FaBehance />
-            </div>
+            {[FaFacebookF, FaLinkedinIn, FaTwitter, FaBehance].map((Icon, idx) => (
+              <div
+                key={idx}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-b-4 border-black text-black hover:bg-orange-500 hover:text-white cursor-pointer transition-all"
+              >
+                <Icon />
+              </div>
+            ))}
           </div>
 
           {/* Links */}
