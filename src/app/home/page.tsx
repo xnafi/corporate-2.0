@@ -1,5 +1,6 @@
 import AboutUs from "@/components/view/AboutUs";
 import Banner from "@/components/view/Banner";
+import CollaborateWork from "@/components/view/CollaborateWork";
 import ContactUs from "@/components/view/ContactUs";
 import HappyCustomer from "@/components/view/HappyCustomer";
 import LiveChat from "@/components/view/LiveChat";
@@ -15,6 +16,7 @@ export default function HomePage() {
        <HappyCustomer />
        <ContactUs />
        <LiveChat />
+       <CollaborateWork />
       </div>
     );
   }
