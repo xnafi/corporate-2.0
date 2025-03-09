@@ -30,7 +30,7 @@ const AboutUs = () => {
 
         {/* Badge with Arrow */}
         <div className="absolute top-20 left-64 flex flex-col items-center ">
-          <div className="w-32 h-32 bg-white rounded-full border-2 border-black flex items-center justify-center text-sm font-bold -rotate-45">
+          <div className="w-32 h-32 bg-white rounded-full border-2 border-black flex items-center justify-center text-sm font-bold -rotate-6 ">
             <span className="text-base text-center">WINNER BEST AWARD</span>
           </div>
         </div>
@@ -44,7 +44,7 @@ const AboutUs = () => {
         <h2 className="text-5xl font-bold text-gray-900 leading-snug">
           Specialists in Tech <br /> Hurdles.
         </h2>
-        <p className="text-gray-600 para-text">
+        <p className=" para-text">
           Solving complex digital challenges with tailored solutions to <br />{" "}
           optimize workflows, enhance efficiency.
         </p>
