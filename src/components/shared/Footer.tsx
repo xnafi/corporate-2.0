@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         {/* Divider Line */}
-        <div className="border-t border-gray-200 my-8"></div>
+        <div className="border-t border-gray-400 my-8"></div>
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center">

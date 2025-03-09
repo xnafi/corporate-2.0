@@ -19,3 +19,32 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+@layer utilities {
+  .headings {
+    @apply text-5xl font-bold  mb-12;
+  }
+  .sub-heading {
+    @apply text-base md:text-xl lg:text-4xl font-semibold uppercase text-[#D3D3D3];
+  }
+  .primary-text {
+    @apply text-sm md:text-base font-bold text-[#D3D3D3];
+  }
+  .primary_color {
+    @apply text-[#FFFFFF];
+  }
+  .secondary_color {
+    @apply text-[#DD4242];
+  }
+  .sub_color{
+    @apply text-[#6C6C6C]
+  }
+  
+  .para-text {
+    @apply text-gray-600 text-sm;
+  }
+ 
+}
+
+.text_head {
+  line-height: 5rem;
+}
