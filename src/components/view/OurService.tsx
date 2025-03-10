@@ -9,21 +9,21 @@ const services = [
     title: "Digital Marketing",
     description:
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
-    icon: <FaCog className="text-white text-3xl" />, // Settings/Gear Icon
+    icon: <FaCog className="text-white text-3xl" />, 
     bgColor: "bg-orange-500",
   },
   {
     title: "Content Marketing",
     description:
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
-    icon: <MdOutlineVideoLibrary className="text-white text-3xl" />, // Video Library Icon
+    icon: <MdOutlineVideoLibrary className="text-white text-3xl" />, 
     bgColor: "bg-purple-500",
   },
   {
     title: "Email Marketing",
     description:
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
-    icon: <FaEnvelope className="text-white text-3xl" />, // Email Icon
+    icon: <FaEnvelope className="text-white text-3xl" />, 
     bgColor: "bg-green-500",
   },
 ];

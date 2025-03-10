@@ -2,14 +2,17 @@
 
 import React from "react";
 import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 const HappyCustomer: React.FC = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+
   return (
-    <div className="container flex justify-between items-center gap-10 md:gap-20">
+    <div ref={ref} className="container flex justify-between items-center gap-10 md:gap-20">
       {/* Happy Customers */}
       <div className="text-center">
         <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
-          <CountUp end={1200000} separator="," duration={3} />+
+          {inView && <CountUp end={1200000} separator="," duration={3} delay={0.5} />}+
         </h2>
         <p className="text-gray-500 text-lg mt-2">Happy Customers</p>
       </div>
@@ -17,7 +20,7 @@ const HappyCustomer: React.FC = () => {
       {/* Expert Members */}
       <div className="text-center">
         <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
-          <CountUp end={1200} separator="," duration={3} />
+          {inView && <CountUp end={1200} separator="," duration={3} delay={0.5} />}
         </h2>
         <p className="text-gray-500 text-lg mt-2">Expert Members</p>
       </div>
@@ -25,7 +28,7 @@ const HappyCustomer: React.FC = () => {
       {/* Years Experience */}
       <div className="text-center">
         <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
-          <CountUp end={14} duration={3} />+
+          {inView && <CountUp end={14} duration={3} delay={0.5} />}+
         </h2>
         <p className="text-gray-500 text-lg mt-2">Years Experience</p>
       </div>
