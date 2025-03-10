@@ -6,7 +6,7 @@ import { FaPlay } from "react-icons/fa";
 
 const CollaborateWork = () => {
   return (
-    <section className="relative flex items-center justify-between w-full bg-[#9c5833] text-white px-12 py-16 overflow-hidden">
+    <section className="relative flex items-center justify-between w-full bg-[#9c5833] text-white px-6 py-16 overflow-hidden md:px-12 lg:px-16">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -21,17 +21,17 @@ const CollaborateWork = () => {
       {/* Content Section */}
       <div className="relative flex w-full max-w-7xl mx-auto items-center">
         {/* Left Content */}
-        <div className="w-2/3">
-          <h2 className="text-5xl font-bold leading-tight">
+        <div className="w-full md:w-2/3">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
             Want to collaborate? Here's <br /> how we work.
           </h2>
-          <p className="mt-4 text-sm text-gray-200">
+          <p className="mt-4 text-sm md:text-base text-gray-200">
             If you have questions, feel free to contact our expert for assistance.
           </p>
         </div>
 
         {/* Right Side - Watch Video Button */}
-        <div className="w-1/3 flex justify-end">
+        <div className="w-full md:w-1/3 flex justify-end mt-8 md:mt-0">
           <a
             href="https://www.youtube.com"
             target="_blank"
