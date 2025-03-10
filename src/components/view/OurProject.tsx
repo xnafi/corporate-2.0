@@ -37,22 +37,23 @@ const projects = [
 
 const OurProject = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section className=" bg-white">
+      <div className="container mx-auto">
         {/* Section Header */}
-        <div className="mb-10 text-start flex items-center justify-between md:text-start">
-          <h2 className="text-5xl font-bold">Our Recent Projects</h2>
-          <div className="gap-4 flex items-center">
+        <div className="mb-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            Our Recent Projects
+          </h2>
+          <div className="flex gap-4 mt-4 md:mt-0">
             {/* Prev Button */}
             <button className="custom-swiper-prev bg-orange-500 p-3 rounded-full shadow-md hover:bg-orange-600 transition">
               <ArrowLeft className="text-white" />
             </button>
-{/* Next Button */}
-<button className="custom-swiper-next bg-orange-500 p-3 rounded-full shadow-md hover:bg-orange-600 transition">
+            {/* Next Button */}
+            <button className="custom-swiper-next bg-orange-500 p-3 rounded-full shadow-md hover:bg-orange-600 transition">
               <ArrowRight className="text-white" />
             </button>
           </div>
-           
         </div>
 
         {/* Swiper Carousel */}
@@ -99,14 +100,9 @@ const OurProject = () => {
             ))}
           </Swiper>
 
-          {/* Custom Navigation & Pagination Below */}
-          <div className="flex justify-center items-center gap-4 mt-6">
-            
-
-            {/* Pagination Dots */}
+          {/* Custom Pagination */}
+          <div className="flex justify-center items-center mt-6">
             <div className="custom-swiper-pagination flex justify-center"></div>
-
-            
           </div>
         </div>
       </div>

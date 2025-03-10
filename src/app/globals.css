@@ -36,7 +36,7 @@ body {
     @apply text-[#DD4242];
   }
   .container{
-    @apply max-w-[1440px] mx-auto px-4 lg:px-12 py-4 lg:py-12;
+    @apply max-w-[1440px] mx-auto px-4 lg:px-4 py-4 lg:py-12;
   }
   
   .para-text {
