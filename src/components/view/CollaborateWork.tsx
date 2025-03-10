@@ -1,11 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client";
+
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 
 const CollaborateWork = () => {
   return (
     <section className="relative flex items-center justify-between w-full bg-[#9c5833] text-white px-12 py-16 overflow-hidden">
-      {/* Left Side - Background Image */}
+      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="https://i.postimg.cc/j5XKBBvj/creative-people-working-office.jpg"
@@ -28,14 +30,19 @@ const CollaborateWork = () => {
           </p>
         </div>
 
-        {/* Right Side - Circular Watch Video Button */}
+        {/* Right Side - Watch Video Button */}
         <div className="w-1/3 flex justify-end">
-          <div className="relative w-32 h-32 flex items-center justify-center rounded-full bg-white text-orange-600 shadow-lg cursor-pointer group">
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative w-32 h-32 flex items-center justify-center rounded-full bg-white text-orange-600 shadow-lg cursor-pointer group transition-transform transform hover:scale-110"
+          >
             <FaPlay className="text-3xl group-hover:scale-110 transition-transform" />
             <div className="absolute inset-0 flex items-center justify-around text-xs text-gray-800 font-semibold uppercase tracking-widest">
               <span className="-rotate-6 mb-12">Watch Video!</span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
