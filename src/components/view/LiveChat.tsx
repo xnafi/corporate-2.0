@@ -2,10 +2,10 @@ import { FaHeart, FaPhoneAlt, FaComments } from "react-icons/fa";
 
 const LiveChat = () => {
   return (
-    <div className="container mx-auto ">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12  ">
+    <div className="container mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
         {/* Help Section */}
-        <div className="flex  items-center text-start gap-4">
+        <div className="flex items-center text-start gap-4">
           <div className="w-12 h-12 flex items-center justify-center bg-purple-500 text-white rounded-full">
             <FaHeart size={20} />
           </div>

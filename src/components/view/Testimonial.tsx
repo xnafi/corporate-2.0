@@ -60,28 +60,28 @@ const Testimonial = () => {
   }, [swiperInstance]);
 
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+    <section className=" bg-gray-100">
+      <div className="container mx-auto flex flex-col md:flex-row items-center">
         {/* Left Section */}
         <div className="md:w-1/3 text-left mb-10 md:mb-0">
           <p className="text-orange-500 uppercase text-sm font-semibold">
             Testimonial
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2">
             1.2k+ Clients <br /> Love us
           </h2>
 
           {/* Navigation Buttons */}
-          <div className="flex items-center gap-4 mt-16">
+          <div className="flex items-center gap-4 mt-12 sm:mt-16">
             <button
               ref={prevRef}
-              className="bg-white text-black w-20 h-20 flex items-center justify-center rounded-full shadow-md hover:bg-orange-600 transition"
+              className="bg-white text-black w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full shadow-md hover:bg-orange-600 transition"
             >
               <FaArrowLeft size={20} />
             </button>
             <button
               ref={nextRef}
-              className="bg-white text-black w-20 h-20 flex items-center justify-center rounded-full shadow-md border hover:bg-orange-600 transition"
+              className="bg-white text-black w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full shadow-md border hover:bg-orange-600 transition"
             >
               <FaArrowRight size={20} />
             </button>
@@ -93,8 +93,14 @@ const Testimonial = () => {
           <Swiper
             modules={[Navigation]}
             spaceBetween={20}
-            slidesPerView={3} 
-            onSwiper={setSwiperInstance} 
+            slidesPerView={3} // Default for Large Screens
+            breakpoints={{
+              1280: { slidesPerView: 3 }, // Large Screens
+              1024: { slidesPerView: 2 }, // Tablets
+              640: { slidesPerView: 1 }, // Small Tablets
+              480: { slidesPerView: 1 }, // Mobile
+            }}
+            onSwiper={setSwiperInstance}
             className="overflow-hidden"
           >
             {testimonials.map((testimonial, index) => (
