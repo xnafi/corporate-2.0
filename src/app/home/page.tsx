@@ -8,6 +8,7 @@ import LiveChat from "@/components/view/LiveChat";
 import OurProject from "@/components/view/OurProject";
 import OurService from "@/components/view/OurService";
 import OurTeam from "@/components/view/OurTeam";
+import Testimonial from "@/components/view/Testimonial";
 
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
        <OurProject />
        <ChooseUs />
        <OurTeam />
+       <Testimonial />
        <ContactUs />
        <LiveChat />
        <CollaborateWork />
