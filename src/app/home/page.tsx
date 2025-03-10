@@ -1,5 +1,6 @@
 import AboutUs from "@/components/view/AboutUs";
 import Banner from "@/components/view/Banner";
+import ChooseUs from "@/components/view/ChooseUs";
 import CollaborateWork from "@/components/view/CollaborateWork";
 import ContactUs from "@/components/view/ContactUs";
 import HappyCustomer from "@/components/view/HappyCustomer";
@@ -15,6 +16,7 @@ export default function HomePage() {
        <OurService />
        <AboutUs />
        <HappyCustomer />
+       <ChooseUs />
        <OurTeam />
        <ContactUs />
        <LiveChat />
