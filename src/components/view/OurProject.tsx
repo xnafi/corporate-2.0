@@ -37,21 +37,21 @@ const projects = [
 
 const OurProject = () => {
   return (
-    <section className=" bg-white">
-      <div className="container mx-auto">
+    <section className="bg-white py-10">
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="mb-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             Our Recent Projects
           </h2>
-          <div className="flex gap-4 mt-4 md:mt-0">
+          <div className="flex gap-3 mt-4 md:mt-0">
             {/* Prev Button */}
-            <button className="custom-swiper-prev bg-orange-500 p-3 rounded-full shadow-md hover:bg-orange-600 transition">
-              <ArrowLeft className="text-white" />
+            <button className="custom-swiper-prev bg-orange-500 p-2 sm:p-3 rounded-full shadow-md hover:bg-orange-600 transition">
+              <ArrowLeft className="text-white" size={20} />
             </button>
             {/* Next Button */}
-            <button className="custom-swiper-next bg-orange-500 p-3 rounded-full shadow-md hover:bg-orange-600 transition">
-              <ArrowRight className="text-white" />
+            <button className="custom-swiper-next bg-orange-500 p-2 sm:p-3 rounded-full shadow-md hover:bg-orange-600 transition">
+              <ArrowRight className="text-white" size={20} />
             </button>
           </div>
         </div>
@@ -60,7 +60,7 @@ const OurProject = () => {
         <div className="relative">
           <Swiper
             modules={[Navigation, Pagination]}
-            spaceBetween={20}
+            spaceBetween={15}
             slidesPerView={1}
             navigation={{
               nextEl: ".custom-swiper-next",
@@ -78,7 +78,7 @@ const OurProject = () => {
               <SwiperSlide key={index}>
                 <div className="relative rounded-xl overflow-hidden group shadow-lg">
                   {/* Image Section */}
-                  <div className="w-full h-64 relative">
+                  <div className="w-full h-52 sm:h-64 md:h-72 lg:h-80 relative">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -88,12 +88,12 @@ const OurProject = () => {
                     />
                   </div>
                   {/* Overlay with Text */}
-                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-5">
-                    <h3 className="text-white text-lg font-semibold">{project.title}</h3>
+                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4 sm:p-5">
+                    <h3 className="text-white text-sm sm:text-lg font-semibold">{project.title}</h3>
                   </div>
                   {/* Hover Arrow */}
-                  <div className="absolute bottom-5 right-5 bg-orange-500 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ArrowRight className="text-white" />
+                  <div className="absolute bottom-4 right-4 bg-orange-500 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ArrowRight className="text-white" size={18} />
                   </div>
                 </div>
               </SwiperSlide>
