@@ -4,16 +4,17 @@ import { FaSearch, FaLock, FaBars, FaTimes } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
+  const [isHomeOpen, setIsHomeOpen] = useState(false);
   const [isPagesOpen, setIsPagesOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Disable scrolling when menu is open (Fix scrolling issue)
+  // Disable scrolling when mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
-      document.documentElement.style.overflowX = "hidden"; // Prevent horizontal scrolling
+      document.documentElement.style.overflowX = "hidden";
     } else {
       document.body.style.overflow = "auto";
       document.documentElement.style.overflowX = "auto";
@@ -21,7 +22,7 @@ const Navbar = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full top-0 z-50 overflow-x-hidden">
+    <nav className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-[1440px] mx-auto flex justify-between items-center py-4 px-4 md:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -41,13 +42,23 @@ const Navbar = () => {
 
         {/* Navigation Menu */}
         <ul
-          className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none md:flex space-x-0 md:space-x-6 text-gray-800 md:items-center md:justify-center transition-all duration-300 ease-in-out overflow-hidden ${
+          className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none md:flex space-x-0 md:space-x-6 text-gray-800 md:items-center md:justify-center transition-all duration-300 ease-in-out ${
             menuOpen ? "block h-auto" : "hidden md:flex"
           }`}
-          style={{ maxWidth: "100vw" }} 
         >
-          <li className="hover:text-orange-500 cursor-pointer px-4 py-3 md:py-0">
-            Home
+          {/* Home Dropdown */}
+          <li
+            className="relative px-4 py-3 md:py-0 cursor-pointer hover:text-orange-500 flex items-center space-x-1"
+            onClick={() => setIsHomeOpen(!isHomeOpen)}
+          >
+            <span>Home</span>
+            <IoIosArrowDown />
+            {isHomeOpen && (
+              <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200">
+                <li className="px-4 py-2 hover:bg-gray-100">Home 1</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Home 2</li>
+              </ul>
+            )}
           </li>
 
           {/* Pages Dropdown */}
@@ -58,7 +69,7 @@ const Navbar = () => {
             <span>Pages</span>
             <IoIosArrowDown />
             {isPagesOpen && (
-              <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200 max-w-[90vw]">
+              <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200">
                 <li className="px-4 py-2 hover:bg-gray-100">Page 1</li>
                 <li className="px-4 py-2 hover:bg-gray-100">Page 2</li>
               </ul>
@@ -73,7 +84,7 @@ const Navbar = () => {
             <span>Services</span>
             <IoIosArrowDown />
             {isServicesOpen && (
-              <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200 max-w-[90vw]">
+              <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200">
                 <li className="px-4 py-2 hover:bg-gray-100">Service 1</li>
                 <li className="px-4 py-2 hover:bg-gray-100">Service 2</li>
               </ul>
@@ -114,6 +125,49 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="md:hidden mt-4 bg-white shadow-lg rounded-md py-3 text-center space-y-3">
+          <a
+            href="#home"
+            className="block hover:text-orange-500"
+            onClick={() => {
+              setIsHomeOpen(!isHomeOpen);
+              setMenuOpen(false);
+            }}
+          >
+            Home
+          </a>
+          <a
+            href="#pages"
+            className="block hover:text-orange-500"
+            onClick={() => {
+              setIsPagesOpen(!isPagesOpen);
+              setMenuOpen(false);
+            }}
+          >
+            Pages
+          </a>
+          <a
+            href="#services"
+            className="block hover:text-orange-500"
+            onClick={() => {
+              setIsServicesOpen(!isServicesOpen);
+              setMenuOpen(false);
+            }}
+          >
+            Services
+          </a>
+          <a
+            href="#contact"
+            className="block hover:text-orange-500"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact Us
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
