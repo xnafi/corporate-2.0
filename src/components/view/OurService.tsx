@@ -30,37 +30,46 @@ const services = [
 
 const OurService = () => {
   return (
-    <section className="bg-gray-100">
+    <section className="bg-gray-100 py-12 px-4">
       <div className="container mx-auto">
-        <div className="text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center md:text-left">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Services</h2>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center sm:items-start text-center sm:text-left transition-transform transform hover:scale-105 hover:shadow-xl"
+            >
+              {/* Icon */}
               <div
-                key={index}
-                className="bg-white rounded-xl p-6 shadow-lg flex flex-col transition-transform transform hover:scale-105"
+                className={`w-16 h-16 flex items-center justify-center rounded-full ${service.bgColor} mb-4`}
               >
-                <div
-                  className={`w-16 h-16 flex items-center justify-center rounded-full ${service.bgColor} mb-4`}
-                >
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-700 text-base mb-4">
-                  {service.description}
-                </p>
-                <a
-                  href="#"
-                  className="text-black font-medium inline-flex items-center gap-2 hover:underline border-b-2 border-gray-400 pb-1"
-                >
-                  View More Details{" "}
-                  <IoIosArrowRoundForward className="text-3xl" />
-                </a>
+                {service.icon}
               </div>
-            ))}
-          </div>
+
+              {/* Service Title */}
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                {service.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-700 text-sm md:text-base mb-4">
+                {service.description}
+              </p>
+
+              {/* View More Button */}
+              <a
+                href="#"
+                className="text-black font-medium inline-flex items-center gap-2 hover:underline border-b-2 border-gray-400 pb-1"
+              >
+                View More Details{" "}
+                <IoIosArrowRoundForward className="text-2xl md:text-3xl" />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
