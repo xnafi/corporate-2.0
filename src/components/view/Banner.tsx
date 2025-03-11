@@ -5,7 +5,7 @@ import { FaPlay } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <section className="container mx-auto sm:mt-10">
+    <section className="container mx-auto sm:mt-10 px-4">
       {/* Banner Section */}
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
         {/* Left Content */}
@@ -38,26 +38,26 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* Right Image */}
-        <div className="lg:w-1/2 flex justify-center">
+        {/* Right Image (Now Responsive) */}
+        <div className="lg:w-1/2 flex justify-center mt-12 md:mt-0">
           <Image
             src="https://i.postimg.cc/K8C1s5Tk/fuel-brand-graph.png"
             alt="Fuel Brand Growth"
             width={600}
             height={400}
-            className="max-w-full h-[200px] md:h-[300px] lg:h-[450px]"
+            className="max-w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[450px]"
           />
         </div>
       </div>
 
       {/* Trusted Companies Section */}
-      <div className="mt-8 md:mt-12 text-center space-y-4 flex flex-row justify-between items-center">
+      <div className="mt-8 md:mt-12 text-center space-y-4 flex lg:flex-row flex-col items-center justify-between">
         <p className="text-gray-600 text-sm md:text-base">
           <span className="font-semibold underline text-black text-lg">Join 27,000+</span> companies who've reached
         </p>
 
-        {/* Logos */}
-        <div className="flex justify-center items-center gap-6 flex-wrap">
+        {/* Logos (Now Responsive) */}
+        <div className="flex flex-wrap justify-center items-center gap-16 sm:flex-row sm:justify-between mt-4 sm:mt-0">
           <Image src="https://i.postimg.cc/Y99C8DF9/Google-2015-logo-svg.png" alt="Google" width={80} height={40} />
           <Image src="https://i.postimg.cc/7PjSGSv7/3374985-56876.jpg" alt="Hello" width={80} height={40} />
           <Image src="https://i.postimg.cc/fTCz9f5n/webflow7029.jpg" alt="Webflow" width={80} height={40} />
