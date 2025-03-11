@@ -1,14 +1,14 @@
 import AboutUs from "@/components/view/AboutUs";
 import Banner from "@/components/view/Banner";
 import ChooseUs from "@/components/view/ChooseUs";
-import CollaborateWork from "@/components/view/CollaborateWork";
+// import CollaborateWork from "@/components/view/CollaborateWork";
 import ContactUs from "@/components/view/ContactUs";
 import HappyCustomer from "@/components/view/HappyCustomer";
 import LiveChat from "@/components/view/LiveChat";
 import OurProject from "@/components/view/OurProject";
 import OurService from "@/components/view/OurService";
 import OurTeam from "@/components/view/OurTeam";
-import Testimonial from "@/components/view/Testimonial";
+// import Testimonial from "@/components/view/Testimonial";
 
 
 export default function HomePage() {
@@ -21,10 +21,10 @@ export default function HomePage() {
        <OurProject />
        <ChooseUs />
        <OurTeam />
-       <Testimonial />
+       {/* <Testimonial /> */}
        <ContactUs />
        <LiveChat />
-       <CollaborateWork />
+       {/* <CollaborateWork /> */}
       </div>
     );
   }
