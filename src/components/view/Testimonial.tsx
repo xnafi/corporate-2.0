@@ -11,7 +11,7 @@ import { useRef, useEffect, useState } from "react";
 const testimonials = [
   {
     quote:
-      "Game-changer! Boosted efficiency, simplified tasks, and Highly recommended are unequivocal!",
+      "Game-changer! Boosted efficiency, simplified tasks, and Highly recommended!",
     name: "Stefan Jong",
     country: "USA",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     quote:
-      "One should not hesitate to ask for the unlikely as they might think it is are unequivocal.",
+      "One should not hesitate to ask for the unlikely as they might think it is.",
     name: "Maria Gomez",
     country: "Germany",
     image: "https://randomuser.me/api/portraits/women/2.jpg",
@@ -27,19 +27,19 @@ const testimonials = [
   },
   {
     quote:
-      "Quick solutions with great performance, recommendations are unequivocal.",
-    name: "Maria Gomez",
-    country: "Germany",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
+      "Quick solutions with great performance, recommendations.",
+    name: "John Doe",
+    country: "UK",
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
     color: "bg-orange-500",
   },
   {
     quote:
-      "Quick solutions with great performance, recommendations are unequivocal.",
-    name: "Maria Gomez",
-    country: "Germany",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-    color: "bg-orange-500",
+      "Absolutely love the service! It exceeded my expectations. ",
+    name: "Emma Smith",
+    country: "Canada",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    color: "bg-blue-500",
   },
 ];
 
@@ -49,7 +49,6 @@ const Testimonial = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
-  // Attach navigation buttons once Swiper is ready
   useEffect(() => {
     if (swiperInstance) {
       swiperInstance.params.navigation.prevEl = prevRef.current;
@@ -60,74 +59,77 @@ const Testimonial = () => {
   }, [swiperInstance]);
 
   return (
-    <section className=" bg-gray-100">
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
+    <section className="bg-gray-100 py-16 overflow-hidden mt-4">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 flex flex-col md:flex-row items-center">
         {/* Left Section */}
-        <div className="md:w-1/3 text-left mb-10 md:mb-0">
+        <div className="md:w-1/3 text-center lg:text-left mb-10 md:mb-0">
           <p className="text-orange-500 uppercase text-sm font-semibold">
             Testimonial
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
             1.2k+ Clients <br /> Love us
           </h2>
 
           {/* Navigation Buttons */}
-          <div className="flex items-center gap-4 mt-12 sm:mt-16">
+          <div className="flex items-center justify-center lg:justify-start gap-4 mt-8 sm:mt-12">
             <button
               ref={prevRef}
-              className="bg-white text-black w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full shadow-md hover:bg-orange-600 transition"
+              className="bg-white text-black w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full shadow-md hover:bg-orange-600 transition"
             >
-              <FaArrowLeft size={20} />
+              <FaArrowLeft size={18} />
             </button>
             <button
               ref={nextRef}
-              className="bg-white text-black w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full shadow-md border hover:bg-orange-600 transition"
+              className="bg-white text-black w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full shadow-md border hover:bg-orange-600 transition"
             >
-              <FaArrowRight size={20} />
+              <FaArrowRight size={18} />
             </button>
           </div>
         </div>
 
         {/* Right Section (Carousel) */}
-        <div className="md:w-2/3">
+        <div className="md:w-2/3 overflow-hidden w-full">
           <Swiper
             modules={[Navigation]}
-            spaceBetween={20}
-            slidesPerView={3} // Default for Large Screens
+            spaceBetween={15}
+            slidesPerView={1} // Default: 1 card on Mobile
             breakpoints={{
-              1280: { slidesPerView: 3 }, // Large Screens
-              1024: { slidesPerView: 2 }, // Tablets
-              640: { slidesPerView: 1 }, // Small Tablets
-              480: { slidesPerView: 1 }, // Mobile
+              640: { slidesPerView: 1 }, // Small devices (1 card)
+              768: { slidesPerView: 2 }, // Tablets (2 cards)
+              1024: { slidesPerView: 3 }, // Laptops (3 cards)
             }}
             onSwiper={setSwiperInstance}
-            className="overflow-hidden"
+            className="!overflow-visible"
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-white p-6 rounded-2xl shadow-lg relative">
+                <div className="bg-white p-5 sm:p-6 md:p-8 rounded-xl shadow-lg relative h-full w-full max-w-[320px] sm:max-w-[400px] mx-auto">
                   {/* Quote Icon */}
                   <div
-                    className={`w-10 h-10 flex items-center justify-center rounded-full ${testimonial.color}`}
+                    className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full ${testimonial.color}`}
                   >
-                    <span className="text-white text-2xl">“</span>
+                    <span className="text-white text-lg sm:text-2xl">“</span>
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-lg mt-4">{testimonial.quote}</p>
+                  <p className="text-sm sm:text-base mt-4 leading-relaxed">
+                    {testimonial.quote}
+                  </p>
 
                   {/* User Info */}
-                  <div className="flex items-center mt-6">
+                  <div className="flex items-center mt-4 sm:mt-6">
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
-                      width={40}
-                      height={40}
-                      className="rounded-full"
+                      width={35}
+                      height={35}
+                      className="rounded-full sm:w-12 sm:h-12"
                     />
-                    <div className="ml-3">
-                      <h4 className="font-semibold">{testimonial.name}</h4>
-                      <p className="text-gray-500 text-sm">
+                    <div className="ml-2 sm:ml-3">
+                      <h4 className="font-semibold text-sm sm:text-base">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-gray-500 text-xs sm:text-sm">
                         {testimonial.country}
                       </p>
                     </div>

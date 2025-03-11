@@ -4,11 +4,11 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaBehance } from "react-icons/fa"
 const Footer = () => {
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-4 lg:px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Left Section */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4">
               <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-2xl">SE</span>
               </div>
@@ -20,19 +20,19 @@ const Footer = () => {
           </div>
 
           {/* Company Links */}
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>About Us</li>
-              <li>Pricing Plan</li>
-              <li>Blogs</li>
-              <li>Testimonial</li>
-              <li>Contact Us</li>
+              <li className="hover:text-orange-500 cursor-pointer">About Us</li>
+              <li className="hover:text-orange-500 cursor-pointer">Pricing Plan</li>
+              <li className="hover:text-orange-500 cursor-pointer">Blogs</li>
+              <li className="hover:text-orange-500 cursor-pointer">Testimonial</li>
+              <li className="hover:text-orange-500 cursor-pointer">Contact Us</li>
             </ul>
           </div>
 
           {/* Contact Us */}
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>seomagency1234@gmail.com</li>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-semibold mb-4">Newsletter</h3>
             <div className="relative w-full">
               <input
@@ -50,7 +50,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="w-full p-3 pr-20 text-sm border border-gray-300 rounded-md outline-none"
               />
-              <button className="absolute top-1/2 right-1 transform -translate-y-1/2 bg-orange-500 text-white px-4 py-2 rounded-md text-sm hover:bg-orange-600">
+              <button className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-orange-500 text-white px-4 py-2 rounded-md text-sm hover:bg-orange-600">
                 TRY NOW
               </button>
             </div>
@@ -61,7 +61,7 @@ const Footer = () => {
         <div className="border-t border-gray-400 my-8"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center text-center">
           <p className="text-sm text-gray-600">© POWERED BY SEOM</p>
 
           {/* Social Icons */}
@@ -78,8 +78,8 @@ const Footer = () => {
 
           {/* Links */}
           <div className="flex space-x-6 text-sm text-gray-600 mt-4 md:mt-0">
-            <span>Terms & Conditions</span>
-            <span>Privacy Policy</span>
+            <span className="hover:text-orange-500 cursor-pointer">Terms & Conditions</span>
+            <span className="hover:text-orange-500 cursor-pointer">Privacy Policy</span>
           </div>
         </div>
       </div>
