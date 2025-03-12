@@ -72,7 +72,7 @@ const Navbar2 = () => {
         </ul>
 
         {/* Contact Button - Hidden on Small Screens */}
-        <Link href="/contact" className="hidden md:block px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition">
+        <Link href="/contact" className="hidden md:block px-6 py-2 border border-b-4 border-black rounded-full text-black hover:bg-white hover:text-lime-500 transition">
           CONTACT US
         </Link>
 
