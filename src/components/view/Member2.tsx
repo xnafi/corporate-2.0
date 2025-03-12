@@ -1,14 +1,19 @@
-"use client"; // Add this at the top
+"use client";
 
-import React from "react";
+import React, { useState } from "react";
 import CountUp from "react-countup";
 
 const Member2 = () => {
+  const [startCount, setStartCount] = useState(false);
+
   return (
-    <section className="bg-white px-4 sm:px-8 lg:px-16 py-12 ">
+    <section
+      className="bg-white px-4 sm:px-8 lg:px-16 py-12"
+      onMouseEnter={() => setStartCount(true)} // Start countdown on hover
+    >
       {/* Title and Description */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 className="text-3xl text-center items-center sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
           Statistics show <br />
           <span className="text-black">Reliability.</span>
         </h2>
@@ -23,7 +28,7 @@ const Member2 = () => {
         {/* Card 1 */}
         <div className="p-8 bg-gray-100 rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            <CountUp start={0} end={20} duration={3} />+
+            {startCount && <CountUp start={0} end={20} duration={3} />}+
           </h3>
           <p className="text-gray-600 mt-2">Years of Excellence</p>
         </div>
@@ -31,7 +36,7 @@ const Member2 = () => {
         {/* Card 2 */}
         <div className="p-8 bg-gray-100 rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            <CountUp start={0} end={1379} duration={3} separator="," />+
+            {startCount && <CountUp start={0} end={1379} duration={3} separator="," />}+
           </h3>
           <p className="text-gray-600 mt-2">Expert Members</p>
         </div>
@@ -39,7 +44,7 @@ const Member2 = () => {
         {/* Card 3 */}
         <div className="p-8 bg-gray-100 rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            <CountUp start={0} end={72} duration={3} separator="," />k
+            {startCount && <CountUp start={0} end={72} duration={3} separator="," />}k
           </h3>
           <p className="text-gray-600 mt-2">Projects Completed</p>
         </div>
