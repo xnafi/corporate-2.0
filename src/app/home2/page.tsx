@@ -1,5 +1,6 @@
 import AboutUs2 from "@/components/view/AboutUs2";
 import Banner2 from "@/components/view/Banner2";
+import Feedback2 from "@/components/view/Feedback2";
 import Member2 from "@/components/view/Member2";
 import Navbar2 from "@/components/view/Navbar2";
 import OurService2 from "@/components/view/OurService2";
@@ -12,6 +13,7 @@ export default function Home2() {
         <OurService2 />
         <AboutUs2 />
         <Member2 />
+        <Feedback2 />
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import { FaLayerGroup, FaChartLine, FaFileAlt, FaSearch, FaGlobe, FaClipboardList } from "react-icons/fa";
 import ServiceCard from "../re-ui/ServiceCard";
 
-
 const services = [
   {
     title: "Ui/Ux Design",
@@ -37,9 +36,11 @@ const services = [
 
 const OurService2 = () => {
   return (
-    <section className=" bg-white">
-      <div className="container mx-auto ">
-        <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Services</h2>
+    <section className="bg-white ">
+      <div className="">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
+          Our Services
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ServiceCard key={index} icon={service.icon} title={service.title} description={service.description} />
