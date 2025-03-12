@@ -9,8 +9,8 @@ const Navbar2 = () => {
   const [dropdownOpen, setDropdownOpen] = useState("");
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-transparent z-50">
-      <div className="max-w-[1440px] mx-auto flex justify-between items-center py-4 px-4 md:px-6 lg:px-8">
+    <nav className="absolute top-0 left-0 w-full bg-transparent z-50 ">
+      <div className="max-w-[1440px] mx-auto flex justify-between items-center py-4 px-4 md:px-8 lg:px-8">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold flex items-center">
           <span className="bg-green-500 text-white px-2 py-1 rounded-full text-lg">SE</span>

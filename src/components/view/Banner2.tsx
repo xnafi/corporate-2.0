@@ -4,15 +4,15 @@ import Button from "../re-ui/Button";
 
 const Banner2 = () => {
   return (
-    <section className="container mx-auto  flex flex-col md:flex-row items-center justify-between bg-gray-100 min-h-screen ">
+    <section className="relative flex flex-col md:flex-row items-center justify-between bg-gray-100 w-full -top-12">
       {/* Left Image */}
-      <div className="w-full md:w-1/2 flex justify-center">
+      <div className="w-full md:w-1/2 flex justify-start items-center">
         <Image
           src="https://i.postimg.cc/657NCmj5/businesswoman-posing.jpg"
           alt="Businesswoman"
           width={600}
           height={400}
-          className="rounded-lg h-[550px] max-h-screen object-fill mb-6"
+          className="rounded-lg h-[600px] object-fill mb-6"
         />
       </div>
 
