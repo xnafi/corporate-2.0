@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { FaSearch, FaLock, FaBars, FaTimes } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isHomeOpen, setIsHomeOpen] = useState(false);
@@ -48,18 +49,22 @@ const Navbar = () => {
         >
           {/* Home Dropdown */}
           <li
-            className="relative px-4 py-3 md:py-0 cursor-pointer hover:text-orange-500 flex items-center space-x-1"
-            onClick={() => setIsHomeOpen(!isHomeOpen)}
-          >
-            <span>Home</span>
-            <IoIosArrowDown />
-            {isHomeOpen && (
-              <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200">
-                <li className="px-4 py-2 hover:bg-gray-100">Home 1</li>
-                <li className="px-4 py-2 hover:bg-gray-100">Home 2</li>
-              </ul>
-            )}
-          </li>
+  className="relative px-4 py-3 md:py-0 cursor-pointer hover:text-orange-500 flex items-center space-x-1"
+  onClick={() => setIsHomeOpen(!isHomeOpen)}
+>
+  <span>Home</span>
+  <IoIosArrowDown />
+  {isHomeOpen && (
+    <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200">
+      <li className="px-4 py-2 hover:bg-gray-100">
+        <Link href="/">Home 1</Link>
+      </li>
+      <li className="px-4 py-2 hover:bg-gray-100">
+        <Link href="/home2">Home 2</Link> {/* Clickable Home 2 */}
+      </li>
+    </ul>
+  )}
+</li>
 
           {/* Pages Dropdown */}
           <li
