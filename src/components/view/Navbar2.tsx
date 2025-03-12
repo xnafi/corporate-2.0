@@ -9,8 +9,9 @@ const Navbar2 = () => {
   const [dropdownOpen, setDropdownOpen] = useState("");
 
   return (
-    <nav className="absolute top-0 left-0 w-full bg-transparent z-50 ">
-      <div className="max-w-[1440px] mx-auto flex justify-between items-center py-4 px-4 md:px-8 lg:px-8">
+    <nav className="absolute top-0 left-0 w-full bg-transparent z-50">
+      <div className="max-w-[1440px] mx-auto flex justify-between items-center py-4 px-10 md:px-10 lg:px-16">
+        
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold flex items-center">
           <span className="bg-green-500 text-white px-2 py-1 rounded-full text-lg">SE</span>
@@ -18,7 +19,7 @@ const Navbar2 = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 text-gray-700 pl-96">
+        <ul className="hidden md:flex gap-6 text-gray-700 lg:pl-72">
           <li>
             <Link href="/" className="hover:text-black transition">Home</Link>
           </li>
@@ -70,7 +71,7 @@ const Navbar2 = () => {
           </li>
         </ul>
 
-        {/* Contact Button */}
+        {/* Contact Button - Hidden on Small Screens */}
         <Link href="/contact" className="hidden md:block px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition">
           CONTACT US
         </Link>
@@ -82,28 +83,33 @@ const Navbar2 = () => {
       </div>
 
       {/* Mobile Menu */}
-      {navOpen && (
-        <ul className="md:hidden bg-white shadow-md absolute top-16 left-0 w-full p-4 space-y-4">
-          <li>
-            <Link href="/" className="block text-gray-700">Home</Link>
-          </li>
-          <li>
-            <Link href="/about" className="block text-gray-700">About Us</Link>
-          </li>
-          <li>
-            <Link href="/team" className="block text-gray-700">Our Team</Link>
-          </li>
-          <li>
-            <Link href="/seo" className="block text-gray-700">SEO Optimization</Link>
-          </li>
-          <li>
-            <Link href="/marketing" className="block text-gray-700">Digital Marketing</Link>
-          </li>
-          <li>
-            <Link href="/contact" className="block text-gray-700">Contact Us</Link>
-          </li>
-        </ul>
-      )}
+      <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity ${navOpen ? "opacity-100 visible" : "opacity-0 invisible"} md:hidden`}>
+        <div className={`fixed top-0 left-0 w-3/4 h-full bg-white shadow-lg transform ${navOpen ? "translate-x-0" : "-translate-x-full"} transition-transform`}>
+          <button className="absolute top-4 right-4 text-2xl" onClick={() => setNavOpen(false)}>
+            <FaTimes />
+          </button>
+          <ul className="flex flex-col space-y-6 p-8 text-gray-700">
+            <li>
+              <Link href="/" className="block">Home</Link>
+            </li>
+            <li>
+              <Link href="/about" className="block">About Us</Link>
+            </li>
+            <li>
+              <Link href="/team" className="block">Our Team</Link>
+            </li>
+            <li>
+              <Link href="/seo" className="block">SEO Optimization</Link>
+            </li>
+            <li>
+              <Link href="/marketing" className="block">Digital Marketing</Link>
+            </li>
+            <li>
+              <Link href="/contact" className="block">Contact Us</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };
