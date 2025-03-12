@@ -30,14 +30,14 @@ const services = [
 
 const OurService = () => {
   return (
-    <section className="bg-gray-100 py-12 px-4">
-      <div className="container mx-auto">
+    <section className="bg-gray-100 ">
+      <div className="">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Services</h2>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <div
               key={index}
