@@ -27,7 +27,7 @@ const Banner2 = () => {
         </p>
         
         {/* Buttons */}
-        <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4">
+        <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4 pt-8">
           <Button text="Get Started" variant="primary" />
           <Button text="How It Works" variant="secondary" />
         </div>
