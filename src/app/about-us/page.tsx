@@ -1,5 +1,6 @@
 "use client";
 
+import AboutUsSpecialists from "@/components/view/AboutUsSpecialists";
 import Image from "next/image";
 
 const AboutUs = () => {
@@ -19,6 +20,9 @@ const AboutUs = () => {
           <p className="mt-2">Home / Pages / About Us</p>
         </div>
       </div>
+          
+        {/* Content Section */}
+        <AboutUsSpecialists />
     </div>
   );
 };
