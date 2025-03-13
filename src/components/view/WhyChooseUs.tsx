@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 py-16">
       {/* Left Side - Image and Badge */}
-      <div className="relative w-full md:w-1/2 flex justify-center md:pr-20">
+      <div className="relative w-full md:w-1/2 flex justify-center md:pr-40">
         {/* Background Shape */}
         <div className="absolute -z-10 bg-yellow-300 w-[200px] h-[250px] sm:w-[280px] sm:h-[420px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px] rounded-[40px]"></div>
 
@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
         />
 
         {/* Badge with Rating - Hidden on Small Screens */}
-        <div className="absolute bottom-4 right-8 bg-white shadow-lg px-4 py-3 rounded-lg flex-col items-center border border-black border-b-4 border-r-4 hidden md:flex">
+        <div className="absolute bottom-4 right-16 bg-white shadow-lg px-4 py-3 rounded-lg flex-col items-center border border-black border-b-4 border-r-4 hidden md:flex">
           <span className="text-lg font-semibold">50k+ Satisfied Clients</span>
           <div className="flex text-orange-500 mt-1">
             {[...Array(5)].map((_, i) => (

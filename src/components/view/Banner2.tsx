@@ -30,7 +30,7 @@ const Banner2 = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-6">
           <Button text="Get Started" variant="primary" />
-          <Button text="How It Works" variant="secondary" />
+          <Button text="How It Works" variant="secondary"/>  
         </div>
       </div>
     </section>

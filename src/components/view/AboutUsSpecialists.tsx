@@ -34,7 +34,7 @@ const AboutUsSpecialists = () => {
       </div>
 
       {/* Right Side - Image and 97% Badge */}
-      <div className="relative w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
+      <div className="relative w-full md:w-1/2 flex justify-center mt-10 md:mt-0 lg:pl-44">
         {/* Background Shape */}
         <div className="absolute -z-10 bg-purple-300 w-[220px] h-[280px] sm:w-[250px] sm:h-[300px] md:w-[300px] md:h-[360px] lg:w-[350px] lg:h-[400px] rounded-[40px]"></div>
 
@@ -48,7 +48,7 @@ const AboutUsSpecialists = () => {
         />
 
         {/* 97% Success Rate - Hidden on small screens */}
-        <div className="absolute bottom-4 left-4 bg-white shadow-lg px-4 py-2 rounded-lg flex-col items-center sm:flex hidden">
+        <div className="absolute bottom-4 left-32 bg-white shadow-lg px-4 py-2 rounded-lg flex-col items-center sm:flex hidden">
           <span className="text-4xl sm:text-6xl font-bold">97%</span>
           <span className="text-sm text-gray-600">SUCCESS RATE</span>
         </div>
