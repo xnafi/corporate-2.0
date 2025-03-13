@@ -84,7 +84,7 @@ const Feedback2 = () => {
                 <div className="bg-gray-100 shadow-md rounded-xl p-6 flex flex-col text-start">
                   {/* User Info */}
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center  mb-4">
                       <div className="relative w-12 h-12 rounded-full overflow-hidden">
                         <Image
                           src={feedback.image}
@@ -93,7 +93,7 @@ const Feedback2 = () => {
                           objectFit="cover"
                         />
                       </div>
-                      <div className="relative w-8 h-8">
+                      <div className="relative w-12 h-12">
                         <Image
                           src={feedback.country}
                           alt="Country Flag"
