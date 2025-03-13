@@ -5,6 +5,7 @@ import Inquiries from "@/components/view/Inquiries";
 import Member2 from "@/components/view/Member2";
 import Navbar2 from "@/components/view/Navbar2";
 import OurService2 from "@/components/view/OurService2";
+import OurWork from "@/components/view/OurWork";
 
 export default function Home2() {
     return (
@@ -14,6 +15,7 @@ export default function Home2() {
         <OurService2 />
         <AboutUs2 />
         <Member2 />
+        <OurWork />
         <Feedback2 />
         <Inquiries />
       </div>
