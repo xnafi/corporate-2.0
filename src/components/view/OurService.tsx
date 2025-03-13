@@ -33,7 +33,7 @@ const OurService = () => {
     <section className="bg-gray-100 ">
       <div className="">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 pt-8">Our Services</h2>
         </div>
 
         {/* Services Grid */}

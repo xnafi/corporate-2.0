@@ -34,7 +34,7 @@ const AboutUsSpecialists = () => {
       </div>
 
       {/* Right Side - Image and 97% Badge */}
-      <div className="relative md:w-1/2 flex justify-center mt-10 md:mt-0">
+      <div className="relative md:w-1/2 flex justify-center mt-10 md:mt-0 ml-52">
         {/* Background Shape */}
         <div className="absolute -z-10 bg-purple-300 w-[280px] h-[340px] md:w-[350px] md:h-[400px] rounded-[40px]"></div>
 
