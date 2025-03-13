@@ -1,7 +1,7 @@
 "use client";
 
 import AboutUsSpecialists from "@/components/view/AboutUsSpecialists";
-// import OurService from "@/components/view/OurService";
+import OurService from "@/components/view/OurService";
 import WhyChooseUs from "@/components/view/WhyChooseUs";
 import Image from "next/image";
 
@@ -25,7 +25,7 @@ const AboutUs = () => {
           
         {/* Content Section */}
         <AboutUsSpecialists />
-        {/* <OurService /> */}
+        <OurService />
         <WhyChooseUs />
     </div>
   );
