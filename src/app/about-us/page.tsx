@@ -1,11 +1,13 @@
 "use client";
 
 import AboutUsSpecialists from "@/components/view/AboutUsSpecialists";
+// import OurService from "@/components/view/OurService";
+import WhyChooseUs from "@/components/view/WhyChooseUs";
 import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       {/* Banner Section */}
       <div className="relative w-full h-[400px] flex items-center justify-center bg-black">
         <Image
@@ -23,6 +25,8 @@ const AboutUs = () => {
           
         {/* Content Section */}
         <AboutUsSpecialists />
+        {/* <OurService /> */}
+        <WhyChooseUs />
     </div>
   );
 };
