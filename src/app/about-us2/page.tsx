@@ -1,9 +1,7 @@
 "use client";
 
 import AboutUs3 from "@/components/view/AboutUs3";
-
 import CollaborateWork from "@/components/view/CollaborateWork";
-
 import CurrentNews from "@/components/view/CurrentNews";
 import Feedback2 from "@/components/view/Feedback2";
 import HappyCustomer from "@/components/view/HappyCustomer";
@@ -27,14 +25,14 @@ const AboutUs2 = () => {
           <p className="mt-2">Home / Pages / About Us</p>
         </div>
       </div>
-          
-        {/* Content Section */}
-        <AboutUs3 />
-        <HappyCustomer />
-        <OurService3 />
-        <Feedback2 />
-        <CurrentNews />
-        <CollaborateWork />
+
+      {/* Content Section */}
+      <AboutUs3 />
+      <HappyCustomer />
+      <OurService3 />
+      <Feedback2 />
+      <CurrentNews />
+      <CollaborateWork />
     </div>
   );
 };
