@@ -7,10 +7,7 @@ import CollaborateWork from "@/components/view/CollaborateWork";
 import CurrentNews from "@/components/view/CurrentNews";
 import Feedback2 from "@/components/view/Feedback2";
 import HappyCustomer from "@/components/view/HappyCustomer";
-
-
-import OurTeam from "@/components/view/OurTeam";
-import WhyChooseUs from "@/components/view/WhyChooseUs";
+import OurService3 from "@/components/view/OurService3";
 import Image from "next/image";
 
 const AboutUs2 = () => {
@@ -34,8 +31,7 @@ const AboutUs2 = () => {
         {/* Content Section */}
         <AboutUs3 />
         <HappyCustomer />
-        <WhyChooseUs />
-        <OurTeam />
+        <OurService3 />
         <Feedback2 />
         <CurrentNews />
         <CollaborateWork />
