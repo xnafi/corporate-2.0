@@ -1,12 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 
 const Navbar2 = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("");
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest(".dropdown")) {
+        setDropdownOpen("");
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
+  const toggleDropdown = (menu: string) => {
+    setDropdownOpen(dropdownOpen === menu ? "" : menu);
+  };
 
   return (
     <nav className="absolute top-0 left-0 w-full bg-transparent z-50">
@@ -25,18 +40,20 @@ const Navbar2 = () => {
           </li>
 
           {/* Dropdown: Pages */}
-          <li
-            className="relative cursor-pointer"
-            onMouseEnter={() => setDropdownOpen("pages")}
-            onMouseLeave={() => setDropdownOpen("")}
-          >
-            <span className="hover:text-black transition flex items-center">
+          <li className="relative dropdown">
+            <div
+              className="hover:text-black transition flex items-center cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleDropdown("pages");
+              }}
+            >
               Pages <span className="ml-1">▼</span>
-            </span>
+            </div>
             {dropdownOpen === "pages" && (
               <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 w-40">
                 <li>
-                  <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">About Us</Link>
+                  <Link href="/about-us2" className="block px-4 py-2 hover:bg-gray-100">About Us</Link>
                 </li>
                 <li>
                   <Link href="/team" className="block px-4 py-2 hover:bg-gray-100">Our Team</Link>
@@ -46,14 +63,16 @@ const Navbar2 = () => {
           </li>
 
           {/* Dropdown: Services */}
-          <li
-            className="relative cursor-pointer"
-            onMouseEnter={() => setDropdownOpen("services")}
-            onMouseLeave={() => setDropdownOpen("")}
-          >
-            <span className="hover:text-black transition flex items-center">
+          <li className="relative dropdown">
+            <div
+              className="hover:text-black transition flex items-center cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleDropdown("services");
+              }}
+            >
               Services <span className="ml-1">▼</span>
-            </span>
+            </div>
             {dropdownOpen === "services" && (
               <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 w-40">
                 <li>
@@ -90,22 +109,22 @@ const Navbar2 = () => {
           </button>
           <ul className="flex flex-col space-y-6 p-8 text-gray-700">
             <li>
-              <Link href="/" className="block">Home</Link>
+              <Link href="/" className="block" onClick={() => setNavOpen(false)}>Home</Link>
             </li>
             <li>
-              <Link href="/about" className="block">About Us</Link>
+              <Link href="/about-us2" className="block" onClick={() => setNavOpen(false)}>About Us</Link>
             </li>
             <li>
-              <Link href="/team" className="block">Our Team</Link>
+              <Link href="/team" className="block" onClick={() => setNavOpen(false)}>Our Team</Link>
             </li>
             <li>
-              <Link href="/seo" className="block">SEO Optimization</Link>
+              <Link href="/seo" className="block" onClick={() => setNavOpen(false)}>SEO Optimization</Link>
             </li>
             <li>
-              <Link href="/marketing" className="block">Digital Marketing</Link>
+              <Link href="/marketing" className="block" onClick={() => setNavOpen(false)}>Digital Marketing</Link>
             </li>
             <li>
-              <Link href="/contact" className="block">Contact Us</Link>
+              <Link href="/contact" className="block" onClick={() => setNavOpen(false)}>Contact Us</Link>
             </li>
           </ul>
         </div>
