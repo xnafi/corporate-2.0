@@ -76,11 +76,11 @@ const Navbar = () => {
             {isPagesOpen && (
               <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200">
                 <li className="px-4 py-2 hover:bg-gray-100">
-  <Link href="/about-us">
-    About Us
-  </Link>
-</li>
-
+                  <Link href="/about-us">About Us</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100">
+                  <Link href="/our-blogs">Our Blogs</Link>
+                </li>
               </ul>
             )}
           </li>
