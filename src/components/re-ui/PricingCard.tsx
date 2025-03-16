@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { HiCheck, HiX } from "react-icons/hi";
 
@@ -10,7 +8,9 @@ interface PricingCardProps {
   features: { text: string; included: boolean }[];
   bgColor: string;
   badgeIcon: React.ReactNode;
-
+  borderColor: string;
+  textColor: string;
+  btnColor: string;
 }
 
 const PricingCard: FC<PricingCardProps> = ({
@@ -20,20 +20,24 @@ const PricingCard: FC<PricingCardProps> = ({
   features,
   bgColor,
   badgeIcon,
+  borderColor,
+  textColor,
+  btnColor,
 }) => {
   return (
-    <div
-      className={`relative p-6 sm:p-8 rounded-xl shadow-lg border ${bgColor}`}
-    >
+    <div className={`relative  p-6 sm:p-8 rounded-2xl shadow-md border border-black border-b-4 border-r-4 ${borderColor} ${bgColor}`}>
       {/* Badge Icon */}
-      <div className="absolute top-3 right-3 bg-white p-2 rounded-full shadow">
+      <div className="absolute top-2 right-3 bg-white p-4 rounded-full shadow-lg">
         {badgeIcon}
       </div>
 
       {/* Plan & Price */}
-      <h3 className="text-lg font-semibold">{plan}</h3>
-      <p className="text-4xl font-bold mt-2">${price}</p>
+      <h3 className="text-sm font-bold uppercase">{plan}</h3>
+      <p className="text-6xl font-bold mt-2">{`$${price}`}</p>
       <p className="text-sm text-gray-600">{description}</p>
+
+      {/* Border between Plan & Features */}
+<div className="border-t my-6"></div>
 
       {/* Features */}
       <ul className="mt-4 space-y-2 text-sm">
@@ -42,13 +46,9 @@ const PricingCard: FC<PricingCardProps> = ({
             {feature.included ? (
               <HiCheck className="text-green-500" />
             ) : (
-              <HiX className="text-red-500 opacity-50" />
+              <HiX className="text-gray-400 opacity-50" />
             )}
-            <span
-              className={`${
-                !feature.included ? "text-gray-400 line-through" : ""
-              }`}
-            >
+            <span className={`${feature.included ? textColor : "text-gray-400"}`}>
               {feature.text}
             </span>
           </li>
@@ -56,8 +56,8 @@ const PricingCard: FC<PricingCardProps> = ({
       </ul>
 
       {/* Purchase Button */}
-      <button className="mt-4 w-full border rounded-lg py-2 text-sm font-semibold hover:bg-black hover:text-white transition">
-        PURCHASE NOW
+      <button className={`mt-4 w-full rounded-full  py-2 text-sm font-semibold border border-black transition ${btnColor}`}>
+        PURCHASE NOW →
       </button>
     </div>
   );
