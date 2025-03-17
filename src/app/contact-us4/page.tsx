@@ -1,7 +1,11 @@
 "use client";
 
+import ContactUsEmail from "@/components/re-ui/ContactUsEmail";
 import CollaborateWork from "@/components/view/CollaborateWork";
+import ContactUs from "@/components/view/ContactUs";
+
 import Image from "next/image";
+
 
 const ContactUs2 = () => {
   return (
@@ -24,7 +28,12 @@ const ContactUs2 = () => {
       </div>
 
       {/* Content Section */}
-     
+      <div className="mt-6 sm:mt-12">
+        <ContactUs />
+      </div>
+      <div className="">
+        <ContactUsEmail />
+      </div>
       <div className="mt-6 sm:mt-12">
         <CollaborateWork />
       </div>

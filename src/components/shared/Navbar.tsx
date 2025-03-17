@@ -105,7 +105,7 @@ const Navbar = () => {
           </li>
 
           <li className="hover:text-orange-500 cursor-pointer px-4 py-3 md:py-0">
-            <Link href="/contact-us2">Contact Us</Link>
+            <Link href="/contact-us4">Contact Us</Link>
           </li>
         </ul>
 
@@ -173,7 +173,7 @@ const Navbar = () => {
             Services
           </a>
           <Link
-            href="/contact-us2"
+            href="/contact-us4"
             className="block px-4 py-2 hover:text-orange-500"
             onClick={() => setMenuOpen(false)}
           >
