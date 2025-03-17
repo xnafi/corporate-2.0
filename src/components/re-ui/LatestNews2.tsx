@@ -1,33 +1,42 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { HiArrowUpRight } from "react-icons/hi2";
 
 const newsItems = [
   {
+    id: 1,
     image: "https://i.postimg.cc/gJWKHxTP/airfocus-JVd-Nm-AFDi-I4-unsplash.jpg",
     category: "Web Design",
     title: "Crafting a Successful SEO Marketing Plan.",
     author: "Jain Smith",
     date: "05 Oct 2024",
+    content:
+      "SEO marketing is essential for businesses to improve visibility and attract more customers. Learn how to craft a perfect SEO strategy.",
   },
   {
-    image:
-      "https://i.postimg.cc/rwRC6G6k/business-advisor-giving-his-opinion.jpg",
+    id: 2,
+    image: "https://i.postimg.cc/rwRC6G6k/business-advisor-giving-his-opinion.jpg",
     category: "Marketing",
     title: "Tactics to Improve Content Engagement",
     author: "Jain Smith",
     date: "05 Oct 2024",
+    content:
+      "Content engagement is the key to audience retention. Discover techniques to keep your readers interested and engaged.",
   },
   {
-    image:
-      "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
+    id: 3,
+    image: "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
     category: "Agency",
     title: "Innovative ways to Captivate your Audience.",
     author: "Jain Smith",
     date: "05 Oct 2024",
+    content:
+      "Captivating your audience is essential for success. Here are some innovative ways to keep them hooked.",
   },
   {
+    id:4,
     image: "https://i.postimg.cc/gJWKHxTP/airfocus-JVd-Nm-AFDi-I4-unsplash.jpg",
     category: "Tech",
     title: "The Future of AI in Web Development",
@@ -35,24 +44,24 @@ const newsItems = [
     date: "06 Oct 2024",
   },
   {
-    image:
-      "https://i.postimg.cc/rwRC6G6k/business-advisor-giving-his-opinion.jpg",
+    id:5,
+    image: "https://i.postimg.cc/gJWKHxTP/airfocus-JVd-Nm-AFDi-I4-unsplash.jpg",
     category: "Tech",
     title: "The Future of AI in Web Development",
     author: "Jain Smith",
     date: "06 Oct 2024",
   },
   {
-    image:
-      "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
+    id:6,
+    image: "https://i.postimg.cc/gJWKHxTP/airfocus-JVd-Nm-AFDi-I4-unsplash.jpg",
     category: "Tech",
     title: "The Future of AI in Web Development",
     author: "Jain Smith",
     date: "06 Oct 2024",
   },
   {
-    image:
-      "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
+    id:7,
+    image: "https://i.postimg.cc/gJWKHxTP/airfocus-JVd-Nm-AFDi-I4-unsplash.jpg",
     category: "Tech",
     title: "The Future of AI in Web Development",
     author: "Jain Smith",
@@ -78,7 +87,7 @@ const LatestNews2 = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {currentItems.map((item, index) => (
             <div
-              key={index}
+              key={item.id}
               className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 border hover:shadow-lg"
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(null)}
@@ -95,20 +104,16 @@ const LatestNews2 = () => {
                 {/* Hover Effect */}
                 <div
                   className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-                    hoverIndex === index
-                      ? "bg-black/50 opacity-100"
-                      : "opacity-0"
+                    hoverIndex === index ? "bg-black/50 opacity-100" : "opacity-0"
                   }`}
                 >
-                  <div
-                    className={`w-12 h-12 flex items-center justify-center rounded-full bg-orange-500 transition-all duration-300 ${
-                      hoverIndex === index
-                        ? "scale-100 opacity-100"
-                        : "scale-0 opacity-0"
-                    }`}
-                  >
-                    <HiArrowUpRight className="text-white text-xl" />
-                  </div>
+                  <Link href={`/news/${item.id}`}>
+                    <div
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-500 transition-all duration-300 cursor-pointer"
+                    >
+                      <HiArrowUpRight className="text-white text-xl" />
+                    </div>
+                  </Link>
                 </div>
 
                 {/* Category Badge */}
@@ -137,9 +142,7 @@ const LatestNews2 = () => {
               key={page}
               onClick={() => setCurrentPage(page)}
               className={`px-4 py-2 text-sm rounded-lg ${
-                currentPage === page
-                  ? "bg-orange-500 text-white"
-                  : "bg-gray-200 text-gray-700"
+                currentPage === page ? "bg-orange-500 text-white" : "bg-gray-200 text-gray-700"
               }`}
             >
               {page}
