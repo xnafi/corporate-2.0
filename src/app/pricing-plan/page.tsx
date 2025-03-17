@@ -73,7 +73,7 @@ const PricingPlan = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold">
+          <h1 className="text-3xl sm:text-base lg:text-5xl font-extrabold">
             Pricing Plan
           </h1>
           <p className="mt-2 text-xs sm:text-sm lg:text-base">
