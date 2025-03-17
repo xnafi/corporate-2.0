@@ -6,7 +6,9 @@ import { HiSearch } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { IoPersonOutline, IoCalendarOutline } from "react-icons/io5";
-import LatestNews from "./LatestNews";
+import LatestNews3 from "./LatestNews3";
+import CommentsSection from "./CommentsSection";
+
 
 const SingleBlogAudience = () => {
   const categories = [
@@ -82,7 +84,8 @@ const SingleBlogAudience = () => {
             Explore cutting-edge strategies designed to capture the attention of your audience, utilizing creative visuals, immersive experiences, and compelling narratives that foster deeper connections and boost engagement.
           </p>
 
-          <LatestNews />
+          <LatestNews3 />
+          <CommentsSection />
         </div>
 
         {/* Right Section (1/3) */}
