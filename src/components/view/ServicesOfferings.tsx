@@ -1,6 +1,5 @@
-import { FaCheckCircle } from "react-icons/fa";
-import { FaSearch, FaGlobe, FaBoxOpen } from "react-icons/fa";
-import Image from "next/image"
+import { FaCheckCircle, FaSearch, FaGlobe, FaBoxOpen } from "react-icons/fa";
+import Image from "next/image";
 
 const serviceOfferings = [
   "Tracking website performance through data analysis and detailed reporting.",
@@ -30,13 +29,13 @@ const services = [
 
 export default function ServicesOfferings() {
   return (
-    <section className="max-w-6xl mx-auto p-6">
+    <section className="max-w-6xl mx-auto px-4 py-8">
       {/* Service Offerings List */}
       <div>
-        <h2 className="text-3xl font-bold mb-4">Services Offering</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Services Offering</h2>
         <ul className="space-y-2">
           {serviceOfferings.map((service, index) => (
-            <li key={index} className="flex items-start space-x-2">
+            <li key={index} className="flex items-start space-x-2 text-sm sm:text-base">
               <FaCheckCircle className="text-orange-500 mt-1" />
               <p>{service}</p>
             </li>
@@ -45,52 +44,54 @@ export default function ServicesOfferings() {
       </div>
 
       {/* Services Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         {services.map((service, index) => (
           <div key={index} className="bg-gray-100 p-6 rounded-lg text-start shadow-sm">
-            <div className="bg-orange-500 w-12 h-12 flex items-center justify-center rounded-full  mb-12">
+            <div className="bg-orange-500 w-12 h-12 flex items-center justify-center rounded-full mb-6">
               {service.icon}
             </div>
-            <h3 className="text-xl font-semibold">{service.title}</h3>
-            <p className="text-gray-600 mt-2">{service.description}</p>
+            <h3 className="text-lg sm:text-xl font-semibold">{service.title}</h3>
+            <p className="text-gray-600 mt-2 text-sm sm:text-base">{service.description}</p>
           </div>
         ))}
       </div>
 
       {/* Previous & Next Services */}
       <div className="flex flex-col md:flex-row justify-between items-center mt-10 gap-4">
-  <div className="w-full md:w-1/2 flex items-center space-x-4 p-4 border rounded-lg shadow-sm">
-    <div className="w-16 h-16 relative">
-      <Image
-        src="https://i.postimg.cc/tg01wkq5/colleagues-working-project-discussing-details.jpg"
-        alt="Previous Service"
-        layout="fill"
-        objectFit="cover"
-        className="rounded"
-      />
-    </div>
-    <div>
-      <p className="text-orange-500 text-sm">Prev Service</p>
-      <h4 className="text-lg font-semibold">Content Marketing</h4>
-    </div>
-  </div>
+        {/* Previous Service */}
+        <div className="w-full md:w-1/2 flex items-center space-x-4 p-4 border rounded-lg shadow-sm">
+          <div className="w-16 h-16 relative">
+            <Image
+              src="https://i.postimg.cc/tg01wkq5/colleagues-working-project-discussing-details.jpg"
+              alt="Previous Service"
+              width={64}
+              height={64}
+              className="rounded object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-orange-500 text-sm">Prev Service</p>
+            <h4 className="text-base sm:text-lg font-semibold">Content Marketing</h4>
+          </div>
+        </div>
 
-  <div className="w-full md:w-1/2 flex items-center space-x-4 p-4 border rounded-lg shadow-sm">
-    <div className="w-16 h-16 relative">
-      <Image
-        src="https://i.postimg.cc/tg01wkq5/colleagues-working-project-discussing-details.jpg"
-        alt="Next Service"
-        layout="fill"
-        objectFit="cover"
-        className="rounded"
-      />
-    </div>
-    <div>
-      <p className="text-orange-500 text-sm">Next Service</p>
-      <h4 className="text-lg font-semibold">Email Marketing</h4>
-    </div>
-  </div>
-</div>;
+        {/* Next Service */}
+        <div className="w-full md:w-1/2 flex items-center space-x-4 p-4 border rounded-lg shadow-sm">
+          <div className="w-16 h-16 relative">
+            <Image
+              src="https://i.postimg.cc/tg01wkq5/colleagues-working-project-discussing-details.jpg"
+              alt="Next Service"
+              width={64}
+              height={64}
+              className="rounded object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-orange-500 text-sm">Next Service</p>
+            <h4 className="text-base sm:text-lg font-semibold">Email Marketing</h4>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
