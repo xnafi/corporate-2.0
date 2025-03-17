@@ -31,10 +31,10 @@ const LatestNews3 = () => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <section className=" mt-4 bg-white">
+    <section className="mt-4 bg-white">
       <div className="text-start">
-        <h2 className="text-4xl font-bold text-gray-900">Latest News</h2>
-        <p className="para-text mt-2 mb-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Latest News</h2>
+        <p className="para-text mt-2 mb-10 text-sm sm:text-base">
           Find the most up-to-date news and articles that offer insights into various topics.
         </p>
 
@@ -78,11 +78,11 @@ const LatestNews3 = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 text-left">
-                <p className="text-gray-500 text-sm">
+              <div className="p-4 sm:p-6 text-left">
+                <p className="text-gray-500 text-xs sm:text-sm">
                   {item.author} / {item.date}
                 </p>
-                <h3 className="text-lg font-semibold text-gray-900 mt-2">{item.title}</h3>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mt-2">{item.title}</h3>
               </div>
             </div>
           ))}

@@ -1,6 +1,5 @@
 "use client";
 
-// import { useState } from "react";
 import Image from "next/image";
 import { HiSearch } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -8,7 +7,6 @@ import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { IoPersonOutline, IoCalendarOutline } from "react-icons/io5";
 import LatestNews3 from "./LatestNews3";
 import CommentsSection from "./CommentsSection";
-
 
 const SingleBlogAudience = () => {
   const categories = [
@@ -40,9 +38,9 @@ const SingleBlogAudience = () => {
   const tags = ["SEO", "Advertising", "Digital Marketing", "Digital Agency", "SEO Campaign"];
 
   return (
-    <section className="px-4 sm:px-8 lg:px-16 py-12 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Left Section (2/3) */}
+    <section className="px-4 sm:px-6 lg:px-16 py-8 bg-white">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Left Section (Main Content) */}
         <div className="md:col-span-2">
           {/* Blog Image */}
           <Image
@@ -54,7 +52,7 @@ const SingleBlogAudience = () => {
           />
 
           {/* Blog Meta */}
-          <div className="flex items-center text-gray-500 text-sm mt-4 space-x-4">
+          <div className="flex flex-wrap items-center text-gray-500 text-sm mt-4 gap-3">
             <div className="flex items-center gap-1">
               <IoPersonOutline className="text-gray-600" />
               <span>Esther Howard</span>
@@ -71,11 +69,10 @@ const SingleBlogAudience = () => {
               <FaRegHeart className="text-gray-600" />
             </div>
           </div>
-            
 
           {/* Blog Title & Content */}
-          <h1 className="text-4xl font-bold text-gray-900 mt-4">
-            Innovative ways to Captivate <br /> your Audience.
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-4">
+            Innovative ways to Captivate your Audience.
           </h1>
           <p className="text-gray-600 mt-4">
             Discover fresh and innovative approaches to captivate your audience, keeping them engaged and intrigued with unique content, creative storytelling, and interactive experiences.
@@ -88,8 +85,8 @@ const SingleBlogAudience = () => {
           <CommentsSection />
         </div>
 
-        {/* Right Section (1/3) */}
-        <aside className="md:col-span-1 space-y-8">
+        {/* Right Section (Sidebar) */}
+        <aside className="md:col-span-1 space-y-6">
           {/* Search Bar */}
           <div>
             <h2 className="text-lg font-semibold text-gray-900">Search Here</h2>
@@ -151,15 +148,13 @@ const SingleBlogAudience = () => {
           </div>
 
           {/* Contact Us Card */}
-                    <div className="bg-orange-500 p-6 rounded-lg text-center text-white">
-                      <h3 className="text-lg sm:text-xl font-semibold">Grow your business with us</h3>
-                      <div className="mt-4 flex justify-center items-center space-x-2 bg-white rounded-full p-2">
-                        <FaPhoneAlt className="text-lg text-black" />
-                        <span className="text-sm sm:text-lg font-medium text-black">
-                          Contact Us
-                        </span>
-                      </div>
-                    </div>
+          <div className="bg-orange-500 p-6 rounded-lg text-center text-white">
+            <h3 className="text-lg sm:text-xl font-semibold">Grow your business with us</h3>
+            <div className="mt-4 flex justify-center items-center space-x-2 bg-white rounded-full p-2">
+              <FaPhoneAlt className="text-lg text-black" />
+              <span className="text-sm sm:text-lg font-medium text-black">Contact Us</span>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
