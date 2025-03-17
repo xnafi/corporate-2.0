@@ -9,7 +9,7 @@ const Member2 = () => {
   return (
     <section
       className="bg-white px-4 sm:px-8 lg:px-16 py-12"
-      onMouseEnter={() => setStartCount(true)} // Start countdown on hover
+      onMouseEnter={() => setStartCount(true)} 
     >
       {/* Title and Description */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 max-w-6xl mx-auto">

@@ -97,7 +97,7 @@ const Navbar = () => {
             <IoIosArrowDown />
             {isServicesOpen && (
               <ul className="absolute left-0 top-10 bg-white shadow-lg py-2 w-40 md:w-32 border border-gray-200">
-               <li className="px-4 py-2 hover:bg-gray-100">
+                <li className="px-4 py-2 hover:bg-gray-100">
                   <Link href="/our-services">Our Services</Link>
                 </li>
               </ul>
@@ -105,7 +105,7 @@ const Navbar = () => {
           </li>
 
           <li className="hover:text-orange-500 cursor-pointer px-4 py-3 md:py-0">
-            Contact Us
+            <Link href="/contact-us2">Contact Us</Link>
           </li>
         </ul>
 
@@ -172,13 +172,13 @@ const Navbar = () => {
           >
             Services
           </a>
-          <a
-            href="#contact"
-            className="block hover:text-orange-500"
+          <Link
+            href="/contact-us2"
+            className="block px-4 py-2 hover:text-orange-500"
             onClick={() => setMenuOpen(false)}
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       )}
     </nav>
