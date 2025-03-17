@@ -21,7 +21,7 @@ const AboutUs2 = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white">
-          <h1 className="text-6xl font-extrabold">About Us</h1>
+          <h1 className="text-4xl lg:text-6xl font-extrabold sm:text-base">About Us</h1>
           <p className="mt-2">Home / Pages / About Us</p>
         </div>
       </div>

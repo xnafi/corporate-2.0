@@ -7,7 +7,7 @@ import ContactUs from "@/components/view/ContactUs";
 import Image from "next/image";
 
 
-const ContactUs2 = () => {
+const ContactUs4 = () => {
   return (
     <div className="container mx-auto">
       {/* Banner Section */}
@@ -41,4 +41,4 @@ const ContactUs2 = () => {
   );
 };
 
-export default ContactUs2;
+export default ContactUs4;
