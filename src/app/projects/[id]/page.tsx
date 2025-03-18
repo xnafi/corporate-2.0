@@ -1,26 +1,30 @@
 import { notFound } from "next/navigation";
-import ProjectDetailsClient from "./ProjectDetailsClient";
+// import ProjectDetailsClient from "./ProjectDetailsClient";
 import Image from "next/image";
-
+import SocialPlatformPromotion from "@/components/view/SocialPlatformPromotion";
+import PromotionEngagement from "@/components/view/PromotionEngagement";
 
 const projects = [
   {
     id: "1",
     title: "Dashboard Design",
     category: "UX/UI",
-    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image:
+      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
   {
     id: "2",
     title: "Logo Design",
     category: "Design",
-    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image:
+      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
   {
     id: "3",
     title: "Brand Identity",
     category: "Branding",
-    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image:
+      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
 ];
 
@@ -49,16 +53,13 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
 
       {/* Project Details Section */}
       <div className="mt-6 sm:mt-12">
-        <ProjectDetailsClient project={project} />
+        {/* <ProjectDetailsClient project={project} /> */}
+        <SocialPlatformPromotion />
       </div>
 
       {/* Additional Sections */}
       <div className="mt-6 sm:mt-12">
-        
-      </div>
-
-      <div className="mt-6 sm:mt-12">
-       
+        <PromotionEngagement />
       </div>
     </div>
   );
