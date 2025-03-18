@@ -41,7 +41,7 @@ const OurProject2 = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="mb-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+          <h2 className="title-header-text">
             Our Recent Projects
           </h2>
           <div className="flex gap-3 mt-4 md:mt-0">

@@ -48,7 +48,7 @@ const Feedback2 = () => {
       <div className="max-w-6xl mx-auto">
         {/* Title & Button Section */}
         <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:text-left mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Customer Feedback</h2>
+          <h2 className="title-header-text text-gray-900">Customer Feedback</h2>
           <button className="px-6 py-2 bg-lime-500 text-white rounded-full shadow-md hover:bg-lime-600 transition mt-4 lg:mt-0">
             View More →
           </button>

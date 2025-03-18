@@ -32,7 +32,7 @@ export default function ServicesOfferings() {
     <section className="max-w-6xl mx-auto px-4 py-8">
       {/* Service Offerings List */}
       <div>
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">Services Offering</h2>
+        <h2 className="title-header-text mb-4">Services Offering</h2>
         <ul className="space-y-2">
           {serviceOfferings.map((service, index) => (
             <li key={index} className="flex items-start space-x-2 text-sm sm:text-base">
