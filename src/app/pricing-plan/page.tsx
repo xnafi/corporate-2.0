@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import BannerSection from "@/components/re-ui/BannerSection";
 import { HiStar, HiOutlineFilter } from "react-icons/hi";
 import { FaDiamond } from "react-icons/fa6";
 import CollaborateWork from "@/components/view/CollaborateWork";
@@ -64,23 +64,7 @@ const PricingPlan = () => {
   return (
     <div className="container mx-auto">
       {/* Banner Section */}
-      <div className="relative w-full h-[250px] sm:h-[300px] lg:h-[400px] flex items-center justify-center bg-black">
-        <Image
-          src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
-          alt="Pricing Plan Banner"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-        />
-        <div className="absolute text-center text-white px-4">
-          <h1 className="text-3xl sm:text-base lg:text-5xl font-extrabold">
-            Pricing Plan
-          </h1>
-          <p className="mt-2 text-xs sm:text-sm lg:text-base">
-            Home / Pages / Pricing Plan
-          </p>
-        </div>
-      </div>
+      <BannerSection />
 
       {/* Pricing Cards */}
       <div className="max-w-6xl mx-auto mt-6 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10 sm:py-12 px-2 sm:px-4">

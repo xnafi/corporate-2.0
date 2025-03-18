@@ -17,10 +17,12 @@ const OurBlogs = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="text-4xl lg:text-6xl font-extrabold sm:text-base">
+          <h1 className="bnr-header-text">
             Our Blogs
           </h1>
-          <p className="mt-2 text-sm sm:text-base">Home / Pages / Our Blogs</p>
+          <p className="banner-para-text">
+            Home / Pages / Our Blogs
+          </p>
         </div>
       </div>
 
