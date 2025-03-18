@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import BannerSection from "@/components/re-ui/BannerSection";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import CollaborateWork from "@/components/view/CollaborateWork";
 import SingleBlogAudience from "@/components/view/SingleBlogAudience";
@@ -55,7 +55,20 @@ const NewsDetail = () => {
   return (
     <div className="container mx-auto px-4 sm:px-8">
       {/* Hero Section */}
-      <BannerSection />
+      <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black">
+        <Image
+          src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
+          alt="Service Banner"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-50"
+        />
+        <div className="absolute text-center text-white px-4">
+          <h1 className="bnr-header-text">{newsItem.title}</h1>
+          <p className="banner-para-text">Home / news / {newsItem.category}</p>
+          <p className="mt-1 banner-para-text">{newsItem.author} / {newsItem.date}</p>
+        </div>
+      </div>
   
       {/* Content Sections */}
       <SingleBlogAudience />

@@ -1,13 +1,13 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import DigitalMarketingAgency from "@/components/view/DigitalMarketingAgency";
 import ServicesOfferings from "@/components/view/ServicesOfferings";
 import PricingCard from "@/components/re-ui/PricingCard";
 import { HiStar, HiOutlineFilter } from "react-icons/hi";
 import { FaDiamond } from "react-icons/fa6";
 import CollaborateWork from "@/components/view/CollaborateWork";
-import BannerSection from "@/components/re-ui/BannerSection";
 
 const servicesData = {
   "ui-ux-design": {
@@ -100,7 +100,19 @@ const SingleService = () => {
   return (
     <div className="container mx-auto px-4 sm:px-8">
       {/* Hero Section */}
-      <BannerSection />
+      <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black">
+        <Image
+          src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
+          alt="Service Banner"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-50"
+        />
+        <div className="absolute text-center text-white px-4">
+          <h1 className="bnr-header-text">{service.title}</h1>
+          <p className="banner-para-text">Home / {service.title}</p>
+        </div>
+      </div>
 
       {/* Content Sections */}
       <div className="mt-4 sm:mt-6">

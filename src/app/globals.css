@@ -43,7 +43,7 @@ body {
     @apply text-gray-600 text-sm;
   }
   .banner-para-text {
-    @apply mt-2 text-sm sm:text-base md:text-lg lg:text-xl mt-2;
+    @apply text-sm sm:text-base md:text-lg lg:text-xl mt-2;
   }
   .bnr-header-text {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold;
