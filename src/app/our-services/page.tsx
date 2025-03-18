@@ -17,10 +17,10 @@ const OurServices = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="text-4xl sm:text-base lg:text-6xl font-extrabold">
+          <h1 className="bnr-header-text">
             Our Services
           </h1>
-          <p className="mt-2 text-sm sm:text-base">Home / Pages / Our Services</p>
+          <p className="banner-para-text">Home / Pages / Our Services</p>
         </div>
       </div>
 

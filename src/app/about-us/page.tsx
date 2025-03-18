@@ -23,8 +23,8 @@ const AboutUs = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white">
-          <h1 className="text-6xl font-extrabold sm:text-base">About Us</h1>
-          <p className="mt-2">Home / Pages / About Us</p>
+          <h1 className="bnr-header-text">About Us</h1>
+          <p className="banner-para-text">Home / Pages / About Us</p>
         </div>
       </div>
           

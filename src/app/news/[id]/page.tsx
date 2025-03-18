@@ -64,9 +64,9 @@ const NewsDetail = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold">{newsItem.title}</h1>
-          <p className="mt-2 text-xs sm:text-base">Home / news / {newsItem.category}</p>
-          <p className="mt-1 text-xs sm:text-sm">{newsItem.author} / {newsItem.date}</p>
+          <h1 className="bnr-header-text">{newsItem.title}</h1>
+          <p className="banner-para-text">Home / news / {newsItem.category}</p>
+          <p className="mt-1 banner-para-text">{newsItem.author} / {newsItem.date}</p>
         </div>
       </div>
   

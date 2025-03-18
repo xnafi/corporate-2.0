@@ -30,7 +30,7 @@ const Navbar = () => {
         window.removeEventListener("scroll", controlNavbar);
       };
     }
-  }, [controlNavbar]); // Now it won't trigger infinite re-renders
+  }, [controlNavbar]); 
   
   return (
     <motion.nav
@@ -58,7 +58,7 @@ const Navbar = () => {
 
         {/* Navigation Menu */}
         <ul
-          className={`absolute md:static top-16 left-0 w-full md:w-auto bg-[#374151]/50 md:bg-transparent backdrop-blur-md shadow-md md:shadow-none md:flex space-x-0 md:space-x-6 text-white md:items-center md:justify-center transition-all duration-300 ease-in-out ${
+          className={`absolute md:static top-16 left-0 w-full md:w-auto p-2 bg-[#374151]/50 md:bg-transparent backdrop-blur-md shadow-md md:shadow-none md:flex space-x-0 md:space-x-6 text-white md:items-center md:justify-center transition-all duration-300 ease-in-out ${
             menuOpen ? "block h-auto" : "hidden md:flex"
           }`}
         >
