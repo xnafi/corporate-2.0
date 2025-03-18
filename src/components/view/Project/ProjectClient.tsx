@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation"; // Import Next.js router
 
 const categories = ["All Design", "UX/UI", "Branding", "Design"];
 
@@ -55,6 +56,7 @@ const projects = [
 export default function ProjectClient() {
   const [activeCategory, setActiveCategory] = useState("All Design");
   const [showAll, setShowAll] = useState(false);
+  const router = useRouter(); // Initialize router
 
   const filteredProjects =
     activeCategory === "All Design"
@@ -120,9 +122,13 @@ export default function ProjectClient() {
                     APP CASE STUDY
                   </p>
                 </div>
-                <div className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-orange-500 text-white rounded-full">
+                {/* Navigation Button */}
+                <button
+                  onClick={() => router.push(`/projects/${project.id}`)} 
+                  className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-orange-500 text-white rounded-full"
+                >
                   <GoArrowUpRight />
-                </div>
+                </button>
               </div>
             </motion.div>
           ))}
