@@ -33,7 +33,7 @@ const LatestNews3 = () => {
   return (
     <section className="mt-4 bg-white">
       <div className="text-start">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Latest News</h2>
+        <h2 className="title-header-text text-gray-900">Latest News</h2>
         <p className="para-text mt-2 mb-10 text-sm sm:text-base">
           Find the most up-to-date news and articles that offer insights into various topics.
         </p>

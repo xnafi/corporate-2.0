@@ -33,7 +33,7 @@ const OurWork = () => {
   return (
     <section className="px-4 sm:px-8 lg:px-16 py-12 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-10">Our Recent Work</h2>
+        <h2 className="title-header-text text-gray-900 mb-10">Our Recent Work</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {workItems.map((item, index) => (

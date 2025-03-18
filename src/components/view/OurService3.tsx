@@ -30,7 +30,7 @@ const OurService3 = () => {
       <div className="max-w-6xl mx-auto">
         {/* Heading Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 space-y-6 lg:space-y-0">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center lg:text-left w-full lg:w-auto">
+          <h2 className="title-header-text text-center lg:text-left w-full lg:w-auto">
             Our Services
           </h2>
           <div className="max-w-lg para-text text-center lg:text-left">

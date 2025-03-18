@@ -73,7 +73,7 @@ const OurTeam: React.FC = () => {
         <h2 className="text-xs sm:text-sm text-orange-500 uppercase tracking-wide">
           Our Team
         </h2>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2">
+        <h1 className="title-header-text mt-2">
           Meet the Experts
         </h1>
         <p className="text-gray-600 mt-2 text-xs sm:text-sm md:text-base">
