@@ -12,7 +12,7 @@ const BannerSection = () => {
         layout="fill"
         objectFit="cover"
         className="opacity-60"
-        priority // Ensures it loads faster
+        priority 
       />
       
       {/* Overlay Content */}
