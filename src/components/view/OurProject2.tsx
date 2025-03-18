@@ -35,7 +35,7 @@ const projects = [
   },
 ];
 
-const OurProject = () => {
+const OurProject2 = () => {
   return (
     <section className="bg-white py-10">
       <div className="container mx-auto px-4">
@@ -110,4 +110,4 @@ const OurProject = () => {
   );
 };
 
-export default OurProject;
+export default OurProject2;
