@@ -78,8 +78,8 @@ export default function ProjectClient() {
             }}
             className={`flex flex-wrap text-xs sm:text-sm font-medium justify-center items-center ${
               activeCategory === category
-                ? "bg-[#22c55e] border[#22c55e] text-white rounded-md font-semibold inline-block px-2 py-2"
-                : "bg-gray-100 dark:text-black backdrop-blur-md inline-block isolation-auto px-2 py-2 border-[#22c55e] font-semibold border  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#22c55e] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 overflow-hidden rounded-md group"
+                ? "bg-orange-500 border-orange-500 text-white rounded-md font-semibold inline-block px-2 py-2"
+                : "bg-gray-100 dark:text-black backdrop-blur-md inline-block isolation-auto px-2 py-2 border-orange-500 font-semibold border  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 overflow-hidden rounded-md group"
             }`}
           >
             {category}
@@ -120,7 +120,7 @@ export default function ProjectClient() {
                     APP CASE STUDY
                   </p>
                 </div>
-                <div className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-green-500 text-white rounded-full">
+                <div className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-orange-500 text-white rounded-full">
                   <GoArrowUpRight />
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function ProjectClient() {
       {/* View Portfolio Button */}
       {filteredProjects.length > 3 && (
         <motion.button
-          className="flex items-center mt-6 mx-auto gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#22c55e] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
+          className="flex items-center mt-6 mx-auto gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
           onClick={() => setShowAll(!showAll)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
