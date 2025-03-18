@@ -71,7 +71,7 @@ const Feedback2 = () => {
           >
             {feedbacks.map((feedback) => (
               <SwiperSlide key={feedback.id}>
-                <FeedbackCard {...feedback} /> {/* Using the new FeedbackCard component */}
+                <FeedbackCard {...feedback} /> 
               </SwiperSlide>
             ))}
           </Swiper>
