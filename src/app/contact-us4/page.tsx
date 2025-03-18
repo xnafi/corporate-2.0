@@ -11,7 +11,7 @@ const ContactUs4 = () => {
   return (
     <div className="container mx-auto">
       {/* Banner Section */}
-      <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black">
+      <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px]  flex items-center justify-center bg-black">
         <Image
           src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
           alt="About Us Banner"
