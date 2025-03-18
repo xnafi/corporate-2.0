@@ -19,9 +19,9 @@ const OurProject = () => {
         />
         <div className="absolute text-center text-white px-4">
           <h1 className="text-4xl lg:text-6xl font-extrabold sm:text-base">
-            Our Blogs
+            Our Projects
           </h1>
-          <p className="mt-2 text-sm sm:text-base">Home / Pages / Our Blogs</p>
+          <p className="mt-2 text-sm sm:text-base">Home / Pages / Our Projects</p>
         </div>
       </div>
 
