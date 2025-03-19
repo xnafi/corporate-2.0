@@ -84,6 +84,9 @@ const Navbar = () => {
               <li className="px-4 py-2 hover:bg-white/10">
                 <Link href="/home2">Home 2</Link>
               </li>
+              <li className="px-4 py-2 hover:bg-white/10">
+                <Link href="/home3">Home 3</Link>
+              </li>
             </motion.ul>
           </li>
 
