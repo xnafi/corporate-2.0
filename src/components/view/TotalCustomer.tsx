@@ -25,14 +25,32 @@ const TotalCustomer = () => {
   }, []);
 
   return (
-    <div className="container mx-auto flex justify-center items-center gap-28 bg-[#0d0f1b] text-white p-6 rounded-xl">
+    <div className="container mx-auto p-6 bg-[#0d0f1b] text-white rounded-xl flex flex-col sm:flex-row gap-10 md:gap-16 lg:gap-28 justify-center items-center">
       {/* First Card - Total Customers */}
-      <div className="bg-[#1e2030] p-6 rounded-2xl w-72 flex flex-col relative">
+      <div className="bg-[#1e2030] p-6 rounded-2xl w-full sm:w-72 flex flex-col relative">
         <div className="flex items-center justify-between">
           <div className="flex -space-x-3">
-            <Image src="https://i.postimg.cc/Vkm8gz6r/male-avatar-portrait-of-a-business-man.jpg" alt="User 1" width={40} height={40} className="rounded-full border" />
-            <Image src="https://i.postimg.cc/Vkm8gz6r/male-avatar-portrait-of-a-business-man.jpg" alt="User 2" width={40} height={40} className="rounded-full border" />
-            <Image src="https://i.postimg.cc/Vkm8gz6r/male-avatar-portrait-of-a-business-man.jpg" alt="User 3" width={40} height={40} className="rounded-full border" />
+            <Image
+              src="https://i.postimg.cc/Vkm8gz6r/male-avatar-portrait-of-a-business-man.jpg"
+              alt="User 1"
+              width={40}
+              height={40}
+              className="rounded-full border"
+            />
+            <Image
+              src="https://i.postimg.cc/Vkm8gz6r/male-avatar-portrait-of-a-business-man.jpg"
+              alt="User 2"
+              width={40}
+              height={40}
+              className="rounded-full border"
+            />
+            <Image
+              src="https://i.postimg.cc/Vkm8gz6r/male-avatar-portrait-of-a-business-man.jpg"
+              alt="User 3"
+              width={40}
+              height={40}
+              className="rounded-full border"
+            />
           </div>
           {/* Play Button */}
           <div className="w-10 h-10 flex items-center justify-center bg-white rounded-xl cursor-pointer">
@@ -51,7 +69,7 @@ const TotalCustomer = () => {
       </div>
 
       {/* Second Card - Testimonial */}
-      <div className="bg-[#1e2030] p-6 rounded-2xl w-72 flex flex-col items-center text-center">
+      <div className="bg-[#1e2030] p-6 rounded-2xl w-full sm:w-72 flex flex-col items-center text-center">
         <div className="bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center pt-2 text-5xl font-extrabold text-center">
           “
         </div>
@@ -62,21 +80,20 @@ const TotalCustomer = () => {
       </div>
 
       {/* Third Card - Experience */}
-      <div className="bg-[#1e2030] p-6 rounded-2xl w-72 flex flex-col">
-  <p className="text-5xl font-bold">12</p>
-  <p className="text-gray-400 text-lg mt-1">Years Experience In this Field.</p>
-  <div className="flex flex-wrap gap-2 mt-4">
-    {["SEO Traffic", "Agency", "Marketing", "Analysis", "Ranking", "Consulting"].map((tag, i) => (
-      <span
-        key={i}
-        className="px-3 py-1 rounded-full text-sm bg-white text-black hover:bg-orange-500 hover:text-white transition-colors duration-300 ease-in-out"
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-</div>
-
+      <div className="bg-[#1e2030] p-6 rounded-2xl w-full sm:w-72 flex flex-col">
+        <p className="text-5xl font-bold">12</p>
+        <p className="text-gray-400 text-lg mt-1">Years Experience In this Field.</p>
+        <div className="flex flex-wrap gap-2 mt-4">
+          {["SEO Traffic", "Agency", "Marketing", "Analysis", "Ranking", "Consulting"].map((tag, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 rounded-full text-sm bg-white text-black hover:bg-orange-500 hover:text-white transition-colors duration-300 ease-in-out"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
