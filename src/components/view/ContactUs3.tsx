@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ContactUs3 = () => {
   return (
-    <div className="container mx-auto flex items-center justify-center min-h-screen bg-[#0d0f1b] p-6 mt-8">
+    <div className="container mx-auto flex items-center justify-center min-h-screen bg-[#0d0f1b] p-6 mt-8 mb-8">
       <div className="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
         {/* Left Side - Contact Form */}
         <div className="flex-1 p-8">
