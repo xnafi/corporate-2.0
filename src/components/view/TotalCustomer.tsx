@@ -25,7 +25,7 @@ const TotalCustomer = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-6 bg-[#0d0f1b] text-white rounded-xl flex flex-col sm:flex-row gap-10 md:gap-16 lg:gap-28 justify-center items-center">
+    <div className="container mx-auto p-6 bg-[#0d0f1b] text-white rounded-xl flex flex-col sm:flex-row gap-10 md:gap-16 lg:gap-28 justify-center items-center mt-8">
       {/* First Card - Total Customers */}
       <div className="bg-[#1e2030] p-6 rounded-2xl w-full sm:w-72 flex flex-col relative">
         <div className="flex items-center justify-between">
