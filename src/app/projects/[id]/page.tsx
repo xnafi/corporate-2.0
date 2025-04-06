@@ -28,8 +28,15 @@ const projects = [
   },
 ];
 
+// ✅ Define the correct type
+interface ProjectDetailsProps {
+  params: {
+    id: string;
+  };
+}
+
 // ✅ This is a Server Component
-export default function ProjectDetails({ params }: { params: { id: string } }) {
+export default function ProjectDetails({ params }: ProjectDetailsProps) {
   const project = projects.find((p) => p.id === params.id);
 
   if (!project) return notFound(); // Show 404 if project is not found
