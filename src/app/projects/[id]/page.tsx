@@ -29,18 +29,18 @@ const projects = [
   },
 ];
 
-// ✅ Define the correct type
-interface ProjectDetailsProps {
+// ✅ Define params manually – don't use any PageProps from elsewhere
+interface Props {
   params: {
     id: string;
   };
 }
 
-// ✅ This is a Server Component
-export default function ProjectDetails({ params }: ProjectDetailsProps) {
+// ✅ Your component can be async or not – this is fine
+export default function ProjectDetails({ params }: Props) {
   const project = projects.find((p) => p.id === params.id);
 
-  if (!project) return notFound(); // Show 404 if project is not found
+  if (!project) return notFound();
 
   return (
     <div className="container mx-auto">
@@ -49,9 +49,8 @@ export default function ProjectDetails({ params }: ProjectDetailsProps) {
         <Image
           src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
           alt="About Us Banner"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
+          fill
+          className="object-cover opacity-50"
         />
         <div className="absolute text-center text-white px-4">
           <h1 className="bnr-header-text">Our Projects</h1>
