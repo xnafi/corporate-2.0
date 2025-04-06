@@ -1,11 +1,9 @@
-// src/app/projects/[id]/page.tsx
-
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import SocialPlatformPromotion from "@/components/view/SocialPlatformPromotion";
 import PromotionEngagement from "@/components/view/PromotionEngagement";
 
-// Example project data
+// Simulated database (you can replace this with real data fetching)
 const projects = [
   {
     id: "1",
@@ -30,15 +28,20 @@ const projects = [
   },
 ];
 
-// ✅ No PageProps type – only this
-interface Props {
+// Simulated async fetch function
+async function getProjectById(id: string) {
+  return projects.find((project) => project.id === id) || null;
+}
+
+interface PageProps {
   params: {
     id: string;
   };
 }
 
-export default function ProjectDetails({ params }: Props) {
-  const project = projects.find((p) => p.id === params.id);
+export default async function Page({ params }: PageProps) {
+  const project = await getProjectById(params.id);
+
   if (!project) return notFound();
 
   return (
@@ -47,23 +50,38 @@ export default function ProjectDetails({ params }: Props) {
       <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black">
         <Image
           src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
-          alt="About Us Banner"
+          alt="Project Banner"
           fill
           className="object-cover opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="bnr-header-text">Our Projects</h1>
-          <p className="banner-para-text">Home / Pages / Our Projects</p>
+          <h1 className="bnr-header-text">{project.title}</h1>
+          <p className="banner-para-text">Home / Projects / {project.title}</p>
         </div>
       </div>
 
-      {/* Project Details */}
+      {/* Project Details Section */}
       <div className="mt-6 sm:mt-12">
-        {/* <ProjectDetailsClient project={project} /> */}
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+          <p className="text-gray-600">{project.category}</p>
+          <div className="mt-4">
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={600}
+              height={400}
+              className="mx-auto rounded-lg shadow"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Promotional Sections */}
+      <div className="mt-6 sm:mt-12">
         <SocialPlatformPromotion />
       </div>
 
-      {/* Additional Sections */}
       <div className="mt-6 sm:mt-12">
         <PromotionEngagement />
       </div>
