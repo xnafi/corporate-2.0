@@ -5,6 +5,7 @@ import Image from "next/image";
 import SocialPlatformPromotion from "@/components/view/SocialPlatformPromotion";
 import PromotionEngagement from "@/components/view/PromotionEngagement";
 
+// Example project data
 const projects = [
   {
     id: "1",
@@ -29,17 +30,15 @@ const projects = [
   },
 ];
 
-// ✅ Define params manually – don't use any PageProps from elsewhere
+// ✅ No PageProps type – only this
 interface Props {
   params: {
     id: string;
   };
 }
 
-// ✅ Your component can be async or not – this is fine
 export default function ProjectDetails({ params }: Props) {
   const project = projects.find((p) => p.id === params.id);
-
   if (!project) return notFound();
 
   return (
@@ -58,7 +57,7 @@ export default function ProjectDetails({ params }: Props) {
         </div>
       </div>
 
-      {/* Project Details Section */}
+      {/* Project Details */}
       <div className="mt-6 sm:mt-12">
         {/* <ProjectDetailsClient project={project} /> */}
         <SocialPlatformPromotion />
