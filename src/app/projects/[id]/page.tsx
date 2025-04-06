@@ -1,38 +1,47 @@
 import { notFound } from "next/navigation";
-// import ProjectDetailsClient from "./ProjectDetailsClient";
 import Image from "next/image";
 import SocialPlatformPromotion from "@/components/view/SocialPlatformPromotion";
 import PromotionEngagement from "@/components/view/PromotionEngagement";
 
-const projects = [
+// Define the Project type
+type Project = {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+};
+
+type ProjectDetails = {
+  params: { id: string };
+}
+
+// Sample static data
+const projects: Project[] = [
   {
     id: "1",
     title: "Dashboard Design",
     category: "UX/UI",
-    image:
-      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
   {
     id: "2",
     title: "Logo Design",
     category: "Design",
-    image:
-      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
   {
     id: "3",
     title: "Brand Identity",
     category: "Branding",
-    image:
-      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
 ];
 
 // ✅ This is a Server Component
-export default function ProjectDetails({ params }: { params: { id: string } }) {
+export default function ProjectDetails({ params } : ProjectDetails) {
   const project = projects.find((p) => p.id === params.id);
 
-  if (!project) return notFound(); // Show 404 if project is not found
+  if (!project) return notFound(); 
 
   return (
     <div className="container mx-auto">
@@ -40,10 +49,9 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
       <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black">
         <Image
           src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
-          alt="About Us Banner"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
+          alt="Project Banner"
+          fill
+          className="object-cover opacity-50"
         />
         <div className="absolute text-center text-white px-4">
           <h1 className="bnr-header-text">Our Projects</h1>
@@ -53,6 +61,7 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
 
       {/* Project Details Section */}
       <div className="mt-6 sm:mt-12">
+        {/* You can uncomment this if needed */}
         {/* <ProjectDetailsClient project={project} /> */}
         <SocialPlatformPromotion />
       </div>
