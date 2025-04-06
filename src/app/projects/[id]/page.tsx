@@ -1,5 +1,6 @@
+// src/app/projects/[id]/page.tsx
+
 import { notFound } from "next/navigation";
-// import ProjectDetailsClient from "./ProjectDetailsClient";
 import Image from "next/image";
 import SocialPlatformPromotion from "@/components/view/SocialPlatformPromotion";
 import PromotionEngagement from "@/components/view/PromotionEngagement";
