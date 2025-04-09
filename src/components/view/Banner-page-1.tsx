@@ -26,14 +26,9 @@ const Banner = () => {
           </p>
 
           {/* Buttons */}
-          <div className="flex items-center justify-center lg:justify-start space-x-3 md:space-x-4">
-            <AnimatedButton text="GET STARTED" withArrow/>
-            <button className="flex items-center border-2 border-black text-sm md:text-lg font-semibold px-5 md:px-6 py-2 md:py-3 rounded-full shadow-md hover:bg-black hover:text-white transition">
-              WATCH VIDEO
-              <span className="ml-2 bg-orange-500 text-white p-2 rounded-full">
-                <FaPlay size={10} />
-              </span>
-            </button>
+          <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start space-y-3 md:space-y-0 md:space-x-4">
+            <AnimatedButton text="GET STARTED" withArrow />
+            <AnimatedButton text="WATCH VIDEO" withIcon />
           </div>
         </div>
 
@@ -52,16 +47,44 @@ const Banner = () => {
       {/* Trusted Companies Section */}
       <div className="mt-8 md:mt-12 text-center space-y-4 flex lg:flex-row flex-col items-center justify-between">
         <p className="text-gray-600 text-sm md:text-base">
-          <span className="font-semibold underline text-black text-lg">Join 27,000+</span> companies who've reached
+          <span className="font-semibold underline text-black text-lg">
+            Join 27,000+
+          </span>{" "}
+          companies who've reached
         </p>
 
         {/* Logos (Now Responsive) */}
         <div className="flex flex-wrap justify-center items-center gap-16 sm:flex-row sm:justify-between mt-4 sm:mt-0">
-          <Image src="https://i.postimg.cc/Y99C8DF9/Google-2015-logo-svg.png" alt="Google" width={80} height={40} />
-          <Image src="https://i.postimg.cc/7PjSGSv7/3374985-56876.jpg" alt="Hello" width={80} height={40} />
-          <Image src="https://i.postimg.cc/fTCz9f5n/webflow7029.jpg" alt="Webflow" width={80} height={40} />
-          <Image src="https://i.postimg.cc/HLy1Bw0L/Vine-Logo-2013.png" alt="Vine" width={80} height={40} />
-          <Image src="https://i.postimg.cc/7hXFfm4K/Getarounds.png" alt="Getaround" width={80} height={40} />
+          <Image
+            src="https://i.postimg.cc/Y99C8DF9/Google-2015-logo-svg.png"
+            alt="Google"
+            width={80}
+            height={40}
+          />
+          <Image
+            src="https://i.postimg.cc/7PjSGSv7/3374985-56876.jpg"
+            alt="Hello"
+            width={80}
+            height={40}
+          />
+          <Image
+            src="https://i.postimg.cc/fTCz9f5n/webflow7029.jpg"
+            alt="Webflow"
+            width={80}
+            height={40}
+          />
+          <Image
+            src="https://i.postimg.cc/HLy1Bw0L/Vine-Logo-2013.png"
+            alt="Vine"
+            width={80}
+            height={40}
+          />
+          <Image
+            src="https://i.postimg.cc/7hXFfm4K/Getarounds.png"
+            alt="Getaround"
+            width={80}
+            height={40}
+          />
         </div>
       </div>
     </section>
