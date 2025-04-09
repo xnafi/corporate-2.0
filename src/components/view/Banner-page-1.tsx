@@ -27,7 +27,7 @@ const Banner = () => {
 
           {/* Buttons */}
           <div className="flex items-center justify-center lg:justify-start space-x-3 md:space-x-4">
-            <AnimatedButton text="GET STARTED"/>
+            <AnimatedButton text="GET STARTED" withArrow/>
             <button className="flex items-center border-2 border-black text-sm md:text-lg font-semibold px-5 md:px-6 py-2 md:py-3 rounded-full shadow-md hover:bg-black hover:text-white transition">
               WATCH VIDEO
               <span className="ml-2 bg-orange-500 text-white p-2 rounded-full">
