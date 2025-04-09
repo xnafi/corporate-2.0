@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaAngleDown } from "react-icons/fa";
+import SearchInput from "../re-ui/SearchInput";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -93,7 +94,7 @@ const Navbar = () => {
     {
       key: "contact-us",
       label: "Contact Us",
-      items: undefined, 
+      items: undefined,
     },
   ];
   // mobile collapse animation
@@ -145,7 +146,7 @@ const Navbar = () => {
       transition={{ ease: "easeOut", duration: 0.5 }}
       className="bg-white shadow-md text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md"
     >
-      <div className="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-2 md:px-0">
         <div className="relative flex items-center justify-between h-[100] w-full">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
@@ -242,31 +243,8 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="hidden sm:flex sm:ml-2">
-              <div className="flex md:space-x-0 lg:space-x-4 items-center">
-                <Link href="/login">
-                  <span
-                    className={`px-3 py-2 rounded-md text-md font-medium ${
-                      isActive("/login")
-                        ? "bg-gray-900"
-                        : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
-                    }`}
-                  >
-                    Login
-                  </span>
-                </Link>
-                <Link href="/sign-up">
-                  <span
-                    className={`px-3 py-2 rounded-md text-md font-medium ${
-                      isActive("/sign-up")
-                        ? "bg-gray-900"
-                        : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
-                    }`}
-                  >
-                    Sign Up
-                  </span>
-                </Link>
-              </div>
+            <div className="hidden sm:flex sm:ml-2 max-w-full">
+              <SearchInput />
             </div>
           </div>
         </div>
@@ -328,21 +306,21 @@ const Navbar = () => {
                       <>
                         <Link
                           onClick={handleClose}
-                          href="/about"
+                          href="/about-us"
                           className="block py-1 text-black hover:text-[#1a73e8]"
                         >
                           About Us
                         </Link>
                         <Link
                           onClick={handleClose}
-                          href="/blogs"
+                          href="/our-blogs"
                           className="block py-1 text-black hover:text-[#1a73e8]"
                         >
                           Our Blogs
                         </Link>
                         <Link
                           onClick={handleClose}
-                          href="/pricing"
+                          href="/pricing-plan"
                           className="block py-1 text-black hover:text-[#1a73e8]"
                         >
                           Pricing Plan
@@ -353,14 +331,14 @@ const Navbar = () => {
                       <>
                         <Link
                           onClick={handleClose}
-                          href="/services"
+                          href="/our-services"
                           className="block py-1 text-black hover:text-[#1a73e8]"
                         >
                           Our Services
                         </Link>
                         <Link
                           onClick={handleClose}
-                          href="/projects"
+                          href="/our-projects"
                           className="block py-1 text-black hover:text-[#1a73e8]"
                         >
                           Our Projects
@@ -380,20 +358,8 @@ const Navbar = () => {
           >
             Contact
           </Link>
-          <Link
-            href="/login"
-            onClick={handleClose}
-            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#1a73e8]"
-          >
-            Login
-          </Link>
-          <Link
-            href="/sign-up"
-            onClick={handleClose}
-            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#1a73e8]"
-          >
-            Sign Up
-          </Link>
+          
+       
         </div>
       </motion.div>
     </motion.nav>

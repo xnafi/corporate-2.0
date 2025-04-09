@@ -5,7 +5,7 @@ import { FaPlay } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <section className="container mx-auto sm:mt-10 px-4">
+    <section className="container2 mx-auto sm:mt-10 px-4">
       {/* Banner Section */}
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
         {/* Left Content */}

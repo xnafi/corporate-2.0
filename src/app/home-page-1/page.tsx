@@ -1,5 +1,5 @@
 import AboutUs from "@/components/view/AboutUs";
-import Banner from "@/components/view/Banner";
+import Banner from "@/components/view/Banner-page-1";
 import ChooseUs from "@/components/view/ChooseUs";
 import CollaborateWork from "@/components/view/CollaborateWork";
 import ContactUs from "@/components/view/ContactUs";

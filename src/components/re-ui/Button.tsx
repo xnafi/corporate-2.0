@@ -11,7 +11,11 @@ const Button: React.FC<ButtonProps> = ({ text, onClick, variant = "primary" }) =
     <button
       onClick={onClick}
       className={`px-6 py-2 text-sm font-semibold rounded-full transition-all
-        ${variant === "primary" ? "bg-lime-400 text-white hover:bg-lime-500" : "border border-black text-black bg-white hover:bg-lime-500"}`}
+        ${
+          variant === "primary"
+            ? "bg-[#1a73e8] text-white hover:bg-lime-500"
+            : "border border-black text-black bg-white hover:bg-lime-500"
+        }`}
     >
       {text}
     </button>

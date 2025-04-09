@@ -27,6 +27,10 @@ background-color: white;
   .container{
     @apply max-w-[1440px] mx-auto px-4 lg:px-4 py-4 lg:py-12;
   }
+  .container2{
+    @apply max-w-[1440px] mx-auto px-4 lg:px-4 py-4 lg:py-12 mt-[100px] h-full lg:h-screen;
+  }
+  
   
   .para-text {
     @apply text-gray-600 text-sm;
