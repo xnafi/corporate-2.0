@@ -10,7 +10,7 @@ export default function NavbarWrapper() {
   return (
     <>
       {/* Show Navbar2 only for /home2, otherwise show Navbar */}
-      {pathname === "/home2" ? <Navbar2 /> : <Navbar />}
+      {pathname === "/home-page-2" ? <Navbar2 /> : <Navbar />}
       
     </>
   );

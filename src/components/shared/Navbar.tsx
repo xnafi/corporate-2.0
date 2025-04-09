@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaAngleDown } from "react-icons/fa";
@@ -49,6 +50,65 @@ const Navbar = () => {
   const toggleSubMenu = (menu: string) => {
     setOpenSubMenu((prev) => (prev === menu ? null : menu));
   };
+  // nav menu items
+
+  type NavItem = {
+    label: string;
+    href: string;
+  };
+
+  type NavGroup = {
+    key: string;
+    label: string;
+    items?: NavItem[];
+  };
+
+  const navDesktop: NavGroup[] = [
+    {
+      key: "home",
+      label: "Home",
+      items: [
+        { label: "Home Page 1", href: "/home-page-1" },
+        { label: "Home Page 2", href: "/home-page-2" },
+        { label: "Home Page 3", href: "/home-page-3" },
+      ],
+    },
+    {
+      key: "pages",
+      label: "Pages",
+      items: [
+        { label: "About Us", href: "/about-us" },
+        { label: "Our Blogs", href: "/our-blogs" },
+        { label: "Pricing Plan", href: "/pricing-plan" },
+      ],
+    },
+    {
+      key: "services",
+      label: "Services",
+      items: [
+        { label: "Our Services", href: "/our-services" },
+        { label: "Our Projects", href: "/our-projects" },
+      ],
+    },
+    {
+      key: "contact-us",
+      label: "Contact Us",
+      items: undefined, 
+    },
+  ];
+  // mobile collapse animation
+  const submenuVariants = {
+    hidden: {
+      height: 0,
+      opacity: 0,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+    visible: {
+      height: "auto",
+      opacity: 1,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
 
   const renderSubMenu = (
     menu: string,
@@ -70,7 +130,7 @@ const Navbar = () => {
           key={item.href}
           href={item.href}
           onClick={handleClose}
-          className="block py-1 hover:text-[#EA580C]"
+          className="block py-1 hover:text-[#1a73e8]"
         >
           {item.label}
         </Link>
@@ -83,7 +143,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="bg-white shadow-md text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md"
+      className="bg-white shadow-md text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md h-[100px]"
     >
       <div className="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-[100] w-full">
@@ -96,7 +156,7 @@ const Navbar = () => {
             >
               {!isOpen ? (
                 <svg
-                  className="block h-6 w-6"
+                  className="block h-6 w-6 text-black"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -110,7 +170,7 @@ const Navbar = () => {
                 </svg>
               ) : (
                 <svg
-                  className="block h-6 w-6"
+                  className="block h-6 w-6 text-black"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -129,7 +189,7 @@ const Navbar = () => {
             <div className="flex-shrink-0">
               <Link href="/" onClick={handleClose}>
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#1a73e8] rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-xl">SE</span>
                   </div>
                   <span className="text-lg font-semibold text-black">Seom</span>
@@ -139,65 +199,46 @@ const Navbar = () => {
 
             <div className="hidden sm:flex sm:ml-2 justify-center items-center">
               <div className="flex md:space-x-0 lg:space-x-4 items-center">
-                {[
-                  {
-                    key: "home",
-                    label: "Home",
-                    items: [
-                      { label: "Home Page 1", href: "/home-page-1" },
-                      { label: "Home Page 2", href: "/home-page-2" },
-                      { label: "Home Page 3", href: "/home-page-3" },
-                    ],
-                  },
-                  {
-                    key: "pages",
-                    label: "Pages",
-                    items: [
-                      { label: "About Us", href: "/about" },
-                      { label: "Our Blogs", href: "/blogs" },
-                      { label: "Pricing Plan", href: "/pricing" },
-                    ],
-                  },
-                  {
-                    key: "services",
-                    label: "Services",
-                    items: [
-                      { label: "Our Services", href: "/services" },
-                      { label: "Our Projects", href: "/projects" },
-                    ],
-                  },
-                ].map(({ key, label, items }) => (
+                {navDesktop.map(({ key, label, items }) => (
                   <div
                     key={key}
                     className="relative group"
-                    onMouseEnter={() => !isMobile && setOpenSubMenu(key)}
-                    onMouseLeave={() => !isMobile && setOpenSubMenu(null)}
+                    onMouseEnter={() =>
+                      !isMobile && items && setOpenSubMenu(key)
+                    }
+                    onMouseLeave={() =>
+                      !isMobile && items && setOpenSubMenu(null)
+                    }
                   >
-                    <button
-                      onClick={() => isMobile && toggleSubMenu(key)}
-                      className={`px-3 py-2 rounded-md text-md font-medium flex justify-center items-center gap-x-2 ${
-                        isActive(`/${key}`)
-                          ? "bg-gray-900"
-                          : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#EA580C]"
-                      }`}
-                    >
-                      {label} <FaAngleDown size={18} />
-                    </button>
-                    {renderSubMenu(key, items)}
+                    {items ? (
+                      <button
+                        onClick={() => isMobile && toggleSubMenu(key)}
+                        className={`px-3 py-2 rounded-md text-md font-medium flex justify-center items-center gap-x-2 ${
+                          isActive(`/${key}`)
+                            ? "bg-[#1a73e8]"
+                            : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
+                        }`}
+                      >
+                        {label}
+                        <FaAngleDown size={18} />
+                      </button>
+                    ) : (
+                      <Link href={`/${key}`}>
+                        <span
+                          className={`px-3 py-2 rounded-md text-md font-medium ${
+                            isActive(`/${key}`)
+                              ? "bg-[#1a73e8]"
+                              : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
+                          }`}
+                        >
+                          {label}
+                        </span>
+                      </Link>
+                    )}
+
+                    {items && renderSubMenu(key, items)}
                   </div>
                 ))}
-
-                <Link href="/contact">
-                  <span
-                    className={`px-3 py-2 rounded-md text-md font-medium ${
-                      isActive("/contact")
-                        ? "bg-gray-900"
-                        : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#EA580C]"
-                    }`}
-                  >
-                    Contact Us
-                  </span>
-                </Link>
               </div>
             </div>
 
@@ -208,7 +249,7 @@ const Navbar = () => {
                     className={`px-3 py-2 rounded-md text-md font-medium ${
                       isActive("/login")
                         ? "bg-gray-900"
-                        : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#EA580C]"
+                        : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
                     }`}
                   >
                     Login
@@ -219,7 +260,7 @@ const Navbar = () => {
                     className={`px-3 py-2 rounded-md text-md font-medium ${
                       isActive("/sign-up")
                         ? "bg-gray-900"
-                        : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#EA580C]"
+                        : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
                     }`}
                   >
                     Sign Up
@@ -237,103 +278,119 @@ const Navbar = () => {
         animate={{ height: isOpen ? "auto" : 0 }}
         className="sm:hidden overflow-hidden"
       >
-        <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
           {["home", "pages", "services"].map((menu) => (
             <div key={menu}>
               <button
                 onClick={() => toggleSubMenu(menu)}
-                className="w-full flex justify-between items-center px-3 py-2 rounded-md text-md font-medium text-black hover:text-[#EA580C]"
+                className="w-full flex justify-between items-center px-3 py-2 rounded-md text-md font-medium text-black hover:text-[#1a73e8]"
               >
                 {menu.charAt(0).toUpperCase() + menu.slice(1)}
                 <FaAngleDown size={18} />
               </button>
-              {openSubMenu === menu && (
-                <div className="pl-6 space-y-1">
-                  {menu === "home" && [
-                    <Link
-                      key="1"
-                      href="/home-page-1"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      Home Page 1
-                    </Link>,
-                    <Link
-                      key="2"
-                      href="/home-page-2"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      Home Page 2
-                    </Link>,
-                    <Link
-                      key="3"
-                      href="/home-page-3"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      Home Page 3
-                    </Link>,
-                  ]}
-                  {menu === "pages" && [
-                    <Link
-                      key="4"
-                      href="/about"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      About Us
-                    </Link>,
-                    <Link
-                      key="5"
-                      href="/blogs"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      Our Blogs
-                    </Link>,
-                    <Link
-                      key="6"
-                      href="/pricing"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      Pricing Plan
-                    </Link>,
-                  ]}
-                  {menu === "services" && [
-                    <Link
-                      key="7"
-                      href="/services"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      Our Services
-                    </Link>,
-                    <Link
-                      key="8"
-                      href="/projects"
-                      className="block py-1 hover:text-[#EA580C]"
-                    >
-                      Our Projects
-                    </Link>,
-                  ]}
-                </div>
-              )}
+
+              <AnimatePresence initial={false}>
+                {openSubMenu === menu && (
+                  <motion.div
+                    key={menu}
+                    variants={submenuVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="pl-6 space-y-1 overflow-hidden"
+                  >
+                    {menu === "home" && (
+                      <>
+                        <Link
+                          onClick={handleClose}
+                          href="/home-page-1"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          Home Page 1
+                        </Link>
+                        <Link
+                          onClick={handleClose}
+                          href="/home-page-2"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          Home Page 2
+                        </Link>
+                        <Link
+                          onClick={handleClose}
+                          href="/home-page-3"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          Home Page 3
+                        </Link>
+                      </>
+                    )}
+                    {menu === "pages" && (
+                      <>
+                        <Link
+                          onClick={handleClose}
+                          href="/about"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          About Us
+                        </Link>
+                        <Link
+                          onClick={handleClose}
+                          href="/blogs"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          Our Blogs
+                        </Link>
+                        <Link
+                          onClick={handleClose}
+                          href="/pricing"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          Pricing Plan
+                        </Link>
+                      </>
+                    )}
+                    {menu === "services" && (
+                      <>
+                        <Link
+                          onClick={handleClose}
+                          href="/services"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          Our Services
+                        </Link>
+                        <Link
+                          onClick={handleClose}
+                          href="/projects"
+                          className="block py-1 text-black hover:text-[#1a73e8]"
+                        >
+                          Our Projects
+                        </Link>
+                      </>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
 
           <Link
             href="/contact"
             onClick={handleClose}
-            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#EA580C]"
+            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#1a73e8]"
           >
             Contact
           </Link>
           <Link
             href="/login"
             onClick={handleClose}
-            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#EA580C]"
+            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#1a73e8]"
           >
             Login
           </Link>
           <Link
             href="/sign-up"
             onClick={handleClose}
-            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#EA580C]"
+            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#1a73e8]"
           >
             Sign Up
           </Link>
