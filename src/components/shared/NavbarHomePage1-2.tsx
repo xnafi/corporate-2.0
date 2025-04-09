@@ -143,7 +143,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="bg-white shadow-md text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md h-[100px]"
+      className="bg-white shadow-md text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md"
     >
       <div className="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-[100] w-full">
@@ -185,10 +185,10 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center mx-auto sm:items-stretch sm:justify-between w-full">
+          <div className="flex-1 flex items-center justify-center mx-auto sm:items-stretch sm:justify-between w-full h-[100px]">
             <div className="flex-shrink-0">
               <Link href="/" onClick={handleClose}>
-                <div className="flex items-center space-x-2">
+                <div className="grid grid-cols-2 place-items-center h-[100px] space-x-2">
                   <div className="w-10 h-10 bg-[#1a73e8] rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-xl">SE</span>
                   </div>
