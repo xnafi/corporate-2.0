@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
-import { FaPlay } from "react-icons/fa";
-import AnimatedButton from "../re-ui/ReButton";
+import PrimaryButton from "../re-ui/PrimaryButton";
+import SecondaryButton from "../re-ui/SecondaryButton";
 
 const Banner = () => {
   return (
@@ -27,8 +27,8 @@ const Banner = () => {
 
           {/* Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start space-y-3 md:space-y-0 md:space-x-4">
-            <AnimatedButton text="GET STARTED" withArrow />
-            <AnimatedButton text="WATCH VIDEO" withIcon />
+            <PrimaryButton text="GET STARTED" withArrow />
+            <SecondaryButton text="WATCH VIDEO" withIcon />
           </div>
         </div>
 

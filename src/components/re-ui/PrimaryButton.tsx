@@ -1,7 +1,7 @@
 import { FaArrowRight } from "react-icons/fa"; 
 import { IoPlayCircleSharp } from "react-icons/io5";
 
-export default function AnimatedButton({
+export default function PrimaryButton({
   withArrow = false,
   withIcon = false,
   icon: Icon = IoPlayCircleSharp,
