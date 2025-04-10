@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Button from "../re-ui/Button";
+import Button from "../../re-ui/Button";
 
 const Banner2 = () => {
   return (
@@ -23,14 +23,15 @@ const Banner2 = () => {
           Web Campaign <br /> and Strategy
         </h1>
         <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-          Web-based campaign solutions for targeted audience growth <br className="hidden md:block" /> 
+          Web-based campaign solutions for targeted audience growth{" "}
+          <br className="hidden md:block" />
           and improved brand visibility online.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-6">
           <Button text="Get Started" variant="primary" />
-          <Button text="How It Works" variant="secondary"/>  
+          <Button text="How It Works" variant="secondary" />
         </div>
       </div>
     </section>

@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
-import PrimaryButton from "../re-ui/PrimaryButton";
-import SecondaryButton from "../re-ui/SecondaryButton";
-import bannerImg from "../../../public/images/banner/3921114.jpg";
+import PrimaryButton from "../../re-ui/PrimaryButton";
+import SecondaryButton from "../../re-ui/SecondaryButton";
+import bannerImg from "../../../../public/images/banner/3921114.jpg";
 
 const Banner = () => {
   return (

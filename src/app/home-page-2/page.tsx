@@ -1,5 +1,5 @@
 import AboutUs2 from "@/components/view/AboutUs2";
-import Banner2 from "@/components/view/Banner2";
+import Banner2 from "@/components/view/banner/Banner2";
 import Feedback2 from "@/components/view/Feedback2";
 import Inquiries from "@/components/view/Inquiries";
 import LatestNews from "@/components/view/LatestNews";

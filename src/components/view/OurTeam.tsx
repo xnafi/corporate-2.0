@@ -1,13 +1,21 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import React from "react";
 
-const teamMembers = [
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  bgColor: string;
+  social?: boolean;
+};
+
+const teamMembers: TeamMember[] = [
   {
     name: "Md. Rofik Hossen",
     role: "Marketing Officer",
@@ -39,29 +47,29 @@ const teamMembers = [
 ];
 
 const OurTeam: React.FC = () => {
-  const settings = {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, 
+    slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true, 
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1280, // Laptop
+        breakpoint: 1280,
         settings: { slidesToShow: 3 },
       },
       {
-        breakpoint: 1024, // Tablet
+        breakpoint: 1024,
         settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 768, // Mobile Large
+        breakpoint: 768,
         settings: { slidesToShow: 1 },
       },
       {
-        breakpoint: 480, // Mobile Small
+        breakpoint: 480,
         settings: { slidesToShow: 1 },
       },
     ],
@@ -70,26 +78,24 @@ const OurTeam: React.FC = () => {
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="text-center">
-        <h2 className="text-xs sm:text-sm text-orange-500 uppercase tracking-wide">
+        <h3 className="text-sm text-[#1A73E8] uppercase font-semibold">
           Our Team
-        </h2>
-        <h1 className="title-header-text mt-2">
-          Meet the Experts
-        </h1>
+        </h3>
+        <h1 className="title-header-text mt-2">Meet the Experts</h1>
         <p className="text-gray-600 mt-2 text-xs sm:text-sm md:text-base">
-          We are dedicated to providing reliable clinical care, guaranteeing
-          the highest standards of trustworthiness.
+          We are dedicated to providing reliable clinical care, guaranteeing the
+          highest standards of trustworthiness.
         </p>
 
-        {/* Team Members Slider */}
-        <div className="mt-10 max-w-[1440px] mx-auto">
+        {/* Slider */}
+        <div className="mt-10 mx-auto">
           <Slider {...settings}>
             {teamMembers.map((member, index) => (
               <div key={index} className="px-2 sm:px-4">
                 <div
                   className={`relative rounded-2xl overflow-hidden shadow-md p-4 sm:p-6 ${member.bgColor}`}
                 >
-                  <div className="relative w-full h-64 sm:h-64 md:h-64 lg:h-64">
+                  <div className="relative w-full h-64">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -99,7 +105,6 @@ const OurTeam: React.FC = () => {
                     />
                   </div>
 
-                  {/* Social Icons for CEO */}
                   {member.social && (
                     <div className="absolute top-4 right-4 flex flex-col space-y-2">
                       <a
@@ -123,6 +128,7 @@ const OurTeam: React.FC = () => {
                     </div>
                   )}
                 </div>
+
                 <div className="text-center mt-4">
                   <h3 className="text-sm sm:text-base md:text-lg font-semibold">
                     {member.role}
