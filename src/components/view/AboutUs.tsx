@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import SecondaryButton from "../re-ui/SecondaryButton";
 
 const AboutUs = () => {
   return (
@@ -45,7 +45,8 @@ const AboutUs = () => {
           Specialists in Tech <br className="hidden md:block" /> Hurdles.
         </h2>
         <p className="text-gray-700 text-sm sm:text-base">
-          Solving complex digital challenges with tailored solutions to optimize workflows and enhance efficiency.
+          Solving complex digital challenges with tailored solutions to optimize
+          workflows and enhance efficiency.
         </p>
         <ul className="space-y-2 text-gray-800 text-sm sm:text-base">
           <li className="flex items-center gap-2 justify-center md:justify-start">
@@ -61,10 +62,7 @@ const AboutUs = () => {
 
         {/* Button */}
         <div className="flex justify-center md:justify-start">
-          <button className="mt-6 flex justify-between items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-orange-600 transition duration-300 border border-b-4 border-black">
-            About Us
-            <IoIosArrowRoundForward className="text-2xl" />
-          </button>
+          <SecondaryButton text=" About Us" withArrow href="/about-us" />
         </div>
       </div>
     </section>
