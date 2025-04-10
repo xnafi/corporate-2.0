@@ -37,8 +37,8 @@ const AboutUs = () => {
       </div>
 
       {/* Right: Content Section */}
-      <div className="w-full md:w-1/2 space-y-5 md:pl-12 text-center md:text-left">
-        <h3 className="text-orange-500 uppercase font-semibold text-sm">
+      <div className="w-full md:w-1/2 space-y-3 md:pl-12 text-center md:text-left">
+        <h3 className="text-sm text-[#1A73E8] uppercase font-semibold">
           About Us
         </h3>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
