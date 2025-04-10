@@ -3,6 +3,7 @@
 import Image from "next/image";
 import PrimaryButton from "../re-ui/PrimaryButton";
 import SecondaryButton from "../re-ui/SecondaryButton";
+import bannerImg from "../../../public/images/banner/3921114.jpg";
 
 const Banner = () => {
   return (
@@ -27,15 +28,19 @@ const Banner = () => {
 
           {/* Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start space-y-3 md:space-y-0 md:space-x-4">
-            <PrimaryButton text="GET STARTED" withArrow />
-            <SecondaryButton text="WATCH VIDEO" withIcon />
+            <PrimaryButton text="GET STARTED" withArrow href="/contact-us" />
+            <SecondaryButton
+              text="WATCH VIDEO"
+              withIcon
+              href="https://www.youtube.com/watch?v=xAt1xcC6qfM"
+            />
           </div>
         </div>
 
         {/* Right Image (Now Responsive) */}
         <div className="lg:w-1/2 flex justify-center mt-12 md:mt-0">
           <Image
-            src="https://i.postimg.cc/K8C1s5Tk/fuel-brand-graph.png"
+            src={bannerImg}
             alt="Fuel Brand Growth"
             width={600}
             height={400}
@@ -45,7 +50,7 @@ const Banner = () => {
       </div>
 
       {/* Trusted Companies Section */}
-      <div className="mt-8 md:mt-12 text-center space-y-4 flex lg:flex-row flex-col items-center justify-between">
+      <div className="mt-8 md:mt-2 text-center space-y-4 flex lg:flex-row flex-col items-center justify-between">
         <p className="text-gray-600 text-sm md:text-base">
           <span className="font-semibold underline text-black text-lg">
             Join 27,000+

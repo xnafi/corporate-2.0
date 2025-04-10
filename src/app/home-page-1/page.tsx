@@ -13,7 +13,7 @@ import Testimonial from "@/components/view/Testimonial";
 
 export default function HomePage() {
     return (
-      <div className="container">
+      <div>
       <Banner />
        <OurService />
        <AboutUs />
