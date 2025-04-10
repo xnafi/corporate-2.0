@@ -6,26 +6,24 @@ import ContactUs from "@/components/view/ContactUs";
 import HappyCustomer from "@/components/view/HappyCustomer";
 import LiveChat from "@/components/view/LiveChat";
 import OurProject from "@/components/view/OurProject2";
-import OurService from "@/components/view/OurService";
+import OurService from "@/components/view/OurServicePage-1";
 import OurTeam from "@/components/view/OurTeam";
 import Testimonial from "@/components/view/Testimonial";
 
-
 export default function HomePage() {
-    return (
-      <div>
+  return (
+    <div>
       <Banner />
-       <OurService />
-       <AboutUs />
-       <HappyCustomer />
-       <OurProject />
-       <ChooseUs />
-       <OurTeam />
-       <Testimonial />
-       <ContactUs />
-       <LiveChat />
-       <CollaborateWork />
-      </div>
-    );
-  }
-  
+      <OurService />
+      <AboutUs />
+      <HappyCustomer />
+      <OurProject />
+      <ChooseUs />
+      <OurTeam />
+      <Testimonial />
+      <ContactUs />
+      <LiveChat />
+      <CollaborateWork />
+    </div>
+  );
+}
