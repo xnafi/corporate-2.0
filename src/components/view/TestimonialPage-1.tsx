@@ -8,7 +8,15 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
-const testimonials = [
+type TestimonialType = {
+  quote: string;
+  name: string;
+  country: string;
+  image: string;
+  color: string;
+};
+
+const testimonials: TestimonialType[] = [
   {
     quote:
       "Game-changer! Boosted efficiency, simplified tasks, and Highly recommended!",
@@ -26,16 +34,14 @@ const testimonials = [
     color: "bg-green-500",
   },
   {
-    quote:
-      "Quick solutions with great performance, recommendations.",
+    quote: "Quick solutions with great performance, recommendations.",
     name: "John Doe",
     country: "UK",
     image: "https://randomuser.me/api/portraits/men/3.jpg",
     color: "bg-orange-500",
   },
   {
-    quote:
-      "Absolutely love the service! It exceeded my expectations. ",
+    quote: "Absolutely love the service! It exceeded my expectations. ",
     name: "Emma Smith",
     country: "Canada",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
@@ -63,7 +69,7 @@ const Testimonial = () => {
       <div className="container mx-auto px-4 md:px-8 lg:px-12 flex flex-col md:flex-row items-center">
         {/* Left Section */}
         <div className="md:w-1/3 text-center lg:text-left mb-10 md:mb-0">
-          <p className="text-orange-500 uppercase text-sm font-semibold">
+          <p className="text-[#1A73E8] uppercase text-sm font-semibold">
             Testimonial
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 leading-tight">
@@ -74,13 +80,13 @@ const Testimonial = () => {
           <div className="flex items-center justify-center lg:justify-start gap-4 mt-8 sm:mt-12">
             <button
               ref={prevRef}
-              className="bg-white text-black w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full shadow-md hover:bg-orange-600 transition"
+              className="bg-[#1A73E8] text-white  md:w-10 md:h-10 flex items-center justify-center shadow-md transition"
             >
               <FaArrowLeft size={18} />
             </button>
             <button
               ref={nextRef}
-              className="bg-white text-black w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full shadow-md border hover:bg-orange-600 transition"
+              className="bg-[#1A73E8] text-white  md:w-10 md:h-10 flex items-center justify-center shadow-md border transition"
             >
               <FaArrowRight size={18} />
             </button>

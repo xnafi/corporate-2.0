@@ -8,7 +8,7 @@ import LiveChat from "@/components/view/LiveChat";
 import OurProject from "@/components/view/OurProjectPage-1";
 import OurService from "@/components/view/OurServicePage-1";
 import OurTeam from "@/components/view/OurTeam";
-import Testimonial from "@/components/view/Testimonial";
+import Testimonial from "@/components/view/TestimonialPage-1";
 
 export default function HomePage() {
   return (
