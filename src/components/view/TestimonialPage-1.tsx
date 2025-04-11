@@ -80,13 +80,13 @@ const Testimonial = () => {
           <div className="flex items-center justify-center lg:justify-start gap-4 mt-8 sm:mt-12">
             <button
               ref={prevRef}
-              className="bg-[#1A73E8] text-white  md:w-10 md:h-10 flex items-center justify-center shadow-md transition"
+              className="bg-[#1A73E8] text-white  w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shadow-md transition"
             >
               <FaArrowLeft size={18} />
             </button>
             <button
               ref={nextRef}
-              className="bg-[#1A73E8] text-white  md:w-10 md:h-10 flex items-center justify-center shadow-md border transition"
+              className="bg-[#1A73E8] text-white  w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shadow-md border transition"
             >
               <FaArrowRight size={18} />
             </button>
