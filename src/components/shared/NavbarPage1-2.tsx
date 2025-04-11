@@ -131,7 +131,7 @@ const Navbar = () => {
           key={item.href}
           href={item.href}
           onClick={handleClose}
-          className="block py-1 hover:text-[#1a73e8]"
+          className="block py-1 hover:text-[#1A73E8]"
         >
           {item.label}
         </Link>
@@ -190,7 +190,7 @@ const Navbar = () => {
             <div className="flex-shrink-0">
               <Link href="/" onClick={handleClose}>
                 <div className="grid grid-cols-2 place-items-center h-[100px] space-x-2">
-                  <div className="w-10 h-10 bg-[#1a73e8] rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#1A73E8] rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-xl">SE</span>
                   </div>
                   <span className="text-lg font-semibold text-black">Seom</span>
@@ -216,8 +216,8 @@ const Navbar = () => {
                         onClick={() => isMobile && toggleSubMenu(key)}
                         className={`px-3 py-2 rounded-md text-md font-medium flex justify-center items-center gap-x-2 ${
                           isActive(`/${key}`)
-                            ? "bg-[#1a73e8]"
-                            : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
+                            ? "bg-[#1A73E8]"
+                            : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1A73E8]"
                         }`}
                       >
                         {label}
@@ -228,8 +228,8 @@ const Navbar = () => {
                         <span
                           className={`px-3 py-2 rounded-md text-md font-medium ${
                             isActive(`/${key}`)
-                              ? "bg-[#1a73e8]"
-                              : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1a73e8]"
+                              ? "bg-[#1A73E8]"
+                              : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1A73E8]"
                           }`}
                         >
                           {label}
@@ -261,7 +261,7 @@ const Navbar = () => {
             <div key={menu}>
               <button
                 onClick={() => toggleSubMenu(menu)}
-                className="w-full flex justify-between items-center px-3 py-2 rounded-md text-md font-medium text-black hover:text-[#1a73e8]"
+                className="w-full flex justify-between items-center px-3 py-2 rounded-md text-md font-medium text-black hover:text-[#1A73E8]"
               >
                 {menu.charAt(0).toUpperCase() + menu.slice(1)}
                 <FaAngleDown size={18} />
@@ -282,21 +282,21 @@ const Navbar = () => {
                         <Link
                           onClick={handleClose}
                           href="/home-page-1"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           Home Page 1
                         </Link>
                         <Link
                           onClick={handleClose}
                           href="/home-page-2"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           Home Page 2
                         </Link>
                         <Link
                           onClick={handleClose}
                           href="/home-page-3"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           Home Page 3
                         </Link>
@@ -307,21 +307,21 @@ const Navbar = () => {
                         <Link
                           onClick={handleClose}
                           href="/about-us"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           About Us
                         </Link>
                         <Link
                           onClick={handleClose}
                           href="/our-blogs"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           Our Blogs
                         </Link>
                         <Link
                           onClick={handleClose}
                           href="/pricing-plan"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           Pricing Plan
                         </Link>
@@ -332,14 +332,14 @@ const Navbar = () => {
                         <Link
                           onClick={handleClose}
                           href="/our-services"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           Our Services
                         </Link>
                         <Link
                           onClick={handleClose}
                           href="/our-projects"
-                          className="block py-1 text-black hover:text-[#1a73e8]"
+                          className="block py-1 text-black hover:text-[#1A73E8]"
                         >
                           Our Projects
                         </Link>
@@ -354,12 +354,10 @@ const Navbar = () => {
           <Link
             href="/contact-us"
             onClick={handleClose}
-            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#1a73e8]"
+            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-[#1A73E8]"
           >
             Contact
           </Link>
-          
-       
         </div>
       </motion.div>
     </motion.nav>

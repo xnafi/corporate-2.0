@@ -36,7 +36,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
         {text}
       </span>
       {withArrow && <FaArrowRight className="z-10 ml-2" />}
-      {withIcon && <Icon className="z-10 ml-2" size={18}/>}
+      {withIcon && <Icon className="z-10 ml-2" size={18} />}
     </>
   );
 

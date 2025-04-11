@@ -1,7 +1,6 @@
 import Image from "next/image";
-import React from "react";
 
-const ContactUs: React.FC = () => {
+const ContactUs = () => {
   return (
     <section className="container px-4 sm:px-6 lg:px-8 py-10">
       <div className="flex flex-col md:flex-row items-center justify-center border-2 border-gray-600 rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 mx-auto max-w-[1200px]">
@@ -39,8 +38,8 @@ const ContactUs: React.FC = () => {
             ></textarea>
 
             <button
-              type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 mt-4 rounded-md transition text-sm sm:text-base"
+              type='button'
+              className="w-full bg-white text-black hover:bg-[#1A73E8] hover:text-white border-2 duration-300 font-semibold py-3 mt-4 rounded-md transition text-sm sm:text-base"
             >
               SEND MESSAGE
             </button>

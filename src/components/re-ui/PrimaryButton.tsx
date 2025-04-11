@@ -21,7 +21,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   onClick,
 }) => {
   const baseClasses =
-    "border hover:scale-95 duration-300 relative group cursor-pointer text-[#1a73e8] overflow-hidden h-14 w-48 rounded-md bg-[#1a73e8] p-2 flex justify-center items-center font-semibold hover:bg-[#e8f0fe]";
+    "border hover:scale-95 duration-300 relative group cursor-pointer text-[#1A73E8] overflow-hidden h-14 w-48 rounded-md bg-[#1A73E8] p-2 flex justify-center items-center font-semibold hover:bg-[#e8f0fe]";
 
   const backgroundCircles = (
     <>
@@ -35,8 +35,8 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   const content = (
     <>
       <p className="z-10 text-[14px] md:text-base">{text}</p>
-      {withArrow && <FaArrowRight className="z-10 ml-2 text-[#1a73e8]" />}
-      {withIcon && <Icon className="z-10 ml-2 bg-[#1a73e8]" />}
+      {withArrow && <FaArrowRight className="z-10 ml-2 text-[#1A73E8]" />}
+      {withIcon && <Icon className="z-10 ml-2 bg-[#1A73E8]" />}
     </>
   );
 
