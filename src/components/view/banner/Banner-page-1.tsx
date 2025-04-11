@@ -7,9 +7,9 @@ import bannerImg from "../../../../public/images/banner/3921114.jpg";
 
 const Banner = () => {
   return (
-    <section className="container2 mx-auto sm:mt-10 px-4">
+    <section className="container2 mx-auto sm:mt-10 px-4 justify-center items-center flex flex-col w-full">
       {/* Banner Section */}
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 w-full">
         {/* Left Content */}
         <div className="lg:w-1/2 text-center lg:text-left space-y-4 md:space-y-6">
           <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wide">
@@ -50,7 +50,7 @@ const Banner = () => {
       </div>
 
       {/* Trusted Companies Section */}
-      <div className="mt-8 md:mt-2 text-center space-y-4 flex lg:flex-row flex-col items-center justify-between">
+      <div className="mt-8 md:mt-2 text-center space-y-4 flex lg:flex-row flex-col items-center justify-between w-full">
         <p className="text-gray-600 text-sm md:text-base">
           <span className="font-semibold underline text-black text-lg">
             Join 27,000+
