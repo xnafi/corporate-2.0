@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -13,36 +14,28 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
 
-  const router = usePathname();
+  const pathname = usePathname();
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const handleToggle = () => setIsOpen(!isOpen);
   const handleClose = () => {
     setIsOpen(false);
     setOpenSubMenu(null);
   };
 
-  const isActive = (path: string) => router === path;
+  const isActive = (path: string) => pathname === path;
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      setLastScrollY(window.scrollY);
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY < lastScrollY);
+      setLastScrollY(currentScrollY);
     }
   };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
+      return () => window.removeEventListener("scroll", controlNavbar);
     }
   }, [lastScrollY]);
 
@@ -51,18 +44,10 @@ const Navbar = () => {
   const toggleSubMenu = (menu: string) => {
     setOpenSubMenu((prev) => (prev === menu ? null : menu));
   };
-  // nav menu items
 
-  type NavItem = {
-    label: string;
-    href: string;
-  };
-
-  type NavGroup = {
-    key: string;
-    label: string;
-    items?: NavItem[];
-  };
+  // Nav structure
+  type NavItem = { label: string; href: string };
+  type NavGroup = { key: string; label: string; items?: NavItem[] };
 
   const navDesktop: NavGroup[] = [
     {
@@ -94,10 +79,9 @@ const Navbar = () => {
     {
       key: "contact-us",
       label: "Contact Us",
-      items: undefined,
     },
   ];
-  // mobile collapse animation
+
   const submenuVariants = {
     hidden: {
       height: 0,
@@ -111,10 +95,7 @@ const Navbar = () => {
     },
   };
 
-  const renderSubMenu = (
-    menu: string,
-    items: { label: string; href: string }[]
-  ) => (
+  const renderSubMenu = (menu: string, items: NavItem[]) => (
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{
@@ -147,31 +128,18 @@ const Navbar = () => {
       className="bg-white shadow-md text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md"
     >
       <div className="max-w-[1400px] mx-auto px-2 md:px-0">
-        <div className="relative flex items-center justify-between h-[100] w-full">
+        <div className="relative flex items-center justify-between h-[100px]">
+          {/* Mobile Hamburger */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               onClick={handleToggle}
-              className="inline-flex items-center justify-center p-2 rounded-md hover:text-black hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md hover:text-black hover:bg-white/10 focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
-              {!isOpen ? (
+              {isOpen ? (
                 <svg
-                  className="block h-6 w-6 text-black"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6 text-black"
+                  className="h-6 w-6 text-black"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -183,67 +151,79 @@ const Navbar = () => {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6 text-black"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
               )}
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center mx-auto sm:items-stretch sm:justify-between w-full h-[100px]">
-            <div className="flex-shrink-0">
-              <Link href="/" onClick={handleClose}>
-                <div className="grid grid-cols-2 place-items-center h-[100px] space-x-2">
-                  <div className="w-10 h-10 bg-[#1A73E8] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">SE</span>
-                  </div>
-                  <span className="text-lg font-semibold text-black">Seom</span>
-                </div>
-              </Link>
-            </div>
 
-            <div className="hidden sm:flex sm:ml-2 justify-center items-center">
-              <div className="flex md:space-x-0 lg:space-x-4 items-center">
-                {navDesktop.map(({ key, label, items }) => (
-                  <div
-                    key={key}
-                    className="relative group"
-                    onMouseEnter={() =>
-                      !isMobile && items && setOpenSubMenu(key)
-                    }
-                    onMouseLeave={() =>
-                      !isMobile && items && setOpenSubMenu(null)
-                    }
-                  >
-                    {items ? (
-                      <button
-                        onClick={() => isMobile && toggleSubMenu(key)}
-                        className={`px-3 py-2 rounded-md text-md font-medium flex justify-center items-center gap-x-2 ${
+          {/* Logo */}
+          <div className="flex-1 flex items-center justify-center mx-auto sm:justify-between h-[100px]">
+            <Link href="/" onClick={handleClose}>
+              <div className="grid grid-cols-2 place-items-center h-full space-x-1">
+                <div className="w-12 h-12 bg-[#1A73E8] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-2xl">SE</span>
+                </div>
+                <span className="text-xl font-semibold text-black">Seom</span>
+              </div>
+            </Link>
+
+            {/* Desktop Menu */}
+            <div className="hidden sm:flex space-x-6 items-center">
+              {navDesktop.map(({ key, label, items }) => (
+                <div
+                  key={key}
+                  className="relative group"
+                  onMouseEnter={() => !isMobile && items && setOpenSubMenu(key)}
+                  onMouseLeave={() =>
+                    !isMobile && items && setOpenSubMenu(null)
+                  }
+                >
+                  {items ? (
+                    <button
+                      onClick={() => isMobile && toggleSubMenu(key)}
+                      className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-2 ${
+                        isActive(`/${key}`)
+                          ? "bg-[#1A73E8] text-white"
+                          : "text-black hover:text-[#1A73E8]"
+                      }`}
+                    >
+                      {label}
+                      <FaAngleDown size={18} />
+                    </button>
+                  ) : (
+                    <Link href={`/${key}`}>
+                      <span
+                        className={`px-3 py-2 rounded-md text-md font-medium ${
                           isActive(`/${key}`)
-                            ? "bg-[#1A73E8]"
-                            : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1A73E8]"
+                            ? "bg-[#1A73E8] text-white"
+                            : "text-black hover:text-[#1A73E8]"
                         }`}
                       >
                         {label}
-                        <FaAngleDown size={18} />
-                      </button>
-                    ) : (
-                      <Link href={`/${key}`}>
-                        <span
-                          className={`px-3 py-2 rounded-md text-md font-medium ${
-                            isActive(`/${key}`)
-                              ? "bg-[#1A73E8]"
-                              : "text-black transition-all duration-500 hover:bg-white/10 hover:text-[#1A73E8]"
-                          }`}
-                        >
-                          {label}
-                        </span>
-                      </Link>
-                    )}
+                      </span>
+                    </Link>
+                  )}
 
-                    {items && renderSubMenu(key, items)}
-                  </div>
-                ))}
-              </div>
+                  {items && renderSubMenu(key, items)}
+                </div>
+              ))}
             </div>
 
-            <div className="hidden sm:flex sm:ml-2 max-w-full">
+            {/* Search Bar */}
+            <div className="hidden sm:flex">
               <SearchInput />
             </div>
           </div>
@@ -277,74 +257,18 @@ const Navbar = () => {
                     exit="hidden"
                     className="pl-6 space-y-1 overflow-hidden"
                   >
-                    {menu === "home" && (
-                      <>
+                    {navDesktop
+                      .find((group) => group.key === menu)
+                      ?.items?.map((item) => (
                         <Link
+                          key={item.href}
                           onClick={handleClose}
-                          href="/home-page-1"
+                          href={item.href}
                           className="block py-1 text-black hover:text-[#1A73E8]"
                         >
-                          Home Page 1
+                          {item.label}
                         </Link>
-                        <Link
-                          onClick={handleClose}
-                          href="/home-page-2"
-                          className="block py-1 text-black hover:text-[#1A73E8]"
-                        >
-                          Home Page 2
-                        </Link>
-                        <Link
-                          onClick={handleClose}
-                          href="/home-page-3"
-                          className="block py-1 text-black hover:text-[#1A73E8]"
-                        >
-                          Home Page 3
-                        </Link>
-                      </>
-                    )}
-                    {menu === "pages" && (
-                      <>
-                        <Link
-                          onClick={handleClose}
-                          href="/about-us"
-                          className="block py-1 text-black hover:text-[#1A73E8]"
-                        >
-                          About Us
-                        </Link>
-                        <Link
-                          onClick={handleClose}
-                          href="/our-blogs"
-                          className="block py-1 text-black hover:text-[#1A73E8]"
-                        >
-                          Our Blogs
-                        </Link>
-                        <Link
-                          onClick={handleClose}
-                          href="/pricing-plan"
-                          className="block py-1 text-black hover:text-[#1A73E8]"
-                        >
-                          Pricing Plan
-                        </Link>
-                      </>
-                    )}
-                    {menu === "services" && (
-                      <>
-                        <Link
-                          onClick={handleClose}
-                          href="/our-services"
-                          className="block py-1 text-black hover:text-[#1A73E8]"
-                        >
-                          Our Services
-                        </Link>
-                        <Link
-                          onClick={handleClose}
-                          href="/our-projects"
-                          className="block py-1 text-black hover:text-[#1A73E8]"
-                        >
-                          Our Projects
-                        </Link>
-                      </>
-                    )}
+                      ))}
                   </motion.div>
                 )}
               </AnimatePresence>
