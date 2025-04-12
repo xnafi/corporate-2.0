@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import React from "react";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 type Project = {
   title: string;
@@ -51,8 +52,11 @@ const OurProjectPage1 = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="mb-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-          <h2 className="title-header-text">Our Recent Projects</h2>
-          <div className="flex gap-3 mt-4 md:mt-0">
+          <ScrollAnimation direction="left">
+            <h2 className="title-header-text">Our Recent Projects</h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="right" className="flex gap-3 mt-4 md:mt-0">
             {/* Prev Button */}
             <button
               className="custom-swiper-prev"
@@ -73,11 +77,11 @@ const OurProjectPage1 = () => {
                 <ArrowRight className="text-white" size={20} />
               </div>
             </button>
-          </div>
+          </ScrollAnimation>
         </div>
 
         {/* Swiper Carousel */}
-        <div className="relative">
+        <ScrollAnimation direction="down" className="relative">
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={15}
@@ -131,7 +135,7 @@ const OurProjectPage1 = () => {
           <div className="flex justify-center items-center mt-6">
             <div className="custom-swiper-pagination flex justify-center"></div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
