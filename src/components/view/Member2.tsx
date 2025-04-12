@@ -1,16 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
-import CountUp from "react-countup";
+import CountUp from "@/utils/countUp";
 
 const Member2 = () => {
-  const [startCount, setStartCount] = useState(false);
-
   return (
-    <section
-      className="bg-white px-4 sm:px-8 lg:px-16 py-12"
-      onMouseEnter={() => setStartCount(true)} 
-    >
+    <section className="bg-white px-4 sm:px-8 lg:px-16 py-12">
       {/* Title and Description */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 max-w-6xl mx-auto">
         <h2 className="text-3xl text-center items-center sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -18,8 +10,8 @@ const Member2 = () => {
           <span className="text-black">Reliability.</span>
         </h2>
         <p className="text-gray-600 md:w-1/2 mt-4 md:mt-0 text-center md:text-left">
-          Attaining wealth success hinges on receiving expert counsel and implementing
-          sound financial strategies for long-term prosperity.
+          Attaining wealth success hinges on receiving expert counsel and
+          implementing sound financial strategies for long-term prosperity.
         </p>
       </div>
 
@@ -28,7 +20,7 @@ const Member2 = () => {
         {/* Card 1 */}
         <div className="p-8 bg-gray-100 rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            {startCount && <CountUp start={0} end={20} duration={3} />}+
+            <CountUp from={0} end={20} duration={3} span="+" />
           </h3>
           <p className="text-gray-600 mt-2">Years of Excellence</p>
         </div>
@@ -36,7 +28,7 @@ const Member2 = () => {
         {/* Card 2 */}
         <div className="p-8 bg-gray-100 rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            {startCount && <CountUp start={0} end={1379} duration={3} separator="," />}+
+            <CountUp from={0} end={1379} duration={3} span="," />+
           </h3>
           <p className="text-gray-600 mt-2">Expert Members</p>
         </div>
@@ -44,7 +36,7 @@ const Member2 = () => {
         {/* Card 3 */}
         <div className="p-8 bg-gray-100 rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            {startCount && <CountUp start={0} end={72} duration={3} separator="," />}k
+            <CountUp from={0} end={72} duration={3} span="," />k
           </h3>
           <p className="text-gray-600 mt-2">Projects Completed</p>
         </div>

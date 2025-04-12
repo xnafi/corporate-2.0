@@ -70,7 +70,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       initial="initial"
       whileInView="animate"
       viewport={{ once: false, amount: 0.2 }}
-      className={className}
+      className={`${className} block overflow-hidden`}
     >
       {children}
     </motion.div>

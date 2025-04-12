@@ -8,7 +8,7 @@ const HappyCustomer: React.FC = () => {
         {/* Happy Customers */}
         <div className="w-full sm:w-auto md:text-start">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <CountUp from={0} to={120000} duration={2} span="+" />
+            <CountUp from={0} end={120000} duration={2} span="+" />
           </h2>
           <p className="text-gray-500 text-sm sm:text-base mt-2">
             Happy Customers
@@ -18,7 +18,7 @@ const HappyCustomer: React.FC = () => {
         {/* Expert Members */}
         <div className="w-full sm:w-auto md:text-start">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <CountUp from={0} to={1200} duration={2} span="+" />
+            <CountUp from={0} end={1200} duration={2} span="+" />
           </h2>
           <p className="text-gray-500 text-sm sm:text-base mt-2">
             Expert Members
@@ -28,7 +28,7 @@ const HappyCustomer: React.FC = () => {
         {/* Years Experience */}
         <div className="w-full sm:w-auto md:text-start">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <CountUp from={0} to={14} duration={2} span="+" />
+            <CountUp from={0} end={14} duration={2} span="+" />
           </h2>
           <p className="text-gray-500 text-sm sm:text-base mt-2">
             Years Experience

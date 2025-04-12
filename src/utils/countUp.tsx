@@ -12,7 +12,7 @@ import { useRef, useEffect, useState } from "react";
 
 interface CounterProps {
   from?: number;
-  to: number;
+  end: number;
   duration?: number;
   className?: string;
   span: string;
@@ -20,7 +20,7 @@ interface CounterProps {
 
 const CountUp: React.FC<CounterProps> = ({
   from = 0,
-  to,
+  end,
   duration = 2,
   className,
   span,
@@ -34,7 +34,7 @@ const CountUp: React.FC<CounterProps> = ({
 
   useEffect(() => {
     if (isInView) {
-      const controls = animate(count, to, { duration });
+      const controls = animate(count, end, { duration });
       const unsubscribe = rounded.on("change", (latest) =>
         setDisplayCount(latest)
       );
@@ -44,7 +44,7 @@ const CountUp: React.FC<CounterProps> = ({
         unsubscribe();
       };
     }
-  }, [count, duration, isInView, rounded, to]);
+  }, [count, duration, isInView, rounded, end]);
 
   return (
     <motion.span ref={ref} className={className}>
