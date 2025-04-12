@@ -1,8 +1,9 @@
 import CountUp from "@/utils/countUp";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 const HappyCustomer: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 lg:py-2">
+    <ScrollAnimation direction="popIn"  className="container mx-auto px-4 lg:py-2">
       <div className="flex flex-col md:flex-row justify-between items-center text-center gap-6 md:gap-16 lg:gap-20">
         {/* Happy Customers */}
         <div className="w-full sm:w-auto md:text-start">
@@ -34,7 +35,7 @@ const HappyCustomer: React.FC = () => {
           </p>
         </div>
       </div>
-    </div>
+    </ScrollAnimation>
   );
 };
 
