@@ -15,7 +15,7 @@ interface CounterProps {
   end: number;
   duration?: number;
   className?: string;
-  span: string;
+  span?: string;
 }
 
 const CountUp: React.FC<CounterProps> = ({
