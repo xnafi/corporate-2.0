@@ -1,11 +1,16 @@
 import Image from "next/image";
 import SecondaryButton from "../re-ui/SecondaryButton";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 const AboutUs = () => {
   return (
     <section className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4 overflow-hidden">
       {/* Left: Images Section */}
-      <div className="relative w-full md:w-1/2 flex flex-col sm:flex-row items-center gap-4">
+
+      <ScrollAnimation
+        direction="left"
+        className="relative w-full md:w-1/2 flex flex-col sm:flex-row items-center gap-4"
+      >
         {/* First Image (Tech Lab) */}
         <div className="w-full sm:w-1/2">
           <Image
@@ -34,10 +39,13 @@ const AboutUs = () => {
             <span className="text-base text-center">WINNER BEST AWARD</span>
           </div>
         </div>
-      </div>
+      </ScrollAnimation>
 
       {/* Right: Content Section */}
-      <div className="w-full md:w-1/2 space-y-3 md:pl-12 text-center md:text-left">
+      <ScrollAnimation
+        direction="right"
+        className="w-full md:w-1/2 space-y-3 md:pl-12 text-center md:text-left"
+      >
         <h3 className="text-sm text-[#1A73E8] uppercase font-semibold">
           About Us
         </h3>
@@ -64,7 +72,7 @@ const AboutUs = () => {
         <div className="flex justify-center md:justify-start">
           <SecondaryButton text=" About Us" withArrow href="/about-us" />
         </div>
-      </div>
+      </ScrollAnimation>
     </section>
   );
 };
