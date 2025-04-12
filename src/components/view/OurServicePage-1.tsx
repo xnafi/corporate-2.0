@@ -2,6 +2,7 @@ import { FaCog, FaEnvelope } from "react-icons/fa";
 import { MdOutlineVideoLibrary } from "react-icons/md";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import React, { JSX } from "react";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 type Service = {
   title: string;
@@ -38,42 +39,46 @@ const OurService: React.FC = () => {
   return (
     <section className="bg-gray-100">
       <div>
-        <div className="text-center">
-          <h2 className="title-header-text pt-8">Our Services</h2>
-        </div>
+        <ScrollAnimation direction="popIn">
+          <div className="text-center">
+            <h2 className="title-header-text pt-8">Our Services</h2>
+          </div>
+        </ScrollAnimation>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 container">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center sm:items-start text-center sm:text-left duration-300 ease-linear transition-transform transform hover:scale-105 hover:shadow-xl"
-            >
-              {/* Icon */}
+        <ScrollAnimation direction="popIn" delay={0.5}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 container">
+            {services.map((service, index) => (
               <div
-                className={`w-16 h-16 flex items-center justify-center rounded-full ${service.bgColor} mb-4`}
+                key={index}
+                className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center sm:items-start text-center sm:text-left duration-300 ease-linear transition-transform transform hover:scale-105 hover:shadow-xl"
               >
-                {service.icon}
+                {/* Icon */}
+                <div
+                  className={`w-16 h-16 flex items-center justify-center rounded-full ${service.bgColor} mb-4`}
+                >
+                  {service.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-700 text-sm md:text-base mb-4">
+                  {service.description}
+                </p>
+
+                {/* View More */}
+                <span className="text-black font-medium inline-flex items-center gap-2 hover:underline border-b-2 border-gray-400 pb-1">
+                  View More Details
+                  <IoIosArrowRoundForward className="text-2xl md:text-3xl" />
+                </span>
               </div>
-
-              {/* Title */}
-              <h3 className="text-xl md:text-2xl font-semibold mb-2">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-700 text-sm md:text-base mb-4">
-                {service.description}
-              </p>
-
-              {/* View More */}
-              <span className="text-black font-medium inline-flex items-center gap-2 hover:underline border-b-2 border-gray-400 pb-1">
-                View More Details
-                <IoIosArrowRoundForward className="text-2xl md:text-3xl" />
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
