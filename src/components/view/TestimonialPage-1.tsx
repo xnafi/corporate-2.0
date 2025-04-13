@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 type TestimonialType = {
   quote: string;
@@ -68,7 +69,7 @@ const Testimonial = () => {
     <section className="bg-gray-100 py-16 overflow-hidden mt-4">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 flex flex-col md:flex-row items-center">
         {/* Left Section */}
-        <div className="md:w-1/3 text-center lg:text-left mb-10 md:mb-0">
+        <ScrollAnimation direction="popIn" className="md:w-1/3 text-center lg:text-left mb-10 md:mb-0">
           <p className="text-[#1A73E8] uppercase text-sm font-semibold">
             Testimonial
           </p>
@@ -91,10 +92,10 @@ const Testimonial = () => {
               <FaArrowRight size={18} />
             </button>
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* Right Section (Carousel) */}
-        <div className="md:w-2/3 overflow-hidden w-full">
+        <ScrollAnimation direction="popIn" className="md:w-2/3 overflow-hidden w-full">
           <Swiper
             modules={[Navigation]}
             spaceBetween={15}
@@ -144,7 +145,7 @@ const Testimonial = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
