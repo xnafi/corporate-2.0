@@ -30,7 +30,7 @@ const ChooseUs: React.FC = () => {
         </div>
 
         {/* Right Section (Cards & Circle) */}
-        <ScrollAnimation direction="right" className="w-full lg:w-1/2 relative flex flex-col items-center lg:items-end mt-12 lg:mt-0">
+        <ScrollAnimation direction="popIn" className="w-full lg:w-1/2 relative flex flex-col items-center lg:items-end mt-12 lg:mt-0">
           {/* Background Circle (Now Responsive) */}
           <div className="absolute w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-gray-100 rounded-full -z-10"></div>
 

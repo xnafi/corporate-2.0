@@ -5,7 +5,8 @@ import Slider, { Settings } from "react-slick";
 import { FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React from "react";
+import ScrollAnimation from "@/utils/scrollAnimation";
+
 
 type TeamMember = {
   name: string;
@@ -77,7 +78,7 @@ const OurTeam: React.FC = () => {
 
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div className="text-center">
+      <ScrollAnimation direction="down" className="text-center">
         <h3 className="text-sm text-[#1A73E8] uppercase font-semibold">
           Our Team
         </h3>
@@ -88,7 +89,7 @@ const OurTeam: React.FC = () => {
         </p>
 
         {/* Slider */}
-        <div className="mt-10 mx-auto">
+        <ScrollAnimation direction="popIn" className="mt-10 mx-auto">
           <Slider {...settings}>
             {teamMembers.map((member, index) => (
               <div key={index} className="px-2 sm:px-4">
@@ -140,8 +141,8 @@ const OurTeam: React.FC = () => {
               </div>
             ))}
           </Slider>
-        </div>
-      </div>
+        </ScrollAnimation>
+      </ScrollAnimation>
     </section>
   );
 };
