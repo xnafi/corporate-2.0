@@ -48,7 +48,7 @@ const projects: Project[] = [
 
 const OurProjectPage1 = () => {
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-10 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="mb-8 flex flex-col md:flex-row items-center justify-between text-center md:text-left">

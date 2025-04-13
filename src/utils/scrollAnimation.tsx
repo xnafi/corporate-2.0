@@ -69,7 +69,7 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
       variants={slideVariants}
       initial="initial"
       whileInView="animate"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       className={`${className} block overflow-hidden`}
     >
       {children}

@@ -1,11 +1,12 @@
 import React from "react";
 import { FaUserTie, FaChartLine } from "react-icons/fa";
 import SecondaryButton from "../re-ui/SecondaryButton";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 const ChooseUs: React.FC = () => {
   return (
     <section className="container mx-auto px-4 py-10">
-      <div className="flex flex-col lg:flex-row items-center justify-between">
+      <ScrollAnimation direction="left" className="flex flex-col lg:flex-row items-center justify-between">
         {/* Left Section (Text + Button) */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h3 className="text-sm text-[#1A73E8] uppercase font-semibold">
@@ -29,7 +30,7 @@ const ChooseUs: React.FC = () => {
         </div>
 
         {/* Right Section (Cards & Circle) */}
-        <div className="w-full lg:w-1/2 relative flex flex-col items-center lg:items-end mt-12 lg:mt-0">
+        <ScrollAnimation direction="right" className="w-full lg:w-1/2 relative flex flex-col items-center lg:items-end mt-12 lg:mt-0">
           {/* Background Circle (Now Responsive) */}
           <div className="absolute w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-gray-100 rounded-full -z-10"></div>
 
@@ -63,8 +64,8 @@ const ChooseUs: React.FC = () => {
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </ScrollAnimation>
+      </ScrollAnimation>
     </section>
   );
 };
