@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Button from "../../re-ui/Button";
 
-const Banner2 = () => {
+const BannerPage2 = () => {
   return (
     <section className="relative flex flex-col md:flex-row items-center justify-between bg-gray-100 w-full -top-12 ">
       {/* Left Image */}
@@ -38,4 +38,4 @@ const Banner2 = () => {
   );
 };
 
-export default Banner2;
+export default BannerPage2;

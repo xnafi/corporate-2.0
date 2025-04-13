@@ -1,17 +1,26 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "@/components/shared/NavbarPage1-2";
 import Navbar2 from "./Navbar-2";
+import Navbar from "./NavbarPage1-2";
+import {  ReactElement } from "react";
 
+const NavbarWrapper = (): ReactElement => {
+  const pathname: string = usePathname();
 
-export default function NavbarWrapper() {
-  const pathname = usePathname();
+  let navbarComponent: ReactElement;
 
-  return (
-    <>
-      {/* Show Navbar2 only for /home2, otherwise show Navbar */}
-      {pathname === "/home-page-2" ? <Navbar2 /> : <Navbar />}
-    </>
-  );
-}
+  switch (pathname) {
+    case "/home-page-2":
+    case "/about-us-2":
+    case "/contact-us-2":
+      navbarComponent = <Navbar2 />;
+      break;
+    default:
+      navbarComponent = <Navbar />;
+  }
+
+  return <>{navbarComponent}</>;
+};
+
+export default NavbarWrapper;
