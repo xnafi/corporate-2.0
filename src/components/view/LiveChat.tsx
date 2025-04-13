@@ -1,9 +1,10 @@
+import ScrollAnimation from "@/utils/scrollAnimation";
 import { FaHeart, FaPhoneAlt, FaComments } from "react-icons/fa";
 
 const LiveChat = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+      <ScrollAnimation direction="popIn" className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
         {/* Help Section */}
         <div className="flex flex-col md:flex-row items-center text-center sm:text-start gap-4">
           <div className="w-12 h-12 flex items-center justify-center bg-[#1A73E8] text-white rounded-full">
@@ -54,7 +55,7 @@ const LiveChat = () => {
             </p>
           </div>
         </div>
-      </div>
+      </ScrollAnimation>
     </div>
   );
 };
