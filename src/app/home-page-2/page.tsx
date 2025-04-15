@@ -1,5 +1,5 @@
 import AboutUs2 from "@/components/view/AboutUs2";
-import Banner2 from "@/components/view/banner/BannerPage-2";
+import Banner2 from "@/components/view/banner/Banner-page-2";
 import Feedback2 from "@/components/view/Feedback2";
 import Inquiries from "@/components/view/Inquiries";
 import LatestNews from "@/components/view/LatestNews";
@@ -10,7 +10,7 @@ import OurWork from "@/components/view/OurWork";
 
 export default function Home2() {
   return (
-    <div className="container flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
       <Navbar2 />
       <Banner2 />
       <OurService2 />

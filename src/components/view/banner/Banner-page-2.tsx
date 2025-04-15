@@ -4,7 +4,7 @@ import Button from "../../re-ui/Button";
 
 const BannerPage2 = () => {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between bg-gray-100 w-full -top-12 ">
+    <section className="flex flex-col md:flex-row items-center justify-between bg-gray-100 w-full -top-12 h-full lg:h-screen container2">
       {/* Left Image */}
       <div className="w-full md:w-1/2 flex justify-center md:justify-start">
         <Image
