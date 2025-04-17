@@ -5,7 +5,7 @@ import CollaborateWork from "@/components/view/CollaborateWork";
 import CurrentNews from "@/components/view/CurrentNews";
 import Feedback2 from "@/components/view/Feedback2";
 import HappyCustomer from "@/components/view/HappyCustomer";
-import OurService3 from "@/components/view/OurService3";
+import OurService3 from "@/components/view/our-services/OurService3";
 import Image from "next/image";
 
 const AboutUs2 = () => {

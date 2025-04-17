@@ -3,12 +3,14 @@ import { MdOutlineVideoLibrary } from "react-icons/md";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import React, { JSX } from "react";
 import ScrollAnimation from "@/utils/scrollAnimation";
+import Link from "next/link";
 
 type Service = {
   title: string;
   description: string;
   icon: JSX.Element;
   bgColor: string;
+  navigate: string;
 };
 
 const services: Service[] = [
@@ -18,6 +20,7 @@ const services: Service[] = [
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
     icon: <FaCog className="text-white text-3xl" />,
     bgColor: "bg-orange-500",
+    navigate: "/service/digital-marketing",
   },
   {
     title: "Content Marketing",
@@ -25,6 +28,7 @@ const services: Service[] = [
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
     icon: <MdOutlineVideoLibrary className="text-white text-3xl" />,
     bgColor: "bg-purple-500",
+    navigate: "/service/content-marketing",
   },
   {
     title: "Email Marketing",
@@ -32,6 +36,7 @@ const services: Service[] = [
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
     icon: <FaEnvelope className="text-white text-3xl" />,
     bgColor: "bg-green-500",
+    navigate: "/service/ui-ux-design",
   },
 ];
 
@@ -71,10 +76,10 @@ const OurService: React.FC = () => {
                 </p>
 
                 {/* View More */}
-                <span className="text-black font-medium inline-flex items-center gap-2 hover:underline border-b-2 border-gray-400 pb-1">
+                <Link href={service.navigate} className="text-black font-medium inline-flex items-center gap-2 border-b-2 border-gray-400 pb-1">
                   View More Details
                   <IoIosArrowRoundForward className="text-2xl md:text-3xl" />
-                </span>
+                </Link>
               </div>
             ))}
           </div>

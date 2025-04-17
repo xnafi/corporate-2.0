@@ -6,7 +6,7 @@ import ContactUs from "@/components/view/ContactUs";
 import HappyCustomer from "@/components/view/HappyCustomer";
 import LiveChat from "@/components/view/LiveChat";
 import OurProject from "@/components/view/OurProjectPage-1";
-import OurService from "@/components/view/OurServicePage-1";
+import OurService from "@/components/view/our-services/OurServicePage-1";
 import OurTeam from "@/components/view/OurTeam";
 import Testimonial from "@/components/view/TestimonialPage-1";
 
