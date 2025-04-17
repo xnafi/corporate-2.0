@@ -109,7 +109,7 @@ const Navbar2 = () => {
           </li>
 
           <li>
-            <Link href="/contact" className="hover:text-black transition">
+            <Link href="/contact-us-2" className="hover:text-black transition">
               Contact Us
             </Link>
           </li>
