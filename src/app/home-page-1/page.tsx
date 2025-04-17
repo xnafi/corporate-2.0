@@ -3,7 +3,6 @@ import Banner from "@/components/view/banner/Banner-page-1";
 import ChooseUs from "@/components/view/WhyChooseUsPage-1";
 import CollaborateWork from "@/components/view/CollaborateWork";
 import ContactUs from "@/components/view/ContactUs";
-import HappyCustomer from "@/components/view/HappyCustomer";
 import LiveChat from "@/components/view/LiveChat";
 import OurProject from "@/components/view/OurProjectPage-1";
 import OurService from "@/components/view/our-services/OurServicePage-1";
@@ -16,7 +15,6 @@ export default function HomePage() {
       <Banner />
       <OurService />
       <AboutUs />
-      <HappyCustomer />
       <OurProject />
       <ChooseUs />
       <OurTeam />

@@ -6,8 +6,9 @@ import {
   FaGlobe,
   FaClipboardList,
 } from "react-icons/fa";
-import ServiceCard from "../../re-ui/ServiceCard";
+
 import Link from "next/link";
+import ServiceCard from "@/components/re-ui/ServiceCard";
 
 const services = [
   {
