@@ -77,15 +77,13 @@ const services: Service[] = [
 
 const OurServicePage2 = () => {
   return (
-    <section className="container h-full lg:h-screen mx-auto">
+    <section className="container h-full lg:h-screen mx-auto grid place-items-center">
       <div>
         <ScrollAnimation
           direction="popIn"
           className="title-header-text text-gray-900 text-center mb-12"
         >
-          <h2>
-            Our services
-          </h2>
+          <h2>Our services</h2>
         </ScrollAnimation>
 
         <ScrollAnimation

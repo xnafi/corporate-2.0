@@ -42,7 +42,7 @@ body {
     @apply text-3xl md:text-4xl font-bold;
   }
   .primaryColor {
-    @apply text-[#1a73e8];
+    @apply text-[#1a73e8] bg-[#1a73e8];
   }
 }
 
