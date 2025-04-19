@@ -1,9 +1,17 @@
 "use client";
-import { useState } from "react";
+import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 import { HiArrowUpRight } from "react-icons/hi2";
 
-const newsItems = [
+interface NewsItem {
+  image: string;
+  category: string;
+  title: string;
+  author: string;
+  date: string;
+}
+
+const newsItems: NewsItem[] = [
   {
     image: "https://i.postimg.cc/gJWKHxTP/airfocus-JVd-Nm-AFDi-I4-unsplash.jpg",
     category: "Web Design",
@@ -12,14 +20,16 @@ const newsItems = [
     date: "05 Oct 2024",
   },
   {
-    image: "https://i.postimg.cc/rwRC6G6k/business-advisor-giving-his-opinion.jpg",
+    image:
+      "https://i.postimg.cc/rwRC6G6k/business-advisor-giving-his-opinion.jpg",
     category: "Marketing",
     title: "Tactics to Improve Content Engagement",
     author: "Jain Smith",
     date: "05 Oct 2024",
   },
   {
-    image: "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
+    image:
+      "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
     category: "Agency",
     title: "Innovative ways to Captivate your Audience.",
     author: "Jain Smith",
@@ -28,23 +38,22 @@ const newsItems = [
 ];
 
 const LatestNews = () => {
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-
   return (
-    <section className="px-4 sm:px-8 lg:px-16 py-12 bg-white">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900">Latest News</h2>
-        <p className="para-text mt-2 mb-10">
-          Find the most up-to-date news and articles that offer insights into various topics.
-        </p>
+    <section className="bg-white container">
+      <div className=" mx-auto text-center">
+        <ScrollAnimation direction="left"><h2 className="text-4xl font-bold text-gray-900">Latest News</h2></ScrollAnimation>
+        <ScrollAnimation direction="right"> <p className="para-text mt-2 mb-10">
+          Find the most up-to-date news and articles that offer insights into
+          various topics.
+        </p></ScrollAnimation>
+        
+       
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ScrollAnimation direction="down" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {newsItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300"
-              onMouseEnter={() => setHoverIndex(index)}
-              onMouseLeave={() => setHoverIndex(null)}
+              className="group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300"
             >
               <div className="relative">
                 {/* Image */}
@@ -56,17 +65,9 @@ const LatestNews = () => {
                   className="w-full h-auto object-cover rounded-t-2xl"
                 />
 
-                {/* Hover Effect */}
-                <div
-                  className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-                    hoverIndex === index ? "bg-black/50 opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <div
-                    className={`w-16 h-16 flex items-center justify-center rounded-full bg-lime-500 transition-all duration-300 ${
-                      hoverIndex === index ? "scale-100 opacity-100" : "scale-0 opacity-0"
-                    }`}
-                  >
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-1000 ease-in-out">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-full bg-lime-500 transform scale-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
                     <HiArrowUpRight className="text-white text-2xl" />
                   </div>
                 </div>
@@ -82,11 +83,13 @@ const LatestNews = () => {
                 <p className="text-gray-500 text-sm">
                   {item.author} / {item.date}
                 </p>
-                <h3 className="text-lg font-semibold text-gray-900 mt-2">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mt-2">
+                  {item.title}
+                </h3>
               </div>
             </div>
           ))}
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
