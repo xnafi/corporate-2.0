@@ -41,11 +41,11 @@ body {
   .title-header-text {
     @apply text-3xl md:text-4xl font-bold;
   }
+  .primaryColor {
+    @apply text-[#1a73e8];
+  }
 }
 
 .text_head {
   line-height: 5rem;
-}
-.primary_color {
-  color: #1a73e8;
 }

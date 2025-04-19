@@ -6,9 +6,13 @@ interface ServiceCardProps {
   description: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  icon,
+  title,
+  description,
+}) => {
   return (
-    <div className="group p-6 border rounded-xl shadow-sm hover:bg-lime-400 transition duration-300 cursor-pointer">
+    <div className="group p-6 border rounded-xl shadow-sm hover:bg-[#1a73e8] transition duration-500 cursor-pointer hover:scale-105">
       <div className="flex items-center gap-4">
         <div className="p-3 bg-gray-100 rounded-full group-hover:bg-black transition duration-300">
           {icon}
@@ -17,7 +21,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
           {title}
         </h3>
       </div>
-      <p className="mt-20 text-gray-700 group-hover:text-white transition duration-300">{description}</p>
+      <p className="mt-20 text-primaryColor group-hover:text-white transition duration-300">
+        {description}
+      </p>
     </div>
   );
 };

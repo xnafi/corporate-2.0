@@ -8,8 +8,19 @@ import {
 } from "react-icons/fa";
 import ServiceCard from "../../re-ui/ServiceCard";
 import Link from "next/link";
+import { ReactNode } from "react";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
-const services = [
+// Define a type for each service
+type Service = {
+  title: string;
+  slug: string;
+  description: string;
+  icon: ReactNode;
+};
+
+// Array of services
+const services: Service[] = [
   {
     title: "UI/UX Design",
     slug: "ui-ux-design",
@@ -66,17 +77,25 @@ const services = [
 
 const OurServicePage2 = () => {
   return (
-    <section className="bg-white container">
+    <section className="container h-full lg:h-screen mx-auto">
       <div>
-        <h2 className="title-header-text text-gray-900 text-center mb-12">
-          Our Services
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ScrollAnimation
+          direction="popIn"
+          className="title-header-text text-gray-900 text-center mb-12"
+        >
+          <h2>
+            
+          </h2>
+        </ScrollAnimation>
+
+        <ScrollAnimation
+          direction="popIn"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {services.map((service, index) => (
             <Link
               href={`/service/${service.slug}`}
               key={index}
-              
               className="cursor-pointer"
             >
               <ServiceCard
@@ -86,7 +105,7 @@ const OurServicePage2 = () => {
               />
             </Link>
           ))}
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
