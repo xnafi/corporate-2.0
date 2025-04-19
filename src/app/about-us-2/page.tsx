@@ -1,6 +1,6 @@
 "use client";
 
-import AboutUs3 from "@/components/view/AboutUs3";
+import AboutUs3 from "@/components/view/about-us/AboutUsPage-3";
 import CollaborateWork from "@/components/view/CollaborateWork";
 import CurrentNews from "@/components/view/CurrentNews";
 import Feedback2 from "@/components/view/Feedback2";

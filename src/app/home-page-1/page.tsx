@@ -1,6 +1,6 @@
-import AboutUs from "@/components/view/AboutUs";
 import Banner from "@/components/view/banner/Banner-page-1";
 import ChooseUs from "@/components/view/WhyChooseUsPage-1";
+import AboutUsPage1 from "../../components/view/about-us/AboutUsPage-1";
 import CollaborateWork from "@/components/view/CollaborateWork";
 import ContactUs from "@/components/view/ContactUs";
 import LiveChat from "@/components/view/LiveChat";
@@ -14,7 +14,7 @@ export default function HomePage() {
     <div>
       <Banner />
       <OurService />
-      <AboutUs />
+      <AboutUsPage1 />
       <OurProject />
       <ChooseUs />
       <OurTeam />

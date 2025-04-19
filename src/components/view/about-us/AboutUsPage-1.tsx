@@ -1,7 +1,8 @@
 import Image from "next/image";
-import SecondaryButton from "../re-ui/SecondaryButton";
+import SecondaryButton from "../../re-ui/SecondaryButton";
 import ScrollAnimation from "@/utils/scrollAnimation";
-import HappyCustomer from "./HappyCustomer";
+import HappyCustomer from "../HappyCustomer";
+
 
 const AboutUs = () => {
   return (
