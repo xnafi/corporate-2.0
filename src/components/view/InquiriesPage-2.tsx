@@ -1,12 +1,11 @@
-"use client";
-
+import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 
 const Inquiries = () => {
   return (
-    <>
+    <ScrollAnimation direction="popIn" className="relative flex flex-col md:flex-row items-center primaryColor !text-white w-full">
       {/* Main Section */}
-      <section className="relative flex flex-col md:flex-row items-center w-full bg-[#9c5833] text-white px-6 py-16 overflow-hidden md:px-12 lg:px-16">
+      <section className="container w-full">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -19,7 +18,7 @@ const Inquiries = () => {
         </div>
 
         {/* Content Section */}
-        <div className="relative flex flex-col md:flex-row w-full max-w-6xl mx-auto items-center">
+        <div className="relative flex flex-col md:flex-row w-full  mx-auto items-center">
           {/* Left Content */}
           <div className="w-full md:w-2/3 text-center md:text-left ">
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -41,7 +40,7 @@ const Inquiries = () => {
           </div>
         </div>
       </section>
-    </>
+    </ScrollAnimation>
   );
 };
 
