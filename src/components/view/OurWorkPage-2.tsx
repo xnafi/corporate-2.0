@@ -1,3 +1,4 @@
+import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import { HiArrowUpRight } from "react-icons/hi2";
@@ -40,11 +41,16 @@ const OurWork = () => {
   return (
     <section className="bg-white w-full">
       <div className="container mx-auto text-center">
-        <h2 className="title-header-text text-gray-900 mb-10">
-          Our Recent Work
-        </h2>
+        <ScrollAnimation direction="popIn">
+          <h2 className="title-header-text text-gray-900 mb-10">
+            Our Recent Work
+          </h2>
+        </ScrollAnimation>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <ScrollAnimation
+          direction="popIn"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"
+        >
           {workItems.map((item, index) => (
             <div
               key={index}
@@ -74,7 +80,7 @@ const OurWork = () => {
               </div>
             </div>
           ))}
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
