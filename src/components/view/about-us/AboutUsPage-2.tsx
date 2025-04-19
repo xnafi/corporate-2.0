@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
 import SecondaryButton from "@/components/re-ui/SecondaryButton";
-import { Fa42Group } from "react-icons/fa6";
 import ScrollAnimation from "@/utils/scrollAnimation";
 
 const AboutUs2 = () => {
