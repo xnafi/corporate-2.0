@@ -5,57 +5,79 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import FeedbackCard from "../re-ui/FeedbackCard";
+import ScrollAnimation from "@/utils/scrollAnimation";
+import SecondaryButton from "../re-ui/SecondaryButton";
 
+interface FeedbackItem {
+  id: number;
+  name: string;
+  country: string;
+  image: string;
+  feedback: string;
+  rating: number;
+}
 
-const feedbacks = [
+const feedbacks: FeedbackItem[] = [
   {
     id: 1,
     name: "Stefan Jackson Jong",
-    country: "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
+    country:
+      "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
     image: "https://i.postimg.cc/L8XL9VzF/photo-1633332755192-727a05c4013d.jpg",
-    feedback: "As a resource-constrained consultancy, we were reluctant to opt for one-size-fits-all marketing packages.",
+    feedback:
+      "As a resource-constrained consultancy, we were reluctant to opt for one-size-fits-all marketing packages.",
     rating: 5,
   },
   {
     id: 2,
     name: "Jackson Jong",
-    country: "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
+    country:
+      "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
     image: "https://i.postimg.cc/L8XL9VzF/photo-1633332755192-727a05c4013d.jpg",
-    feedback: "Due to limited marketing resources, our consultancy was reluctant to engage agencies providing generic service packages.",
+    feedback:
+      "Due to limited marketing resources, our consultancy was reluctant to engage agencies providing generic service packages.",
     rating: 5,
   },
   {
     id: 3,
     name: "Emily Johnson",
-    country: "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
+    country:
+      "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
     image: "https://i.postimg.cc/L8XL9VzF/photo-1633332755192-727a05c4013d.jpg",
-    feedback: "The marketing strategies provided by the agency helped us scale our business to the next level.",
+    feedback:
+      "The marketing strategies provided by the agency helped us scale our business to the next level.",
     rating: 5,
   },
   {
     id: 4,
     name: "Michael Smith",
-    country: "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
+    country:
+      "https://i.postimg.cc/mgvDv3jw/simple-canada-flag-isolated-on-white-background-vector.jpg",
     image: "https://i.postimg.cc/L8XL9VzF/photo-1633332755192-727a05c4013d.jpg",
-    feedback: "We appreciated the personalized approach and innovative ideas that helped our business grow.",
+    feedback:
+      "We appreciated the personalized approach and innovative ideas that helped our business grow.",
     rating: 4,
   },
 ];
 
 const Feedback2 = () => {
   return (
-    <div className="px-4 sm:px-8 lg:px-16 py-12 overflow-hidden max-w-full">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-full">
+      <div className="container space-y-4">
         {/* Title & Button Section */}
-        <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:text-left mb-8">
-          <h2 className="title-header-text text-gray-900">Customer Feedback</h2>
-          <button className="px-6 py-2 bg-lime-500 text-white rounded-full shadow-md hover:bg-lime-600 transition mt-4 lg:mt-0">
-            View More →
-          </button>
+        <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:text-left space-y-3 lg:space-y-0">
+          <ScrollAnimation direction="left">
+            <h2 className="title-header-text text-gray-900">
+              Customer Feedback
+            </h2>
+          </ScrollAnimation>
+          <ScrollAnimation direction="right">
+            <SecondaryButton text="View More" withArrow />
+          </ScrollAnimation>
         </div>
 
         {/* Swiper Slider Container */}
-        <div className="relative">
+        <ScrollAnimation direction="down" className="relative">
           <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={20}
@@ -71,7 +93,7 @@ const Feedback2 = () => {
           >
             {feedbacks.map((feedback) => (
               <SwiperSlide key={feedback.id}>
-                <FeedbackCard {...feedback} /> 
+                <FeedbackCard {...feedback} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -92,7 +114,7 @@ const Feedback2 = () => {
               }
             }
           `}</style>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   );

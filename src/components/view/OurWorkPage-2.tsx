@@ -42,19 +42,19 @@ const OurWork = () => {
     <section className="bg-white w-full">
       <div className="container mx-auto text-center">
         <ScrollAnimation direction="popIn">
-          <h2 className="title-header-text text-gray-900 mb-10">
+          <h2 className="title-header-text text-gray-900 mb-2 lg:mb-10">
             Our Recent Work
           </h2>
         </ScrollAnimation>
 
         <ScrollAnimation
           direction="popIn"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10 py-4 overflow-visible"
         >
           {workItems.map((item, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-1000"
+              className="group bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-1000"
             >
               <div className="relative">
                 <Image

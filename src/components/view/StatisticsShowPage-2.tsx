@@ -24,7 +24,7 @@ const Member2 = () => {
         {/* Card 1 */}
         <div className="w-full bg-gray-100 p-7 mx-auto text-center rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            <CountUp from={0} end={20} duration={3} span="+" />
+            <CountUp from={0} end={20} duration={2} span="+" />
           </h3>
           <p className="text-gray-600 mt-2">Years of Excellence</p>
         </div>
@@ -32,7 +32,7 @@ const Member2 = () => {
         {/* Card 2 */}
         <div className="w-full bg-gray-100 p-7 mx-auto text-center rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            <CountUp from={0} end={1379} duration={3} span="+" />
+            <CountUp from={0} end={1379} duration={2} span="+" />
           </h3>
           <p className="text-gray-600 mt-2">Expert Members</p>
         </div>
@@ -40,7 +40,7 @@ const Member2 = () => {
         {/* Card 3 */}
         <div className="w-full bg-gray-100 p-7 mx-auto text-center rounded-xl shadow-md">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
-            <CountUp from={0} end={72} duration={3} span="k" />
+            <CountUp from={0} end={72} duration={2} span="k" />
           </h3>
           <p className="text-gray-600 mt-2">Projects Completed</p>
         </div>
