@@ -4,7 +4,7 @@ import AboutUsPage1 from "../../components/view/about-us/AboutUsPage-1";
 import CollaborateWork from "@/components/view/CollaborateWork";
 import ContactUs from "@/components/view/contact-us/ContactUsPage-1";
 import LiveChat from "@/components/view/LiveChat";
-import OurProject from "@/components/view/OurProjectPage-1";
+import OurProject from "@/components/view/Project/OurProjectPage-1";
 import OurService from "@/components/view/our-services/OurServicePage-1";
 import OurTeam from "@/components/view/OurTeam";
 import Testimonial from "@/components/view/TestimonialPage-1";

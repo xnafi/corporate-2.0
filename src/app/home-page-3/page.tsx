@@ -1,15 +1,15 @@
 import BannerThree from "@/components/view/banner/Banner-page-3";
-import ContactUs3 from "@/components/view/ContactUs3";
+import ContactUs3 from "@/components/view/contact-us/ContactUs3";
 import DigitalResource from "@/components/view/DigitalResource";
 import Feedback2 from "@/components/view/FeedBackPage-2";
 import LatestNewsNew from "@/components/view/LatestNewsNew";
-import OurProjectNewly from "@/components/view/OurProjectNewly";
+import OurProjectNewly from "@/components/view/Project/OurProjectNewlyPage-3";
 import OurService2 from "@/components/view/our-services/OurServicePage-2";
 import TotalCustomer from "@/components/view/TotalCustomerPage-3";
 
 export default function Home3() {
   return (
-    <div className="container flex flex-col justify-center items-center overflow-hidden">
+    <div className="flex flex-col justify-center items-center overflow-hidden">
       <BannerThree />
       <TotalCustomer />
       <OurService2 />
