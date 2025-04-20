@@ -5,11 +5,11 @@ import Feedback2 from "@/components/view/FeedBackPage-2";
 import LatestNewsNew from "@/components/view/LatestNewsNew";
 import OurProjectNewly from "@/components/view/OurProjectNewly";
 import OurService2 from "@/components/view/our-services/OurServicePage-2";
-import TotalCustomer from "@/components/view/TotalCustomer";
+import TotalCustomer from "@/components/view/TotalCustomerPage-3";
 
 export default function Home3() {
   return (
-    <div className="container flex flex-col justify-center items-center">
+    <div className="container flex flex-col justify-center items-center overflow-hidden">
       <BannerThree />
       <TotalCustomer />
       <OurService2 />
