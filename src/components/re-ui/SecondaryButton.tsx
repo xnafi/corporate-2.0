@@ -21,7 +21,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   onClick,
 }) => {
   const baseClasses =
-    "cursor-pointer font-semibold overflow-hidden relative z-100 border border-green-500 group px-8 py-3.5 rounded-md flex items-center";
+    "cursor-pointer xl:uppercase font-semibold overflow-hidden relative z-100 border border-green-500 group px-8 py-3.5 rounded-md flex items-center";
 
   const backgroundEffect = (
     <>

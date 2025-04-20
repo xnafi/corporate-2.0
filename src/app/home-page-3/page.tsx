@@ -1,4 +1,4 @@
-import BannerThree from "@/components/view/banner/BannerThree";
+import BannerThree from "@/components/view/banner/Banner-page-3";
 import ContactUs3 from "@/components/view/ContactUs3";
 import DigitalResource from "@/components/view/DigitalResource";
 import Feedback2 from "@/components/view/FeedBackPage-2";

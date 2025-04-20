@@ -2,10 +2,9 @@
 
 import ContactUsEmail from "@/components/re-ui/ContactUsEmail";
 import CollaborateWork from "@/components/view/CollaborateWork";
-import ContactUs from "@/components/view/ContactUs";
+import ContactUs from "@/components/view/contact-us/ContactUsPage-1";
 
 import Image from "next/image";
-
 
 const ContactUs4 = () => {
   return (
@@ -20,9 +19,7 @@ const ContactUs4 = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="bnr-header-text">
-            Contact Us
-          </h1>
+          <h1 className="bnr-header-text">Contact Us</h1>
           <p className="banner-para-text">Home / Pages / Contact Us</p>
         </div>
       </div>

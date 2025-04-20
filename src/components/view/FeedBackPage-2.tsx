@@ -62,7 +62,7 @@ const feedbacks: FeedbackItem[] = [
 
 const Feedback2 = () => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <div className="container space-y-4">
         {/* Title & Button Section */}
         <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:text-left space-y-3 lg:space-y-0">

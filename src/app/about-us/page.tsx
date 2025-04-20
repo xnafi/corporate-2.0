@@ -2,7 +2,7 @@
 
 import AboutUsSpecialists from "@/components/view/AboutUsSpecialists";
 import CollaborateWork from "@/components/view/CollaborateWork";
-import ContactUs from "@/components/view/ContactUs";
+import ContactUs from "@/components/view/contact-us/ContactUsPage-1";
 import Feedback2 from "@/components/view/FeedBackPage-2";
 import LiveChat from "@/components/view/LiveChat";
 import OurService from "@/components/view/our-services/OurServicePage-1";
