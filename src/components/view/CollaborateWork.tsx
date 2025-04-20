@@ -1,34 +1,24 @@
-/* eslint-disable react/no-unescaped-entities */
-"use client";
-
-import { useState, useEffect } from "react";
+'use client'
+import { useRef } from "react";
 import Image from "next/image";
 import { FaPlay, FaTimes } from "react-icons/fa";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 const CollaborateWork = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef<HTMLDialogElement>(null);
 
-  // Close modal when pressing the 'Escape' key
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setIsOpen(false);
-      }
-    };
+  const openModal = () => {
+    modalRef.current?.showModal();
+  };
 
-    if (isOpen) {
-      document.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.removeEventListener("keydown", handleKeyDown);
-    }
-
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
+  const closeModal = () => {
+    modalRef.current?.close();
+  };
 
   return (
-    <>
+    <ScrollAnimation direction="popIn" className="bg-[#1A73E8]/90 text-white overflow-hidden">
       {/* Main Section */}
-      <section className="relative flex flex-col md:flex-row items-center w-full bg-[#1A73E8]/90 text-white px-6 py-16 overflow-hidden md:px-12 lg:px-16">
+      <div className="relative flex flex-col md:flex-row items-center w-full container">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -36,12 +26,12 @@ const CollaborateWork = () => {
             alt="Creative People Working"
             layout="fill"
             objectFit="cover"
-            className="opacity-50  blur-sm"
+            className="opacity-50 blur-sm"
           />
         </div>
 
         {/* Content Section */}
-        <div className="relative flex flex-col md:flex-row w-full max-w-7xl mx-auto items-center">
+        <div className="relative flex flex-col md:flex-row w-full mx-auto items-center">
           {/* Left Content */}
           <div className="w-full md:w-2/3 text-center md:text-left">
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -55,9 +45,9 @@ const CollaborateWork = () => {
           </div>
 
           {/* Right Side - Watch Video Button */}
-          <div className="w-full md:w-1/3 flex justify-center md:justify-end mt-8 md:mt-0">
+          <div className="w-full flex justify-center md:justify-end mt-8 md:mt-0">
             <button
-              onClick={() => setIsOpen(true)}
+              onClick={openModal}
               className="relative w-24 h-24 md:w-32 md:h-32 group flex items-center justify-center rounded-full bg-white text-black hover:text-white hover:bg-[#1A73E8] duration-500 shadow-lg cursor-pointer transition-transform transform hover:scale-110"
             >
               <FaPlay className="text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
@@ -67,41 +57,40 @@ const CollaborateWork = () => {
             </button>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Video Popup Modal */}
-      {isOpen && (
+      {/* Video Modal using <dialog> */}
+      <dialog
+        ref={modalRef}
+        className="backdrop:bg-black/70 p-0 rounded-lg overflow-hidden w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%]"
+        onClick={closeModal}
+      >
         <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-          onClick={() => setIsOpen(false)} // Close when clicking outside
+          className="relative bg-white p-4"
+          onClick={(e) => e.stopPropagation()}
         >
-          <div
-            className="relative w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%] bg-white p-4 rounded-lg shadow-lg"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+          {/* Close Button */}
+          <button
+            onClick={closeModal}
+            className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
           >
-            {/* Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
-            >
-              <FaTimes size={24} />
-            </button>
+            <FaTimes size={24} />
+          </button>
 
-            {/* Video Player */}
-            <div className="relative w-full pt-[56.25%]">
-              <iframe
-                className="absolute inset-0 w-full h-full rounded-md"
-                src="https://www.youtube.com/embed/lmwmg4pwdBc"
-                title="Collaborate Video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
+          {/* Video Player */}
+          <div className="relative w-full pt-[56.25%]">
+            <iframe
+              className="absolute inset-0 w-full h-full rounded-md"
+              src="https://www.youtube.com/embed/lmwmg4pwdBc"
+              title="Collaborate Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
-      )}
-    </>
+      </dialog>
+    </ScrollAnimation>
   );
 };
 
