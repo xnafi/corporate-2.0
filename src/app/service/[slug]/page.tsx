@@ -7,7 +7,7 @@ import ServicesOfferings from "@/components/view/ServicesOfferings";
 import PricingCard from "@/components/re-ui/PricingCard";
 import { HiStar, HiOutlineFilter } from "react-icons/hi";
 import { FaDiamond } from "react-icons/fa6";
-import CollaborateWork from "@/components/view/CollaborateWork";
+import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 
 const servicesData = {
   "ui-ux-design": {
@@ -17,23 +17,28 @@ const servicesData = {
   },
   "digital-marketing": {
     title: "Digital Marketing",
-    description: "Engaging audiences through innovative online marketing tactics.",
+    description:
+      "Engaging audiences through innovative online marketing tactics.",
   },
   "content-marketing": {
     title: "Content Marketing",
-    description: "Driving customer engagement with strategic content creation efforts.",
+    description:
+      "Driving customer engagement with strategic content creation efforts.",
   },
   "product-evaluation": {
     title: "Product Evaluation",
-    description: "Conducting assessments to identify strengths and weaknesses of products.",
+    description:
+      "Conducting assessments to identify strengths and weaknesses of products.",
   },
   "search-engine-ranking": {
     title: "Search Engine Ranking",
-    description: "Increasing organic traffic by optimizing search engine rankings strategically.",
+    description:
+      "Increasing organic traffic by optimizing search engine rankings strategically.",
   },
   "digital-social-campaigns": {
     title: "Digital Social Campaigns",
-    description: "Driving engagement with innovative digital social marketing strategies.",
+    description:
+      "Driving engagement with innovative digital social marketing strategies.",
   },
 };
 
@@ -41,7 +46,8 @@ const SingleService = () => {
   const { slug } = useParams();
   const service = servicesData[slug as keyof typeof servicesData];
 
-  if (!service) return <p className="text-center text-red-500">Service not found</p>;
+  if (!service)
+    return <p className="text-center text-red-500">Service not found</p>;
 
   const pricingOptions = [
     {
@@ -125,10 +131,15 @@ const SingleService = () => {
       {/* Pricing Section */}
       <div className="mt-4 sm:mt-6">
         <section className="text-center py-4">
-          <p className="text-orange-500 font-medium text-sm uppercase tracking-wide">Pricing Plan</p>
-          <h2 className="text-2xl sm:text-4xl font-bold mt-2">Choose Your Best Option</h2>
+          <p className="text-orange-500 font-medium text-sm uppercase tracking-wide">
+            Pricing Plan
+          </p>
+          <h2 className="text-2xl sm:text-4xl font-bold mt-2">
+            Choose Your Best Option
+          </h2>
           <p className="text-sm sm:text-base mt-3 mb-3">
-            Take a look at our comprehensive pricing plan to find the best option that suits your needs.
+            Take a look at our comprehensive pricing plan to find the best
+            option that suits your needs.
           </p>
         </section>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import AboutUsSpecialists from "@/components/view/AboutUsSpecialists";
-import CollaborateWork from "@/components/view/CollaborateWork";
+import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import ContactUs from "@/components/view/contact-us/ContactUsPage-1";
 import Feedback2 from "@/components/view/FeedBackPage-2";
 import LiveChat from "@/components/view/LiveChat";

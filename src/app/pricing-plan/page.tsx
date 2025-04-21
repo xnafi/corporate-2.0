@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { HiStar, HiOutlineFilter } from "react-icons/hi";
 import { FaDiamond } from "react-icons/fa6";
-import CollaborateWork from "@/components/view/CollaborateWork";
+import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import PricingCard from "@/components/re-ui/PricingCard";
 
 const PricingPlan = () => {
@@ -73,12 +73,8 @@ const PricingPlan = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="bnr-header-text">
-            Pricing Plan
-          </h1>
-          <p className="banner-para-text">
-            Home / Pages / Pricing Plan
-          </p>
+          <h1 className="bnr-header-text">Pricing Plan</h1>
+          <p className="banner-para-text">Home / Pages / Pricing Plan</p>
         </div>
       </div>
 

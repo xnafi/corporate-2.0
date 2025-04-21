@@ -2,7 +2,7 @@
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import CollaborateWork from "@/components/view/CollaborateWork";
+import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import SingleBlogAudience from "@/components/view/SingleBlogAudience";
 
 const newsItems = [
@@ -18,7 +18,8 @@ const newsItems = [
   },
   {
     id: 2,
-    image: "https://i.postimg.cc/rwRC6G6k/business-advisor-giving-his-opinion.jpg",
+    image:
+      "https://i.postimg.cc/rwRC6G6k/business-advisor-giving-his-opinion.jpg",
     category: "Marketing",
     title: "Tactics to Improve Content Engagement",
     author: "Jain Smith",
@@ -28,7 +29,8 @@ const newsItems = [
   },
   {
     id: 3,
-    image: "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
+    image:
+      "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
     category: "Agency",
     title: "Innovative ways to Captivate your Audience.",
     author: "Jain Smith",
@@ -40,8 +42,16 @@ const newsItems = [
 
 const NewsDetail = () => {
   const { id } = useParams();
-  
-  const [newsItem, setNewsItem] = useState<{ id: number; image: string; category: string; title: string; author: string; date: string; content: string } | null>(null);
+
+  const [newsItem, setNewsItem] = useState<{
+    id: number;
+    image: string;
+    category: string;
+    title: string;
+    author: string;
+    date: string;
+    content: string;
+  } | null>(null);
 
   useEffect(() => {
     const item = newsItems.find((news) => news.id === Number(id));
@@ -66,10 +76,12 @@ const NewsDetail = () => {
         <div className="absolute text-center text-white px-4">
           <h1 className="bnr-header-text">{newsItem.title}</h1>
           <p className="banner-para-text">Home / news / {newsItem.category}</p>
-          <p className="mt-1 banner-para-text">{newsItem.author} / {newsItem.date}</p>
+          <p className="mt-1 banner-para-text">
+            {newsItem.author} / {newsItem.date}
+          </p>
         </div>
       </div>
-  
+
       {/* Content Sections */}
       <SingleBlogAudience />
 

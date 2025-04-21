@@ -1,6 +1,6 @@
 "use client";
 
-import CollaborateWork from "@/components/view/CollaborateWork";
+import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import OurService2 from "@/components/view/our-services/OurServicePage-2";
 import Image from "next/image";
 

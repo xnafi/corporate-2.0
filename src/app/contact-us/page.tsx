@@ -1,7 +1,7 @@
 "use client";
 
 import ContactUsEmail from "@/components/re-ui/ContactUsEmail";
-import CollaborateWork from "@/components/view/CollaborateWork";
+import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import ContactUs from "@/components/view/contact-us/ContactUsPage-1";
 
 import Image from "next/image";

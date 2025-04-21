@@ -1,7 +1,7 @@
 "use client";
 
 import LatestNews2 from "@/components/re-ui/LatestNews2";
-import CollaborateWork from "@/components/view/CollaborateWork";
+import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import Image from "next/image";
 
 const OurBlogs = () => {
@@ -17,12 +17,8 @@ const OurBlogs = () => {
           className="opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="bnr-header-text">
-            Our Blogs
-          </h1>
-          <p className="banner-para-text">
-            Home / Pages / Our Blogs
-          </p>
+          <h1 className="bnr-header-text">Our Blogs</h1>
+          <p className="banner-para-text">Home / Pages / Our Blogs</p>
         </div>
       </div>
 
