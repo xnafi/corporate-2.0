@@ -58,8 +58,8 @@ const servicesData: Record<
 export default async function SingleServicePage({
   params,
 }: {
-  params: { slug: string };
-  }) {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const service = servicesData[slug as ServiceKey];
 
