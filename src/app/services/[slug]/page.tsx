@@ -126,7 +126,7 @@ export default async function SingleServicePage({
   ];
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto overflow-hidden">
       {/* Hero Section */}
       <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black mt-[100px]">
         <Image
@@ -156,24 +156,30 @@ export default async function SingleServicePage({
       {/* Pricing Section */}
       <div className="mt-4 sm:mt-6">
         <section className="text-center py-4">
-          <p className="primaryColor font-medium text-sm uppercase tracking-wide">
-            Pricing Plan
-          </p>
-          <h2 className="text-2xl sm:text-4xl font-bold mt-2">
-            Choose Your Best Option
-          </h2>
-          <p className="text-sm sm:text-base mt-3 mb-3">
-            Take a look at our comprehensive pricing plan to find the best
-            option that suits your needs.
-          </p>
+          <ScrollAnimation direction="popIn">
+            <p className="font-medium text-sm uppercase tracking-wide">
+              Pricing Plan
+            </p>
+          </ScrollAnimation>
+          <ScrollAnimation direction="popIn">
+            <h2 className="text-2xl sm:text-4xl font-bold mt-2">
+              Choose Your Best Option
+            </h2>
+          </ScrollAnimation>
+          <ScrollAnimation direction="popIn">
+            <p className="text-sm sm:text-base mt-3 mb-3">
+              Take a look at our comprehensive pricing plan to find the best
+              option that suits your needs.
+            </p>
+          </ScrollAnimation>
         </section>
 
         {/* Pricing Cards */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ScrollAnimation direction="popIn" className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {pricingOptions.map((option, index) => (
             <PricingCard key={index} {...option} />
           ))}
-        </div>
+        </ScrollAnimation>
       </div>
 
       {/* Collaboration Section */}
