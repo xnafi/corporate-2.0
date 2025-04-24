@@ -35,7 +35,9 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
       <span className="relative z-10 text-[#1A73E8] group-hover:text-white text-base duration-500">
         {text}
       </span>
-      {withArrow && <FaArrowRight className="z-10 ml-2" />}
+      {withArrow && (
+        <FaArrowRight className="z-10 ml-2 group-hover:text-white" />
+      )}
       {withIcon && <Icon className="z-10 ml-2" size={18} />}
     </>
   );

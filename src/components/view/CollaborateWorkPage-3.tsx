@@ -84,7 +84,6 @@ const CollaborateWork = () => {
               className="absolute inset-0 w-full h-full rounded-md"
               src="https://www.youtube.com/embed/lmwmg4pwdBc"
               title="Collaborate Video"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
