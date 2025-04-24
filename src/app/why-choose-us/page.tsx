@@ -1,11 +1,12 @@
+import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
 const WhyChooseUs = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 py-16">
+    <section className="flex flex-col md:flex-row items-center justify-between mx-auto container h-full lg:h-screen mt-[100px] 2xl:mt-[50px]">
       {/* Left Side - Image and Badge */}
-      <div className="relative w-full md:w-1/2 flex justify-center md:pr-40">
+      <ScrollAnimation direction="left" className="relative w-full md:w-1/2 flex justify-center md:pr-40">
         {/* Background Shape */}
         <div className="absolute -z-10 bg-yellow-300 w-[200px] h-[250px] sm:w-[280px] sm:h-[420px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px] rounded-[40px]"></div>
 
@@ -27,10 +28,10 @@ const WhyChooseUs = () => {
             ))}
           </div>
         </div>
-      </div>
+      </ScrollAnimation>
 
       {/* Right Side - Content */}
-      <div className="w-full md:w-1/2 space-y-4 mt-10 md:mt-0 text-center md:text-left">
+      <ScrollAnimation direction="right" className="w-full md:w-1/2 space-y-4 mt-10 md:mt-0 text-center md:text-left">
         <h4 className="text-orange-500 uppercase font-semibold text-sm sm:text-base">Why Choose Us</h4>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
           What we Offer our Clients.
@@ -56,7 +57,7 @@ const WhyChooseUs = () => {
             </div>
           ))}
         </div>
-      </div>
+      </ScrollAnimation>
     </section>
   );
 };

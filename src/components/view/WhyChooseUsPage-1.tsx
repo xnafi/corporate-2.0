@@ -5,7 +5,7 @@ import ScrollAnimation from "@/utils/scrollAnimation";
 
 const ChooseUs: React.FC = () => {
   return (
-    <section className="container mx-auto px-4 py-10">
+    <section className="container mx-auto">
       <ScrollAnimation direction="left" className="flex flex-col lg:flex-row items-center justify-between">
         {/* Left Section (Text + Button) */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
