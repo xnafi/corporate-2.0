@@ -72,8 +72,8 @@ const Navbar = () => {
       key: "services",
       label: "Services",
       items: [
-        { label: "Our Services", href: "/our-services" },
-        { label: "Our Projects", href: "/our-projects" },
+        { label: "Our Services", href: "/services" },
+        { label: "Our Projects", href: "/projects" },
       ],
     },
     {

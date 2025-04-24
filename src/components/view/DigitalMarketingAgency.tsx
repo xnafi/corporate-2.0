@@ -5,7 +5,7 @@ import { FaSearch, FaPhoneAlt } from "react-icons/fa";
 
 const DigitalMarketingAgency = () => {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-8">
+    <section className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Left Section - Image & Content */}
         <div className="md:col-span-2">
@@ -72,7 +72,7 @@ const DigitalMarketingAgency = () => {
           </div>
 
           {/* Contact Us Card */}
-          <div className="bg-orange-500 p-6 rounded-lg text-center text-white">
+          <div className="primaryColor p-6 rounded-lg text-center !text-white">
             <h3 className="text-lg sm:text-xl font-semibold">Contact Us</h3>
             <div className="mt-4 flex justify-center items-center space-x-2 bg-white rounded-full p-2">
               <FaPhoneAlt className="text-lg text-black" />

@@ -92,7 +92,7 @@ const OurServicePage2 = () => {
         >
           {services.map((service, index) => (
             <Link
-              href={`/service/${service.slug}`}
+              href={`/services/${service.slug}`}
               key={index}
               className="cursor-pointer"
             >

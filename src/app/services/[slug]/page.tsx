@@ -1,15 +1,28 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import Image from "next/image";
+import { HiStar, HiOutlineFilter } from "react-icons/hi";
+import { FaDiamond } from "react-icons/fa6";
+
 import DigitalMarketingAgency from "@/components/view/DigitalMarketingAgency";
 import ServicesOfferings from "@/components/view/ServicesOfferings";
 import PricingCard from "@/components/re-ui/PricingCard";
-import { HiStar, HiOutlineFilter } from "react-icons/hi";
-import { FaDiamond } from "react-icons/fa6";
 import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
-const servicesData = {
+type ServiceKey =
+  | "ui-ux-design"
+  | "digital-marketing"
+  | "content-marketing"
+  | "product-evaluation"
+  | "search-engine-ranking"
+  | "digital-social-campaigns";
+
+const servicesData: Record<
+  ServiceKey,
+  {
+    title: string;
+    description: string;
+  }
+> = {
   "ui-ux-design": {
     title: "UI/UX Design",
     description:
@@ -42,12 +55,20 @@ const servicesData = {
   },
 };
 
-const SingleService = () => {
-  const { slug } = useParams();
-  const service = servicesData[slug as keyof typeof servicesData];
+export default function SingleServicePage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const service = servicesData[params.slug as ServiceKey];
 
-  if (!service)
-    return <p className="text-center text-red-500">Service not found</p>;
+  if (!service) {
+    return (
+      <p className="text-center text-red-500 text-xl mt-10">
+        Service not found
+      </p>
+    );
+  }
 
   const pricingOptions = [
     {
@@ -78,11 +99,11 @@ const SingleService = () => {
         { text: "Monthly review of item Performance", included: true },
         { text: "Keyword research", included: false },
       ],
-      bgColor: "bg-orange-100",
-      badgeIcon: <HiStar className="text-orange-500 text-lg" />,
-      borderColor: "border-orange-500",
-      textColor: "text-orange-800",
-      btnColor: "bg-orange-500 text-white hover:bg-orange-600",
+      bgColor: "bg-white",
+      badgeIcon: <HiStar className="primaryColor text-lg" />,
+      borderColor: "border-[#1A73E8]",
+      textColor: "text-[#1A73E8]",
+      btnColor: "bg-[#1A73E8] text-white hover:bg-orange-600",
     },
     {
       plan: "Premium Plan",
@@ -96,27 +117,30 @@ const SingleService = () => {
         { text: "Keyword research", included: true },
       ],
       bgColor: "bg-yellow-100",
-      badgeIcon: <FaDiamond className="text-yellow-500 text-lg" />,
+      badgeIcon: <FaDiamond className="primaryColor text-lg" />,
       borderColor: "border-yellow-500",
       textColor: "text-yellow-800",
-      btnColor: "bg-yellow-500 text-white hover:bg-yellow-600",
+      btnColor: "bg-yellow-500 text-white hover:primaryColor",
     },
   ];
 
   return (
-    <div className="container mx-auto px-4 sm:px-8">
+    <div className="mx-auto">
       {/* Hero Section */}
-      <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black">
+      <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black mt-[100px]">
         <Image
           src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
           alt="Service Banner"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
+          fill
+          className="object-cover opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="bnr-header-text">{service.title}</h1>
-          <p className="banner-para-text">Home / {service.title}</p>
+          <ScrollAnimation direction="popIn">
+            <h1 className="bnr-header-text">{service.title}</h1>
+          </ScrollAnimation>
+          <ScrollAnimation direction="popIn">
+            <p className="banner-para-text">Home / {service.title}</p>
+          </ScrollAnimation>
         </div>
       </div>
 
@@ -131,7 +155,7 @@ const SingleService = () => {
       {/* Pricing Section */}
       <div className="mt-4 sm:mt-6">
         <section className="text-center py-4">
-          <p className="text-orange-500 font-medium text-sm uppercase tracking-wide">
+          <p className="primaryColor font-medium text-sm uppercase tracking-wide">
             Pricing Plan
           </p>
           <h2 className="text-2xl sm:text-4xl font-bold mt-2">
@@ -157,6 +181,4 @@ const SingleService = () => {
       </div>
     </div>
   );
-};
-
-export default SingleService;
+}
