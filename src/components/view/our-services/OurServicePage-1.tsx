@@ -20,7 +20,7 @@ const services: Service[] = [
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
     icon: <FaCog className="text-white text-3xl" />,
     bgColor: "bg-orange-500",
-    navigate: "/service/digital-marketing",
+    navigate: "/services/digital-marketing",
   },
   {
     title: "Content Marketing",
@@ -28,7 +28,7 @@ const services: Service[] = [
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
     icon: <MdOutlineVideoLibrary className="text-white text-3xl" />,
     bgColor: "bg-purple-500",
-    navigate: "/service/content-marketing",
+    navigate: "/services/content-marketing",
   },
   {
     title: "Email Marketing",
@@ -36,7 +36,7 @@ const services: Service[] = [
       "Strategic content creation that drives audience engagement and boosts brand awareness through valuable, relevant information.",
     icon: <FaEnvelope className="text-white text-3xl" />,
     bgColor: "bg-green-500",
-    navigate: "/service/ui-ux-design",
+    navigate: "/services/ui-ux-design",
   },
 ];
 
