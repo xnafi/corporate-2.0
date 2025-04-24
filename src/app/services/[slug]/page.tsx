@@ -55,12 +55,13 @@ const servicesData: Record<
   },
 };
 
-export default function SingleServicePage({
+export default async function SingleServicePage({
   params,
 }: {
   params: { slug: string };
-}) {
-  const service = servicesData[params.slug as ServiceKey];
+  }) {
+  const { slug } = await params;
+  const service = servicesData[slug as ServiceKey];
 
   if (!service) {
     return (
