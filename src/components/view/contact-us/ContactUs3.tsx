@@ -1,9 +1,10 @@
+import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 
 const ContactUs3 = () => {
   return (
-    <div className="container mx-auto flex items-center justify-center min-h-screen bg-[#0d0f1b] p-6 mt-8 mb-8">
-      <div className="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
+    <div className="container mx-auto flex items-center justify-center min-h-screen bg-white">
+      <ScrollAnimation direction="popIn" className="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
         {/* Left Side - Contact Form */}
         <div className="flex-1 p-8">
           <h2 className="title-header-text mb-6">Contact Us.</h2>
@@ -47,7 +48,7 @@ const ContactUs3 = () => {
             className="w-full h-full object-cover rounded-r-2xl"
           />
         </div>
-      </div>
+      </ScrollAnimation>
     </div>
   );
 };
