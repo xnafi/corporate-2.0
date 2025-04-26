@@ -56,8 +56,8 @@ interface PageProps {
     id: string;
   };
 }
-async function NewsDetailPage({ params }: PageProps) {
-  const { id } = await params;
+function NewsDetailPage({ params }: PageProps) {
+  const { id } =  params;
   const newsItem = newsItems.find((item) => item.id === Number(id));
 
   if (!newsItem) {
