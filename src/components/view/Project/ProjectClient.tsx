@@ -2,13 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation"; // Import Next.js router
 
-const categories = ["All Design", "UX/UI", "Branding", "Design"];
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+}
 
-const projects = [
+const categories = ["All Design", "UX/UI", "Branding", "Design"] as const;
+
+const projects: Project[] = [
   {
     id: 1,
     title: "Dashboard Design",
@@ -54,9 +61,9 @@ const projects = [
 ];
 
 export default function ProjectClient() {
-  const [activeCategory, setActiveCategory] = useState("All Design");
+  const [activeCategory, setActiveCategory] =
+    useState<(typeof categories)[number]>("All Design");
   const [showAll, setShowAll] = useState(false);
-  const router = useRouter(); // Initialize router
 
   const filteredProjects =
     activeCategory === "All Design"
@@ -80,8 +87,8 @@ export default function ProjectClient() {
             }}
             className={`flex flex-wrap text-xs sm:text-sm font-medium justify-center items-center ${
               activeCategory === category
-                ? "bg-orange-500 border-orange-500 text-white rounded-md font-semibold inline-block px-2 py-2"
-                : "bg-gray-100 dark:text-black backdrop-blur-md inline-block isolation-auto px-2 py-2 border-orange-500 font-semibold border  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 overflow-hidden rounded-md group"
+                ? "bg-[#1A73E8] border-orange-500 text-white rounded-md font-semibold inline-block px-2 py-2"
+                : "bg-gray-100 dark:text-black backdrop-blur-md inline-block isolation-auto px-2 py-2 border-orange-500 font-semibold border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#1A73E8] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 overflow-hidden rounded-md group"
             }`}
           >
             {category}
@@ -106,9 +113,8 @@ export default function ProjectClient() {
                 <Image
                   src={project.image}
                   alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105"
+                  fill
+                  className="rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105 object-cover"
                 />
               </div>
 
@@ -123,12 +129,12 @@ export default function ProjectClient() {
                   </p>
                 </div>
                 {/* Navigation Button */}
-                <button
-                  onClick={() => router.push(`/projects/${project.id}`)} 
-                  className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-orange-500 text-white rounded-full"
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-[#1A73E8] text-white rounded-full"
                 >
                   <GoArrowUpRight />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -138,8 +144,8 @@ export default function ProjectClient() {
       {/* View Portfolio Button */}
       {filteredProjects.length > 3 && (
         <motion.button
-          className="flex items-center mt-6 mx-auto gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
-          onClick={() => setShowAll(!showAll)}
+          onClick={() => setShowAll((prev) => !prev)}
+          className="flex items-center mt-6 mx-auto gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#1A73E8] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
