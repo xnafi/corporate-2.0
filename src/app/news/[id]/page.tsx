@@ -49,12 +49,6 @@ const newsItems: NewsItem[] = [
   },
 ];
 
-// Receive params from the server
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
 async function NewsDetailPage({ params }: { params: Promise<{ id: number }> }) {
   const { id } = await params;
   const newsItem = newsItems.find((item) => item.id === Number(id));
