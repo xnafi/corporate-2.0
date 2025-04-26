@@ -55,8 +55,9 @@ interface PageProps {
     id: string;
   };
 }
-function NewsDetailPage({ params }: PageProps) {
-  const newsItem = newsItems.find((item) => item.id === Number(params.id));
+async function NewsDetailPage({ params }: { params: Promise<{ id: number }> }) {
+  const { id } = await params;
+  const newsItem = newsItems.find((item) => item.id === Number(id));
 
   if (!newsItem) {
     return <NotFound />;
