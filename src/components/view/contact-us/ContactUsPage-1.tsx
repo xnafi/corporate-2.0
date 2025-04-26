@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ContactUs = () => {
   return (
-    <section className="container px-4 sm:px-6 lg:px-8 py-10">
+    <section className="container">
       <ScrollAnimation direction="popIn" className="flex flex-col md:flex-row items-center justify-center border-2 shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 mx-auto max-w-[1200px]">
         {/* Left Side - Image */}
         <div className="w-full md:w-1/2">
