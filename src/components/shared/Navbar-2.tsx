@@ -54,10 +54,10 @@ const Navbar2 = () => {
                 </li>
                 <li>
                   <Link
-                    href="/team"
+                    href="/pricing-plan"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    Our Team
+                    Pricing Plan
                   </Link>
                 </li>
               </ul>
@@ -79,15 +79,15 @@ const Navbar2 = () => {
               <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 w-40">
                 <li>
                   <Link
-                    href="/seo"
+                    href="/services/ui-ux-design"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    SEO Optimization
+                    UI/UX design
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/marketing"
+                    href="/services/digital-marketing"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
                     Digital Marketing
@@ -106,7 +106,7 @@ const Navbar2 = () => {
 
         {/* Contact Button - Hidden on Small Screens */}
         <Link
-          href="/contact"
+          href="/contact-us"
           className="hidden md:block px-6 py-2 border border-b-4 border-black rounded-full text-black hover:bg-white hover:text-lime-500 transition"
         >
           CONTACT US

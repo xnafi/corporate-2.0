@@ -1,3 +1,4 @@
+import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 
 const page = () => {
@@ -5,7 +6,7 @@ const page = () => {
     <div className="container2 mx-auto flex items-center justify-center min-h-screen bg-[#0d0f1b] p-6 mt-8 mb-8">
       <div className="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
         {/* Left Side - Contact Form */}
-        <div className="flex-1 p-8">
+        <ScrollAnimation direction="popIn" className="flex-1 p-8">
           <h2 className="title-header-text mb-6">Contact Us.</h2>
           <form className="space-y-4">
             <div>
@@ -35,7 +36,7 @@ const page = () => {
               SEND MESSAGE
             </button>
           </form>
-        </div>
+        </ScrollAnimation>
 
         {/* Right Side - Image */}
         <div className="relative flex-1">
