@@ -5,9 +5,21 @@ import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { IoPersonOutline, IoCalendarOutline } from "react-icons/io5";
 import LatestNews3 from "./LatestNews3";
 import CommentsSection from "../CommentsSection";
+import ScrollAnimation from "@/utils/scrollAnimation";
+
+interface Category {
+  name: string;
+  count: number;
+}
+
+interface RecentPost {
+  image: string;
+  title: string;
+  date: string;
+}
 
 const SingleNewsAudience = () => {
-  const categories = [
+  const categories: Category[] = [
     { name: "SEO Agency", count: 5 },
     { name: "Digital Marketing", count: 2 },
     { name: "SEO Campaign", count: 4 },
@@ -15,7 +27,7 @@ const SingleNewsAudience = () => {
     { name: "Digital Agency", count: 7 },
   ];
 
-  const recentPosts = [
+  const recentPosts: RecentPost[] = [
     {
       image:
         "https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg",
@@ -36,7 +48,7 @@ const SingleNewsAudience = () => {
     },
   ];
 
-  const tags = [
+  const tags: string[] = [
     "SEO",
     "Advertising",
     "Digital Marketing",
@@ -45,21 +57,26 @@ const SingleNewsAudience = () => {
   ];
 
   return (
-    <section className="px-4 sm:px-6 lg:px-16 py-8 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="container bg-white">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Section (Main Content) */}
         <div className="md:col-span-2">
           {/* Blog Image */}
-          <Image
-            src="https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg"
-            alt="Blog Image"
-            width={800}
-            height={450}
-            className="w-full h-auto rounded-lg"
-          />
+          <ScrollAnimation direction="left">
+            <Image
+              src="https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg"
+              alt="Blog Image"
+              width={800}
+              height={450}
+              className="w-full h-auto rounded-lg"
+            />
+          </ScrollAnimation>
 
           {/* Blog Meta */}
-          <div className="flex flex-wrap items-center text-gray-500 text-sm mt-4 gap-3">
+          <ScrollAnimation
+            direction="left"
+            className="flex flex-wrap items-center text-gray-500 text-sm mt-4 gap-3"
+          >
             <div className="flex items-center gap-1">
               <IoPersonOutline className="text-gray-600" />
               <span>Esther Howard</span>
@@ -75,23 +92,28 @@ const SingleNewsAudience = () => {
             <div className="flex items-center gap-1">
               <FaRegHeart className="text-gray-600" />
             </div>
-          </div>
-
+          </ScrollAnimation>
           {/* Blog Title & Content */}
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-4">
-            Innovative ways to Captivate your Audience.
-          </h1>
-          <p className="text-gray-600 mt-4">
-            Discover fresh and innovative approaches to captivate your audience,
-            keeping them engaged and intrigued with unique content, creative
-            storytelling, and interactive experiences.
-          </p>
-          <p className="text-gray-600 mt-4">
-            Explore cutting-edge strategies designed to capture the attention of
-            your audience, utilizing creative visuals, immersive experiences,
-            and compelling narratives that foster deeper connections and boost
-            engagement.
-          </p>
+          <ScrollAnimation direction="left">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-4">
+              Innovative ways to Captivate your Audience.
+            </h1>
+          </ScrollAnimation>
+          <ScrollAnimation direction="left">
+            <p className="text-gray-600 mt-4">
+              Discover fresh and innovative approaches to captivate your
+              audience, keeping them engaged and intrigued with unique content,
+              creative storytelling, and interactive experiences.
+            </p>
+          </ScrollAnimation>
+          <ScrollAnimation direction="left">
+            <p className="text-gray-600 mt-4">
+              Explore cutting-edge strategies designed to capture the attention
+              of your audience, utilizing creative visuals, immersive
+              experiences, and compelling narratives that foster deeper
+              connections and boost engagement.
+            </p>
+          </ScrollAnimation>
 
           <LatestNews3 />
           <CommentsSection />
@@ -100,7 +122,7 @@ const SingleNewsAudience = () => {
         {/* Right Section (Sidebar) */}
         <aside className="md:col-span-1 space-y-6">
           {/* Search Bar */}
-          <div>
+          <ScrollAnimation direction="right">
             <h2 className="text-lg font-semibold text-gray-900">Search Here</h2>
             <div className="relative mt-2">
               <input
@@ -110,32 +132,33 @@ const SingleNewsAudience = () => {
               />
               <HiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 text-lg" />
             </div>
-          </div>
+          </ScrollAnimation>
 
           {/* Categories */}
           <div>
             <h2 className="text-lg font-semibold text-gray-900">Categories</h2>
             <ul className="mt-2 space-y-2">
               {categories.map((category, index) => (
-                <li
+                <ScrollAnimation
+                  direction="right"
                   key={index}
                   className="flex justify-between text-gray-700 text-sm border-b py-2"
                 >
                   <span>{category.name}</span>
                   <span>({category.count})</span>
-                </li>
+                </ScrollAnimation>
               ))}
             </ul>
           </div>
 
           {/* Recent Posts */}
-          <div>
+          <ScrollAnimation direction="right">
             <h2 className="text-lg font-semibold text-gray-900">
               Recent Posts
             </h2>
             <ul className="mt-2 space-y-4">
               {recentPosts.map((post, index) => (
-                <li key={index} className="flex items-center space-x-3">
+                <ScrollAnimation direction="right" key={index} className="flex items-center space-x-3">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -149,13 +172,13 @@ const SingleNewsAudience = () => {
                       {post.title}
                     </p>
                   </div>
-                </li>
+                </ScrollAnimation>
               ))}
             </ul>
-          </div>
+          </ScrollAnimation>
 
           {/* Tags */}
-          <div>
+          <ScrollAnimation direction="right">
             <h2 className="text-lg font-semibold text-gray-900">Tags</h2>
             <div className="mt-2 flex flex-wrap gap-2">
               {tags.map((tag, index) => (
@@ -167,10 +190,10 @@ const SingleNewsAudience = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </ScrollAnimation>
 
           {/* Contact Us Card */}
-          <div className="bg-orange-500 p-6 rounded-lg text-center text-white">
+          <ScrollAnimation direction="right" className="bg-[#1A73E8] p-6 rounded-lg text-center text-white">
             <h3 className="text-lg sm:text-xl font-semibold">
               Grow your business with us
             </h3>
@@ -180,7 +203,7 @@ const SingleNewsAudience = () => {
                 Contact Us
               </span>
             </div>
-          </div>
+          </ScrollAnimation>
         </aside>
       </div>
     </section>
