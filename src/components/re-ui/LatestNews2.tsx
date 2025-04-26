@@ -1,10 +1,9 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { HiArrowUpRight } from "react-icons/hi2";
-import { FC } from "react";
+import { FC, useState } from "react";
 import ScrollAnimation from "@/utils/scrollAnimation";
 
 interface NewsItem {
@@ -87,19 +86,17 @@ const newsItems: NewsItem[] = [
 const itemsPerPage = 6;
 
 const LatestNews2: FC = () => {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const currentPage = Number(searchParams.get("page")) || 1;
+  const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(newsItems.length / itemsPerPage);
-  const currentItems = newsItems.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
 
   const handlePageChange = (page: number) => {
-    router.push(`?page=${page}`);
+    setCurrentPage(page);
   };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = newsItems.slice(startIndex, endIndex);
 
   return (
     <section className="container bg-white">
@@ -119,7 +116,6 @@ const LatestNews2: FC = () => {
                   height={300}
                   className="w-full h-auto object-cover rounded-t-xl"
                 />
-
                 {/* Hover Effect */}
                 <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:bg-black/50">
                   <Link
@@ -129,13 +125,11 @@ const LatestNews2: FC = () => {
                     <HiArrowUpRight className="text-white text-xl" />
                   </Link>
                 </div>
-
                 {/* Category Badge */}
                 <span className="absolute top-3 right-3 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                   {item.category}
                 </span>
               </div>
-
               {/* Content */}
               <div className="p-6 text-left">
                 <p className="text-gray-500 text-sm">

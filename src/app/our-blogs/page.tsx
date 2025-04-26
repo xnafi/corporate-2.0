@@ -1,5 +1,3 @@
-"use client";
-
 import LatestNews2 from "@/components/re-ui/LatestNews2";
 import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import ScrollAnimation from "@/utils/scrollAnimation";
