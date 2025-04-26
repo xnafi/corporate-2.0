@@ -136,7 +136,12 @@ const SingleNewsAudience = () => {
 
           {/* Categories */}
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Categories</h2>
+            <ScrollAnimation direction="right">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Categories
+              </h2>
+            </ScrollAnimation>
+
             <ul className="mt-2 space-y-2">
               {categories.map((category, index) => (
                 <ScrollAnimation
@@ -158,7 +163,11 @@ const SingleNewsAudience = () => {
             </h2>
             <ul className="mt-2 space-y-4">
               {recentPosts.map((post, index) => (
-                <ScrollAnimation direction="right" key={index} className="flex items-center space-x-3">
+                <ScrollAnimation
+                  direction="right"
+                  key={index}
+                  className="flex items-center space-x-3"
+                >
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -193,7 +202,10 @@ const SingleNewsAudience = () => {
           </ScrollAnimation>
 
           {/* Contact Us Card */}
-          <ScrollAnimation direction="right" className="bg-[#1A73E8] p-6 rounded-lg text-center text-white">
+          <ScrollAnimation
+            direction="right"
+            className="bg-[#1A73E8] p-6 rounded-lg text-center text-white"
+          >
             <h3 className="text-lg sm:text-xl font-semibold">
               Grow your business with us
             </h3>
