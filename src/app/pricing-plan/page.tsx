@@ -1,13 +1,30 @@
-"use client";
-
 import Image from "next/image";
 import { HiStar, HiOutlineFilter } from "react-icons/hi";
 import { FaDiamond } from "react-icons/fa6";
 import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import PricingCard from "@/components/re-ui/PricingCard";
+import { ReactNode } from "react";
+
+// Define TypeScript types for pricing options
+interface Feature {
+  text: string;
+  included: boolean;
+}
+
+interface PricingOption {
+  plan: string;
+  price: number;
+  description: string;
+  features: Feature[];
+  bgColor: string;
+  badgeIcon: ReactNode;
+  borderColor: string;
+  textColor: string;
+  btnColor: string;
+}
 
 const PricingPlan = () => {
-  const pricingOptions = [
+  const pricingOptions: PricingOption[] = [
     {
       plan: "Basic Plan",
       price: 15,
@@ -62,34 +79,36 @@ const PricingPlan = () => {
   ];
 
   return (
-    <div className="container mx-auto">
-      {/* Banner Section */}
-      <div className="relative w-full h-[250px] sm:h-[300px] lg:h-[400px] flex items-center justify-center bg-black">
-        <Image
-          src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
-          alt="Pricing Plan Banner"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-        />
-        <div className="absolute text-center text-white px-4">
-          <h1 className="bnr-header-text">Pricing Plan</h1>
-          <p className="banner-para-text">Home / Pages / Pricing Plan</p>
+    <>
+      {" "}
+      <div className="mx-auto">
+        {/* Banner Section */}
+        <div className="relative w-full h-[250px] sm:h-[300px] lg:h-[400px] flex items-center justify-center bg-black mt-[100px]">
+          <Image
+            src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
+            alt="Pricing Plan Banner"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-50"
+          />
+          <div className="absolute text-center text-white px-4">
+            <h1 className="bnr-header-text">Pricing Plan</h1>
+            <p className="banner-para-text">Home / Pages / Pricing Plan</p>
+          </div>
+        </div>
+
+        {/* Pricing Cards */}
+        <div className="max-w-6xl mx-auto mt-6 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10 sm:py-12 px-2 sm:px-4">
+          {pricingOptions.map((option, index) => (
+            <PricingCard key={index} {...option} />
+          ))}
         </div>
       </div>
-
-      {/* Pricing Cards */}
-      <div className="max-w-6xl mx-auto mt-6 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10 sm:py-12 px-2 sm:px-4">
-        {pricingOptions.map((option, index) => (
-          <PricingCard key={index} {...option} />
-        ))}
-      </div>
-
       {/* Collaboration Section */}
       <div className="mt-6 sm:mt-12">
         <CollaborateWork />
       </div>
-    </div>
+    </>
   );
 };
 

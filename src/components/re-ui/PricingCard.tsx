@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { HiCheck, HiX } from "react-icons/hi";
 import SecondaryButton from "./SecondaryButton";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
 interface PricingCardProps {
   plan: string;
@@ -23,7 +24,7 @@ const PricingCard: FC<PricingCardProps> = ({
   textColor,
 }) => {
   return (
-    <div
+    <ScrollAnimation direction="popIn"
       className={`relative p-6 sm:p-8 rounded-2xl shadow-md border border-black border-b-4 border-r-4`}
     >
       {/* Badge Icon */}
@@ -61,7 +62,7 @@ const PricingCard: FC<PricingCardProps> = ({
       <div className="mx-auto self-center my-3 flex w-full text-center">
         <SecondaryButton text=" PURCHASE NOW" withArrow />
       </div>
-    </div>
+    </ScrollAnimation>
   );
 };
 
