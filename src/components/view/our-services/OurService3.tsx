@@ -6,8 +6,17 @@ import {
   FaFileAlt,
   FaClipboardList,
 } from "react-icons/fa";
+import { ReactNode } from "react";
 
-const services = [
+// Define TypeScript type for service items
+interface Service {
+  title: string;
+  description: string;
+  icon: ReactNode;
+  highlight?: boolean;
+}
+
+const services: Service[] = [
   {
     title: "Media Advertising Solutions",
     description:

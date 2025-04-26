@@ -1,10 +1,21 @@
 "use client";
-import { useState } from "react";
+
 import Image from "next/image";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
+import ScrollAnimation from "@/utils/scrollAnimation";
 
-const newsItems = [
+// Define TypeScript type for news item
+interface NewsItem {
+  image: string;
+  title: string;
+  author: string;
+  readTime: string;
+  date: string;
+}
+
+const newsItems: NewsItem[] = [
   {
     image:
       "https://i.postimg.cc/gjBRQjNj/jj-englert-n9-CAmj-Xls-Vk-unsplash.jpg",
@@ -24,37 +35,33 @@ const newsItems = [
 ];
 
 const CurrentNews = () => {
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-
   return (
-    <section className="px-4 sm:px-6 lg:px-16 py-12 bg-gray-100">
-      <div className="max-w-6xl mx-auto">
+    <section className="container bg-gray-100">
+      <div className="mx-auto">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          <ScrollAnimation direction="left" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Current News and <br className="hidden sm:block" /> Updates
-          </h2>
-          <div className="mt-4 lg:mt-0 flex flex-col items-start gap-4 text-start">
+          </ScrollAnimation>
+          <ScrollAnimation direction="right" className="mt-4 lg:mt-0 flex flex-col items-start gap-4 text-start">
             <p className="text-gray-600 text-sm sm:text-base max-w-lg">
               Stay informed with the latest news and updates, covering
               everything from global events to local happenings, including
               significant developments in various fields and industries.
             </p>
-            <button className="bg-black text-white font-semibold px-5 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-lime-500">
-              ALL PROJECTS
+            <Link href='/our-blogs' className="bg-black text-white font-semibold px-5 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-[#1A73E8]">
+              ALL NEWS
               <HiArrowUpRight className="text-lg transition-transform duration-300 hover:-translate-y-1" />
-            </button>
-          </div>
+            </Link>
+          </ScrollAnimation>
         </div>
 
         {/* News Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {newsItems.map((item, index) => (
-            <div
+            <ScrollAnimation direction="popIn"
               key={index}
-              className="relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl"
-              onMouseEnter={() => setHoverIndex(index)}
-              onMouseLeave={() => setHoverIndex(null)}
+              className="relative group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl"
             >
               {/* Image Section */}
               <div className="relative">
@@ -83,21 +90,12 @@ const CurrentNews = () => {
 
               {/* Hover Effect Button */}
               <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 transition-all duration-300">
-                <div
-                  className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-black text-white transition-all duration-300 ${
-                    hoverIndex === index
-                      ? "bg-lime-500 transform -translate-y-1"
-                      : ""
-                  }`}
-                >
-                  {hoverIndex === index ? (
-                    <HiArrowUpRight className="text-white text-lg" />
-                  ) : (
-                    <FiArrowRight className="text-white text-lg" />
-                  )}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-black text-white transition-all duration-300 group-hover:bg-[#1A73E8] group-hover:-translate-y-1">
+                  <HiArrowUpRight className="text-white text-lg hidden group-hover:block" />
+                  <FiArrowRight className="text-white text-lg block group-hover:hidden" />
                 </div>
               </div>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>
