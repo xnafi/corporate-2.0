@@ -8,17 +8,6 @@ const Navbar2 = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("");
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (!(event.target as HTMLElement).closest(".dropdown")) {
-        setDropdownOpen("");
-      }
-    };
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, []);
-
   const toggleDropdown = (menu: string) => {
     setDropdownOpen(dropdownOpen === menu ? "" : menu);
   };
@@ -57,7 +46,7 @@ const Navbar2 = () => {
               <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 w-40">
                 <li>
                   <Link
-                    href="/about-us2"
+                    href="/about-us-2"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
                     About Us

@@ -1,6 +1,4 @@
-"use client";
-
-import AboutUs3 from "@/components/view/about-us/AboutUsPage-3";
+import AboutUs from "@/components/view/about-us/AboutUsPage-1";
 import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import CurrentNews from "@/components/view/CurrentNews";
 import Feedback2 from "@/components/view/FeedBackPage-2";
@@ -10,9 +8,9 @@ import Image from "next/image";
 
 const AboutUs2 = () => {
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto">
       {/* Banner Section */}
-      <div className="relative w-full h-[400px] flex items-center justify-center bg-black">
+      <div className="relative w-full h-[400px] flex items-center justify-center bg-black mt-[100px]">
         <Image
           src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
           alt="About Us Banner"
@@ -27,8 +25,7 @@ const AboutUs2 = () => {
       </div>
 
       {/* Content Section */}
-      <AboutUs3 />
-      <HappyCustomer />
+      <AboutUs />
       <OurService3 />
       <Feedback2 />
       <CurrentNews />
