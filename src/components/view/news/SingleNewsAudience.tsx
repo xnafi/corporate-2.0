@@ -6,9 +6,9 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { IoPersonOutline, IoCalendarOutline } from "react-icons/io5";
 import LatestNews3 from "./LatestNews3";
-import CommentsSection from "./CommentsSection";
+import CommentsSection from "../CommentsSection";
 
-const SingleBlogAudience = () => {
+const SingleNewsAudience = () => {
   const categories = [
     { name: "SEO Agency", count: 5 },
     { name: "Digital Marketing", count: 2 },
@@ -19,23 +19,32 @@ const SingleBlogAudience = () => {
 
   const recentPosts = [
     {
-      image: "https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg",
+      image:
+        "https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg",
       title: "Maximizing marketing impact through social media.",
       date: "Jan 12, 2024",
     },
     {
-      image: "https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg",
+      image:
+        "https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg",
       title: "The crucial role of SEO in digital strategy.",
       date: "May 04, 2024",
     },
     {
-      image: "https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg",
+      image:
+        "https://i.postimg.cc/yY9pw1Fj/photographer-explaining-about-shot-his-team-studio-looking-laptop-talking-his-assistants-holding-cam.jpg",
       title: "A beginner’s guide to SEO for blogging.",
       date: "Oct 19, 2024",
     },
   ];
 
-  const tags = ["SEO", "Advertising", "Digital Marketing", "Digital Agency", "SEO Campaign"];
+  const tags = [
+    "SEO",
+    "Advertising",
+    "Digital Marketing",
+    "Digital Agency",
+    "SEO Campaign",
+  ];
 
   return (
     <section className="px-4 sm:px-6 lg:px-16 py-8 bg-white">
@@ -75,10 +84,15 @@ const SingleBlogAudience = () => {
             Innovative ways to Captivate your Audience.
           </h1>
           <p className="text-gray-600 mt-4">
-            Discover fresh and innovative approaches to captivate your audience, keeping them engaged and intrigued with unique content, creative storytelling, and interactive experiences.
+            Discover fresh and innovative approaches to captivate your audience,
+            keeping them engaged and intrigued with unique content, creative
+            storytelling, and interactive experiences.
           </p>
           <p className="text-gray-600 mt-4">
-            Explore cutting-edge strategies designed to capture the attention of your audience, utilizing creative visuals, immersive experiences, and compelling narratives that foster deeper connections and boost engagement.
+            Explore cutting-edge strategies designed to capture the attention of
+            your audience, utilizing creative visuals, immersive experiences,
+            and compelling narratives that foster deeper connections and boost
+            engagement.
           </p>
 
           <LatestNews3 />
@@ -105,7 +119,10 @@ const SingleBlogAudience = () => {
             <h2 className="text-lg font-semibold text-gray-900">Categories</h2>
             <ul className="mt-2 space-y-2">
               {categories.map((category, index) => (
-                <li key={index} className="flex justify-between text-gray-700 text-sm border-b py-2">
+                <li
+                  key={index}
+                  className="flex justify-between text-gray-700 text-sm border-b py-2"
+                >
                   <span>{category.name}</span>
                   <span>({category.count})</span>
                 </li>
@@ -115,7 +132,9 @@ const SingleBlogAudience = () => {
 
           {/* Recent Posts */}
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Recent Posts</h2>
+            <h2 className="text-lg font-semibold text-gray-900">
+              Recent Posts
+            </h2>
             <ul className="mt-2 space-y-4">
               {recentPosts.map((post, index) => (
                 <li key={index} className="flex items-center space-x-3">
@@ -128,7 +147,9 @@ const SingleBlogAudience = () => {
                   />
                   <div>
                     <p className="text-xs text-gray-500">{post.date}</p>
-                    <p className="text-sm text-gray-800 font-medium">{post.title}</p>
+                    <p className="text-sm text-gray-800 font-medium">
+                      {post.title}
+                    </p>
                   </div>
                 </li>
               ))}
@@ -140,7 +161,10 @@ const SingleBlogAudience = () => {
             <h2 className="text-lg font-semibold text-gray-900">Tags</h2>
             <div className="mt-2 flex flex-wrap gap-2">
               {tags.map((tag, index) => (
-                <span key={index} className="px-3 py-1 text-xs text-gray-700 bg-gray-200 rounded-lg">
+                <span
+                  key={index}
+                  className="px-3 py-1 text-xs text-gray-700 bg-gray-200 rounded-lg"
+                >
                   {tag}
                 </span>
               ))}
@@ -149,10 +173,14 @@ const SingleBlogAudience = () => {
 
           {/* Contact Us Card */}
           <div className="bg-orange-500 p-6 rounded-lg text-center text-white">
-            <h3 className="text-lg sm:text-xl font-semibold">Grow your business with us</h3>
+            <h3 className="text-lg sm:text-xl font-semibold">
+              Grow your business with us
+            </h3>
             <div className="mt-4 flex justify-center items-center space-x-2 bg-white rounded-full p-2">
               <FaPhoneAlt className="text-lg text-black" />
-              <span className="text-sm sm:text-lg font-medium text-black">Contact Us</span>
+              <span className="text-sm sm:text-lg font-medium text-black">
+                Contact Us
+              </span>
             </div>
           </div>
         </aside>
@@ -161,4 +189,4 @@ const SingleBlogAudience = () => {
   );
 };
 
-export default SingleBlogAudience;
+export default SingleNewsAudience;

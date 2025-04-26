@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import SecondaryButton from "../re-ui/SecondaryButton";
+import SecondaryButton from "../../re-ui/SecondaryButton";
 import Link from "next/link";
 import ScrollAnimation from "@/utils/scrollAnimation";
 

@@ -1,11 +1,21 @@
-"use client";
-import { useParams } from "next/navigation";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
-import SingleBlogAudience from "@/components/view/SingleBlogAudience";
+import ScrollAnimation from "@/utils/scrollAnimation";
+import SingleNewsAudience from "@/components/view/news/SingleNewsAudience";
+import NotFound from "@/app/not-found";
+import async from "../../projects/[id]/page";
 
-const newsItems = [
+interface NewsItem {
+  id: number;
+  image: string;
+  category: string;
+  title: string;
+  author: string;
+  date: string;
+  content?: string;
+}
+
+const newsItems: NewsItem[] = [
   {
     id: 1,
     image: "https://i.postimg.cc/gJWKHxTP/airfocus-JVd-Nm-AFDi-I4-unsplash.jpg",
@@ -40,50 +50,49 @@ const newsItems = [
   },
 ];
 
-const NewsDetail = () => {
-  const { id } = useParams();
+// Receive params from the server
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+async function NewsDetailPage({ params }: PageProps) {
+  const { id } = await params;
+  const newsItem = newsItems.find((item) => item.id === Number(id));
 
-  const [newsItem, setNewsItem] = useState<{
-    id: number;
-    image: string;
-    category: string;
-    title: string;
-    author: string;
-    date: string;
-    content: string;
-  } | null>(null);
-
-  useEffect(() => {
-    const item = newsItems.find((news) => news.id === Number(id));
-    if (item) {
-      setNewsItem(item);
-    }
-  }, [id]);
-
-  if (!newsItem) return <p className="text-center mt-10">Loading...</p>;
+  if (!newsItem) {
+    return <NotFound />;
+  }
 
   return (
-    <div className="container mx-auto px-4 sm:px-8">
+    <div className="mx-auto">
       {/* Hero Section */}
-      <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black">
+      <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center bg-black mt-[100px] overflow-hidden">
         <Image
           src="https://i.postimg.cc/bwTh0nJQ/look-studio.jpg"
           alt="Service Banner"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
+          fill
+          className="object-cover opacity-50"
         />
         <div className="absolute text-center text-white px-4">
-          <h1 className="bnr-header-text">{newsItem.title}</h1>
-          <p className="banner-para-text">Home / news / {newsItem.category}</p>
-          <p className="mt-1 banner-para-text">
-            {newsItem.author} / {newsItem.date}
-          </p>
+          <ScrollAnimation direction="popIn">
+            <h1 className="bnr-header-text">{newsItem.title}</h1>
+          </ScrollAnimation>
+          <ScrollAnimation direction="popIn">
+            <p className="banner-para-text">
+              Home / news / {newsItem.category}
+            </p>
+          </ScrollAnimation>
+          <ScrollAnimation direction="popIn">
+            <p className="mt-1 banner-para-text">
+              {newsItem.author} / {newsItem.date}
+            </p>
+          </ScrollAnimation>
         </div>
       </div>
 
       {/* Content Sections */}
-      <SingleBlogAudience />
+      <SingleNewsAudience />
 
       {/* Collaboration Section */}
       <div className="mt-8 sm:mt-12">
@@ -91,6 +100,6 @@ const NewsDetail = () => {
       </div>
     </div>
   );
-};
+}
 
-export default NewsDetail;
+export default NewsDetailPage;

@@ -1,5 +1,3 @@
-"use client";
-
 import AboutUsSpecialists from "@/components/view/about-us/AboutUsSpecialists";
 import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import ContactUs from "@/components/view/contact-us/ContactUsPage-1";
@@ -13,7 +11,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <div className="mx-auto">
+    <div className="mx-auto overflow-hidden">
       {/* Banner Section */}
       <div className="relative w-full h-[400px] flex items-center justify-center bg-black mt-[100px]">
         <Image
