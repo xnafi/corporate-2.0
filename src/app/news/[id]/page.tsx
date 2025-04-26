@@ -3,7 +3,6 @@ import CollaborateWork from "@/components/view/CollaborateWorkPage-3";
 import ScrollAnimation from "@/utils/scrollAnimation";
 import SingleNewsAudience from "@/components/view/news/SingleNewsAudience";
 import NotFound from "@/app/not-found";
-import async from "../../projects/[id]/page";
 
 interface NewsItem {
   id: number;
@@ -57,8 +56,7 @@ interface PageProps {
   };
 }
 function NewsDetailPage({ params }: PageProps) {
-  const { id } =  params;
-  const newsItem = newsItems.find((item) => item.id === Number(id));
+  const newsItem = newsItems.find((item) => item.id === Number(params.id));
 
   if (!newsItem) {
     return <NotFound />;

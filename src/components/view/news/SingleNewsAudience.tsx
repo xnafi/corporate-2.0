@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { HiSearch } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
