@@ -15,7 +15,7 @@ const LatestNewsNew = () => {
           </h2>
         </ScrollAnimation>
         <ScrollAnimation direction="right">
-          <SecondaryButton text="ALL BLOGS" href="/news" withArrow />
+          <SecondaryButton text="ALL BLOGS" href="/our-blogs" withArrow />
         </ScrollAnimation>
       </div>
 
