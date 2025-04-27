@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { FiArrowRight } from "react-icons/fi";

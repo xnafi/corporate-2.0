@@ -1,4 +1,3 @@
-"use client";
 import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 import { HiArrowUpRight } from "react-icons/hi2";

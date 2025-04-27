@@ -1,5 +1,3 @@
-"use client";
-
 import ScrollAnimation from "@/utils/scrollAnimation";
 import Image from "next/image";
 import { FaSearch, FaPhoneAlt } from "react-icons/fa";
