@@ -1,3 +1,4 @@
+import ScrollAnimation from "@/utils/scrollAnimation";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -79,12 +80,13 @@ const Footer = () => {
           <div className="flex space-x-4 my-4 md:my-0">
             {[FaFacebookF, FaLinkedinIn, FaTwitter, FaBehance].map(
               (Icon, idx) => (
-                <div
+                <ScrollAnimation
+                  direction="popIn"
                   key={idx}
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-b-4 border-black text-black hover:bg-[#1A73E8]  hover:text-white cursor-pointer transition-all"
                 >
                   <Icon />
-                </div>
+                </ScrollAnimation>
               )
             )}
           </div>
