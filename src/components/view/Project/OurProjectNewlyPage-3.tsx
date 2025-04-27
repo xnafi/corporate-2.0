@@ -14,7 +14,7 @@ const OurProjectNewly = () => {
           </h2>
         </ScrollAnimation>
         <ScrollAnimation direction="right">
-          <SecondaryButton text="ALL PROJECTS" href="/our-projects" withArrow />
+          <SecondaryButton text="ALL PROJECTS" href="/projects" withArrow />
         </ScrollAnimation>
       </div>
 

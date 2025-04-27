@@ -86,24 +86,22 @@ const OurServicePage2 = () => {
           <h2>Our services</h2>
         </ScrollAnimation>
 
-        <ScrollAnimation
-          direction="popIn"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-visible"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-visible">
           {services.map((service, index) => (
-            <Link
-              href={`/services/${service.slug}`}
-              key={index}
-              className="cursor-pointer"
-            >
-              <ServiceCard
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
-            </Link>
+            <ScrollAnimation direction="popIn" key={index}>
+              <Link
+                href={`/services/${service.slug}`}
+                className="cursor-pointer"
+              >
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
+              </Link>
+            </ScrollAnimation>
           ))}
-        </ScrollAnimation>
+        </div>
       </div>
     </section>
   );

@@ -47,12 +47,10 @@ const OurWork = () => {
           </h2>
         </ScrollAnimation>
 
-        <ScrollAnimation
-          direction="popIn"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10 py-4 overflow-visible"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10 py-4 overflow-visible">
           {workItems.map((item, index) => (
-            <div
+            <ScrollAnimation
+              direction="popIn"
               key={index}
               className="group bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-1000"
             >
@@ -78,9 +76,9 @@ const OurWork = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollAnimation>
           ))}
-        </ScrollAnimation>
+        </div>
       </div>
     </section>
   );
