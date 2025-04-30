@@ -8,10 +8,10 @@ const TotalCustomer = () => {
     <section className="w-full overflow-hidden">
       <ScrollAnimation
         direction="popIn"
-        className="container w-full primaryColor !text-white flex flex-col md:flex-row justify-between rounded-md shadow-md gap-2"
+        className="container w-full bg-white !text-black flex flex-col md:flex-row justify-between rounded-md shadow-md gap-10"
       >
         {/* First Card - Total Customers */}
-        <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-72 flex flex-col relative">
+        <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-full flex flex-col relative">
           <div className="flex items-center justify-between">
             <div className="flex -space-x-3">
               <Image
@@ -41,7 +41,7 @@ const TotalCustomer = () => {
               <Play className="text-orange-500 w-6 h-6" />
             </div>
           </div>
-          <p className="text-gray-400 mt-3">Our Total Customers</p>
+          <p className="mt-3">Our Total Customers</p>
           <CountUp
             from={0}
             end={130000}
@@ -51,20 +51,20 @@ const TotalCustomer = () => {
         </div>
 
         {/* Second Card - Testimonial */}
-        <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-72 flex flex-col items-center text-center">
+        <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-full flex flex-col items-center text-center">
           <div className="bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center pt-2 text-5xl font-extrabold text-center">
             “
           </div>
-          <p className="text-lg text-gray-300 mt-3 leading-relaxed">
+          <p className="text-lg mt-3 leading-relaxed">
             “Efficient, knowledgeable, & smooth experience. Highly recommended”
           </p>
           <p className="text-gray-400 mt-3 text-sm">— Musa Jamy, SEOM</p>
         </div>
 
         {/* Third Card - Experience */}
-        <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-72 flex flex-col">
+        <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-full flex flex-col">
           <CountUp className="text-5xl font-bold" from={0} end={12} span="+" />
-          <p className="text-gray-400 text-lg mt-1">
+          <p className="text-lg mt-1">
             Years Experience In this Field.
           </p>
           <div className="flex flex-wrap gap-2 mt-4">
@@ -78,7 +78,7 @@ const TotalCustomer = () => {
             ].map((tag, i) => (
               <span
                 key={i}
-                className="px-3 py-1 rounded-full text-sm bg-white text-black hover:bg-orange-500 hover:text-white transition-colors duration-300 ease-in-out"
+                className="px-3 py-1 rounded-full text-sm bg-white text-black hover:bg-orange-500 hover:text-white transition-colors duration-300 ease-in-out shadow-lg"
               >
                 {tag}
               </span>

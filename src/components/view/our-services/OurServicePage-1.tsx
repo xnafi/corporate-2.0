@@ -42,7 +42,7 @@ const services: Service[] = [
 
 const OurService: React.FC = () => {
   return (
-    <section className="bg-gray-100">
+    <section className="bg-gray-100 py-16">
       <div>
         <ScrollAnimation direction="popIn">
           <div className="text-center">
