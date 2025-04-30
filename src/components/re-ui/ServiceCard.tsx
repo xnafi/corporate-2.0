@@ -12,9 +12,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
 }) => {
   return (
-    <div className="group p-6 border rounded-xl shadow-sm hover:bg-[#1a73e8] transition duration-500 cursor-pointer hover:scale-105 w-full h-full hover:rounded-xl">
+    <div className="group p-6 border rounded-lg hover:bg-[#1a73e8] duration-500 cursor-pointer w-full h-full ease-linear transition-transform transform">
       <div className="flex items-center gap-4">
-        <div className="p-3 bg-gray-100 rounded-full group-hover:bg-black transition duration-300">
+        <div className="p-3 bg-gray-100 rounded-full group-hover:bg-black transition duration-300 ">
           {icon}
         </div>
         <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white transition duration-300">

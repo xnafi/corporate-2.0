@@ -60,7 +60,7 @@ const OurWork = () => {
                   alt={item.title}
                   width={600}
                   height={400}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-[250px] lg:h-[400px] object-cover"
                 />
               </div>
               <div className="p-6 text-left">

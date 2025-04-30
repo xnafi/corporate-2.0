@@ -10,13 +10,20 @@ const DigitalResource = () => {
         direction="left"
         className="w-full md:w-1/2 flex justify-center md:justify-end gap-4"
       >
-        <div className="relative w-1/2">
+        <div className="relative w-1/2 space-y-4 justify-between items-start flex flex-col">
           <Image
             src="https://i.postimg.cc/MT6XjK5h/modern-equipped-compu.ter-lab.jpg"
             alt="Digital Resource"
-            width={300}
-            height={300}
-            className="rounded-lg shadow-lg w-full"
+            width={400}
+            height={400}
+            className="rounded-lg shadow-lg w-full h-full"
+          />
+          <Image
+            src="https://i.postimg.cc/Kjz71g1P/ux-indonesia-w00-Fk-E6e8z-E-unsplash.jpg"
+            alt="Digital Resource"
+            width={400}
+            height={400}
+            className="rounded-lg shadow-lg w-full h-full"
           />
         </div>
         <div className="relative w-1/2">

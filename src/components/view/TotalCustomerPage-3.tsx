@@ -8,7 +8,7 @@ const TotalCustomer = () => {
     <section className="w-full overflow-hidden">
       <ScrollAnimation
         direction="popIn"
-        className="container w-full bg-white !text-black flex flex-col md:flex-row justify-between rounded-md shadow-md gap-10"
+        className="container w-full bg-white !text-black flex flex-col md:flex-row justify-between rounded-md gap-10"
       >
         {/* First Card - Total Customers */}
         <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-full flex flex-col relative">

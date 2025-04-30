@@ -53,7 +53,7 @@ const LatestNews = () => {
 
         <ScrollAnimation
           direction="down"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-4"
         >
           {newsItems.map((item, index) => (
             <div

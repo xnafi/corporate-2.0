@@ -19,7 +19,7 @@ const Member2 = () => {
       {/* Statistics Section */}
       <ScrollAnimation
         direction="popIn"
-        className=" grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-20"
+        className=" grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-20 py-2"
       >
         {/* Card 1 */}
         <div className="w-full bg-gray-100 p-7 mx-auto text-center rounded-xl shadow-md">
