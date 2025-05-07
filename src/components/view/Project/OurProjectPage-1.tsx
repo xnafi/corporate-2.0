@@ -6,9 +6,9 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ArrowRight, ArrowLeft } from "lucide-react";
 import React from "react";
 import ScrollAnimation from "@/utils/scrollAnimation";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 type Project = {
   title: string;
@@ -64,7 +64,7 @@ const OurProjectPage1 = () => {
               aria-label="Previous"
             >
               <div className="p-2 sm:p-3 rounded-full shadow-md hover:opacity-90 transition">
-                <ArrowLeft className="text-white" size={20} />
+                <FaArrowLeft className="text-white" size={20} />
               </div>
             </button>
             {/* Next Button */}
@@ -74,7 +74,7 @@ const OurProjectPage1 = () => {
               aria-label="Next"
             >
               <div className="p-2 sm:p-3 rounded-full shadow-md hover:opacity-90 transition">
-                <ArrowRight className="text-white" size={20} />
+                <FaArrowRight className="text-white" size={20} />
               </div>
             </button>
           </ScrollAnimation>
@@ -124,7 +124,7 @@ const OurProjectPage1 = () => {
                     className="absolute bottom-4 right-4 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ backgroundColor: "#1A73E8" }}
                   >
-                    <ArrowRight className="text-white" size={18} />
+                    <FaArrowRight className="text-white" size={18} />
                   </div>
                 </div>
               </SwiperSlide>

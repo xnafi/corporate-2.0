@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Play } from "lucide-react"; // Importing play icon
 import CountUp from "@/utils/countUp";
 import ScrollAnimation from "@/utils/scrollAnimation";
+import { FaPlay } from "react-icons/fa";
 
 const TotalCustomer = () => {
   return (
@@ -37,8 +37,8 @@ const TotalCustomer = () => {
               />
             </div>
             {/* Play Button */}
-            <div className="w-10 h-10 flex items-center justify-center bg-white rounded-xl cursor-pointer">
-              <Play className="text-orange-500 w-6 h-6" />
+            <div className="w-10 h-10 flex items-center justify-center bg-white rounded-xl cursor-pointer border">
+              <FaPlay className="text-orange-500 w-6 h-6 " />
             </div>
           </div>
           <p className="mt-3">Our Total Customers</p>
@@ -64,9 +64,7 @@ const TotalCustomer = () => {
         {/* Third Card - Experience */}
         <div className="shadow-xl hover:drop-shadow-md hover:scale-105 duration-500 ease-in-out p-6 rounded-2xl w-full sm:w-full flex flex-col">
           <CountUp className="text-5xl font-bold" from={0} end={12} span="+" />
-          <p className="text-lg mt-1">
-            Years Experience In this Field.
-          </p>
+          <p className="text-lg mt-1">Years Experience In this Field.</p>
           <div className="flex flex-wrap gap-2 mt-4">
             {[
               "SEO Traffic",
