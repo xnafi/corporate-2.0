@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import NavbarWrapper from "@/components/shared/NavbarWrapper"; // New Client Component
 import Footer from "@/components/shared/Footer";
-import NavbarWrapper from "@/components/shared/NavbarWrapper";
+import Navbar from "@/components/shared/NavbarPage1-2";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +16,7 @@ const geistMono = Geist_Mono({
 
 // ✅ Metadata should only be in a server component
 export const metadata: Metadata = {
-  title: "Seom",
+  title: "Elegant Web Studio",
   description: "Advertising Agency",
 };
 
@@ -32,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* ✅ Navbar Logic Moved to Client Component */}
-        <NavbarWrapper />
+        <Navbar />
 
         {/* Main Content */}
         {children}

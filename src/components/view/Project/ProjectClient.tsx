@@ -87,8 +87,8 @@ export default function ProjectClient() {
             }}
             className={`flex flex-wrap text-xs sm:text-sm font-medium justify-center items-center ${
               activeCategory === category
-                ? "bg-[#1A73E8] border-orange-500 text-white rounded-md font-semibold inline-block px-2 py-2"
-                : "bg-gray-100 dark:text-black backdrop-blur-md inline-block isolation-auto px-2 py-2 border-orange-500 font-semibold border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#1A73E8] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 overflow-hidden rounded-md group"
+                ? "bg-[#1A73E8] text-white rounded-md font-semibold inline-block px-2 py-2"
+                : "bg-gray-100 dark:text-black backdrop-blur-md inline-block isolation-auto px-2 py-2 font-semibold border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#1A73E8] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 overflow-hidden rounded-md group"
             }`}
           >
             {category}

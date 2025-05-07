@@ -86,7 +86,7 @@ const OurServicePage2 = () => {
           <h2>Our services</h2>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-visible">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ScrollAnimation direction="popIn" key={index}>
               <Link

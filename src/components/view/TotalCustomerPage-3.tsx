@@ -58,7 +58,7 @@ const TotalCustomer = () => {
           <p className="text-lg mt-3 leading-relaxed">
             “Efficient, knowledgeable, & smooth experience. Highly recommended”
           </p>
-          <p className="text-gray-400 mt-3 text-sm">— Musa Jamy, SEOM</p>
+          <p className="text-gray-400 mt-3 text-sm">— Musa Jamy, EWS</p>
         </div>
 
         {/* Third Card - Experience */}

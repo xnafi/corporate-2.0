@@ -14,10 +14,9 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4">
-              <div className="w-12 h-12 bg-[#1A73E8] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">SE</span>
+              <div className="w-16 h-16 bg-[#1A73E8] rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-2xl">EWS</span>
               </div>
-              <span className="text-xl font-semibold">Seom</span>
             </div>
             <p className="text-sm text-gray-600">
               A reputable SEO agency begins with a comprehensive analysis.
@@ -46,7 +45,7 @@ const Footer = () => {
           <div className="text-center sm:text-left">
             <h3 className="font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>seomagency1234@gmail.com</li>
+              <li>elegantwebstudio@gmail.com</li>
               <li>+1123 456 7890</li>
               <li>421 Allen, Mexico 4233</li>
             </ul>
@@ -74,7 +73,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center text-center">
           {/* Copy */}
-          <p className="text-sm text-gray-600">© POWERED BY SEOM</p>
+          <p className="text-sm text-gray-600">© POWERED BY ELEGANT WEB STUDIO</p>
 
           {/* Social Icons */}
           <div className="flex space-x-4 my-4 md:my-0">

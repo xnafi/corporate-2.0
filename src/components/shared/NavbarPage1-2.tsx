@@ -172,11 +172,10 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-1 flex items-center justify-center mx-auto sm:justify-between h-[100px]">
             <Link href="/" onClick={handleClose}>
-              <div className="grid grid-cols-2 place-items-center h-full space-x-1">
-                <div className="w-12 h-12 bg-[#1A73E8] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">SE</span>
+              <div className="grid place-items-center h-full space-x-1">
+                <div className="w-16 h-16 bg-[#1A73E8] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-2xl">EWS</span>
                 </div>
-                <span className="text-xl font-semibold text-black">Seom</span>
               </div>
             </Link>
 
